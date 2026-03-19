@@ -3,7 +3,24 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+
+parts: 
+  - caption: ROS 
+    chapters:
+    - file: _pages/ros/1_node
+    - file: _pages/ros/2_communication
+    - file: _pages/ros/command
+
+  - caption: Pinky Pro 
+    chapters:
+    - file: _pages/pinky/1
+    - file: _pages/pinky/2
+  
+  - caption: Python for ROS2
+    chapters:
+    - file: _pages/python_ROS/1
+
+  # - caption: Autonomous Driving 
+  #   chapters:
+  #   - file: 
+

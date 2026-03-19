@@ -1,9 +1,10 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: My sample book
-author: The Jupyter Book Community
-logo: logo.png
+title: Study for Autonomous Driving
+author: Daye Lee
+logo: autonomous_driving_perception.jpg
+only_build_toc_files: true
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -14,6 +15,7 @@ execute:
 latex:
   latex_documents:
     targetname: book.tex
+  numbered: true
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
@@ -30,3 +32,11 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+shpinx:
+  config:
+    html_theme: sphinx_book_theme
+    html_title: "Study for Autonomous Driving"
+    html_theme_options:
+      home_page_in_toc: true
+      repository_url: "https://daye-lee18.github.io/ros_autonomous/"

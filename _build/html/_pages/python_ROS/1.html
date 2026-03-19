@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Command for ROS &#8212; Study for Autonomous Driving</title>
+    <title>Python Library for ROS &#8212; Study for Autonomous Driving</title>
   
   
   
@@ -57,11 +57,10 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '_pages/ros/command';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_pages/python_ROS/1';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Pinky Robot" href="../pinky/1.html" />
-    <link rel="prev" title="통신 (communication)" href="2_communication.html" />
+    <link rel="prev" title="맵 생성 가이드" href="../pinky/2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,10 +179,10 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">ROS</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1_node.html">Node</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_communication.html">통신 (communication)</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Command for ROS</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ros/1_node.html">Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros/2_communication.html">통신 (communication)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros/command.html">Command for ROS</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pinky Pro</span></p>
 <ul class="nav bd-sidenav">
@@ -191,8 +190,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../pinky/2.html">맵 생성 가이드</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">python library for ROS2</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../python_ROS/1.html">Python Library for ROS</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python Library for ROS</a></li>
 </ul>
 
     </div>
@@ -264,7 +263,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F_pages/ros/command.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F_pages/python_ROS/1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -294,7 +293,7 @@
       
       
       
-      <li><a href="../../_sources/_pages/ros/command.md" target="_blank"
+      <li><a href="../../_sources/_pages/python_ROS/1.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -378,7 +377,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Command for ROS</h1>
+    <h1>Python Library for ROS</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -388,14 +387,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ros">ROS</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">패키지 및 환경 변수 인식</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">노드 실행</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">로봇 시스템 한 번에 실행 및 관리</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">의존성 패키지 분석 및 자동 설치</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rclpy">rclpy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rclpy-init">rclpy.init()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#node">Node 관련</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rclpy-create-node-callback">rclpy.create_node() 및 콜백(Callback) 함수</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#callback">콜백(Callback)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#node-create-subscription">node.create_subscription()</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nav2-simple-commander">nav2_simple_commander</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-transformations">tf_transformations</a></li>
 </ul>
             </nav>
         </div>
@@ -407,59 +410,115 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="command-for-ros">
-<h1>Command for ROS<a class="headerlink" href="#command-for-ros" title="Link to this heading">#</a></h1>
-<section id="linux">
-<h2>Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="python-library-for-ros">
+<h1>Python Library for ROS<a class="headerlink" href="#python-library-for-ros" title="Link to this heading">#</a></h1>
+<section id="rclpy">
+<h2>rclpy<a class="headerlink" href="#rclpy" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">rclpy</span></code>는 ROS2 python client library이다.</p>
+<section id="rclpy-init">
+<h3>rclpy.init()<a class="headerlink" href="#rclpy-init" title="Link to this heading">#</a></h3>
+<p>rclpy.init()는 rclpy를 초기화하여 ROS2 네트워크와 통신할 수 있도록 준비하는 필수 함수이다. 노드 생성 전 가장 먼저 호출되어 노드 초기화 및 통신 환경 설정을 수행한다.</p>
 <ul class="simple">
-<li><p>alias</p></li>
-<li><p>sudo poweroff</p></li>
-<li><p>echo “” &gt;&gt; <file name></p></li>
-<li><p>echo $환경변수</p></li>
+<li><p>ROS2 네트워크 연결: 노드를 ROS2 시스템 (Graph)에 등록하고, 다른 노드들과의 통신(Topic, Service, Action 등)을 준비한다.</p></li>
+<li><p>초기 설정: args인자를 전달받아 실행 시 필요한 옵션을 설정할 수 있다.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">rclpy</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="c1"># 1. rclpy 초기화 (필수)</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span>
+    
+    <span class="c1"># 2. 노드 생성 및 처리 (생략)</span>
+    <span class="c1"># node = MyNode()</span>
+    <span class="c1"># rclpy.spin(node)</span>
+    
+    <span class="c1"># 3. 종료 시 rclpy.shutdown() 호출</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+
+</pre></div>
+</div>
+</section>
+<section id="node">
+<h3>Node 관련<a class="headerlink" href="#node" title="Link to this heading">#</a></h3>
+<section id="rclpy-create-node-callback">
+<h4>rclpy.create_node() 및 콜백(Callback) 함수<a class="headerlink" href="#rclpy-create-node-callback" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>역할: ROS2에서 실행 가능한 노드 객체를 생성하는 파이썬 함수이다.</p></li>
+<li><p>사용법: <code class="docutils literal notranslate"><span class="pre">node</span> <span class="pre">=</span> <span class="pre">rclpy.create_node('node_name')</span></code> 형태로 노드 이름을 지정하여 생성</p></li>
 </ul>
 </section>
-<section id="ros">
-<h2>ROS<a class="headerlink" href="#ros" title="Link to this heading">#</a></h2>
-<section id="id1">
-<h3>패키지 및 환경 변수 인식<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>&lt;setup.bash<span class="w"> </span>/<span class="w"> </span>local_setup.bash&gt;
+<section id="callback">
+<h4>콜백(Callback)<a class="headerlink" href="#callback" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>노드 내부에 콜백 함수를 등록하여 데이터를 처리한다.</p></li>
+<li><p>역할: Subscriber가 메시지를 받거나, 타이머가 만료되었을 때, 또는 서비스 요청을 받았을 때 비동기적으로 호출되어 실행되는 함수</p></li>
+<li><p>코드 예시:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">timer_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># 1초마다 이 코드가 실행됨 </span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Hello ROS2&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>현재 ‘터미널’ 세션에 ROS 패키지, 노드, 라이브러리, 그리고 환경 변수의 위치를 인식시킨다. (<code class="docutils literal notranslate"><span class="pre">ROS_PACKAGE_PATH</span></code>, <code class="docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH</span></code>, <code class="docutils literal notranslate"><span class="pre">PATH</span></code> 등의 환경 변수)</p></li>
-<li><p>‘source’로 설정된 환경 변수는 해당 터미널(세션) 내에서만 유효하다.</p></li>
-<li><p>‘내가 만든(혹은 설치한) 패키지가 여기 있으니, 터미널아, 이제부터 이 명령어를 알아들어!’</p></li>
+<li><p>노드가 동작하는 동안 ‘특정 로직을 수행’한다.</p></li>
 </ul>
-</section>
-<section id="id2">
-<h3>노드 실행<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>&lt;package<span class="w"> </span>name&gt;<span class="w"> </span>&lt;node<span class="w"> </span>name&gt;
+<p>주로 AMCL (Adaptive Monte Carlo Localization)에서 위치 추정 방식으로 자율주행 로봇이 위치 추정 정보를 받아들이고 처리하는 핵심 함수이다. 주로 맵 상에서 로봇의 현재 위치 (Pose)가 업데이트 될 때마다 호출되는 콜백 함수를 지칭한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sub_amcl</span> <span class="o">=</span> <span class="n">rclpy</span><span class="o">.</span><span class="n">create_node</span><span class="p">(</span><span class="s1">&#39;sub_amcl&#39;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">amcl_callback</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;===&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
-<section id="id3">
-<h3>로봇 시스템 한 번에 실행 및 관리<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>&lt;package<span class="w"> </span>name&gt;<span class="w"> </span>&lt;launch<span class="w"> </span>file&gt;
+<section id="node-create-subscription">
+<h4>node.create_subscription()<a class="headerlink" href="#node-create-subscription" title="Link to this heading">#</a></h4>
+<p>특정 토픽을 구독하고 메시지를 수신할 콜백 함수를 등록하는 함수</p>
+<ul class="simple">
+<li><p>기본 구조</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">subscription</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_subscription</span><span class="p">(</span><span class="n">MsgType</span><span class="p">,</span> <span class="s1">&#39;topic_name&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">,</span> <span class="n">qos_profile</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>로봇 시스템을 한 번에 실행 및 관리한다. 개별 노드를 일일이 실행할 필요가 없어 시스템 구동을 간소화한다.</p></li>
-<li><p>주로 Python을 기반으로 한 <code class="docutils literal notranslate"><span class="pre">.launch.py</span></code> 파일을 사용한다.</p></li>
+<li><p>매개변수:</p>
+<ul>
+<li><p>MsgType: 수신할 메시지 행식 지정 (예: std_msgs.msg.String)</p></li>
+<li><p>‘topic_name’: 구독할 토픽의 이름(문자열)</p></li>
+<li><p>self.callback: 메시지를 받았을 때 실행할 함수</p></li>
+<li><p>qos_profile: QoS (Quality of Serivce) 설정 (기본값: 10)</p></li>
+</ul>
+</li>
+<li><p>용도: 토픽을 통해 발행된 메시지를 실시간으로 받아 명령이나 데이터를 처리하는데 사용</p></li>
 </ul>
 </section>
-<section id="id4">
-<h3>의존성 패키지 분석 및 자동 설치<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosdep<span class="w"> </span>install<span class="w"> </span>--from-paths<span class="w"> </span>src<span class="w"> </span>--ignore-src<span class="w"> </span>-r<span class="w"> </span>-y
+</section>
+</section>
+<section id="nav2-simple-commander">
+<h2>nav2_simple_commander<a class="headerlink" href="#nav2-simple-commander" title="Link to this heading">#</a></h2>
+<p>ROS2 Navigation2(Nav2) 스택의 기능을 파이썬 스크립트에서 호출할 수 있도록 설계된 API 라이브러리이다. 액션 클라이언트(Action Client)나 ROS2 내부 작동 방식을 일일이 구현하지 않아도 로봇의 ‘네비게이션 기능’을 제어할 수 있게 해준다.</p>
+<ul class="simple">
+<li><p>로봇의 목적지 설정 및 제어를 가장 단순화하여 사용할 수 있는 라이브러리</p></li>
+<li><p>주요 용도</p>
+<ul>
+<li><p>파이썬 기반 네이게이션 제어</p></li>
+<li><p>웨이포인트(Waypoint) 내비게이션</p></li>
+<li><p>로봇 상태 모니터링</p></li>
+<li><p>간단한 작업 흐름 자동화</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nav2_simple_commander.robot_navigator</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasicNavigator</span> 
+<span class="kn">import</span><span class="w"> </span><span class="nn">rclpy</span>
+
+<span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">nav</span> <span class="o">=</span> <span class="n">BasicNavigator</span><span class="p">()</span> <span class="c1"># Nav2 클래스 불러오기 </span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>ROS 패키지를 빌드하거나 실행하는데 필요한 시스템 의존성을 자동으로 식별하고 설치</p></li>
-<li><p>package.xml 파일에 명시된 의존성 패키지를 분석해 apt-get 등으로 필요 라이브러리를 자동으로 설치</p></li>
-<li><p>현재 워크스페이스(src폴더) 내의 패키지들을 스캔하여 필요한 모든 의존성을 설치</p></li>
-<li><p>sudo rosdep init: rosdep을 처음 사용할 때 초기화하는 명령어 (한번만 실행)</p></li>
-<li><p>rosdep update: 의존성 패키지 목록을 최신으로 업데이트</p></li>
-</ul>
 </section>
+<section id="tf-transformations">
+<h2>tf_transformations<a class="headerlink" href="#tf-transformations" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -476,7 +535,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./_pages/ros"
+            path: "./_pages/python_ROS"
         },
         predefinedOutput: true
     }
@@ -494,22 +553,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="2_communication.html"
+       href="../pinky/2.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">통신 (communication)</p>
+        <p class="prev-next-title">맵 생성 가이드</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="../pinky/1.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Pinky Robot</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -527,14 +577,18 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ros">ROS</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">패키지 및 환경 변수 인식</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">노드 실행</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">로봇 시스템 한 번에 실행 및 관리</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">의존성 패키지 분석 및 자동 설치</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rclpy">rclpy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rclpy-init">rclpy.init()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#node">Node 관련</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rclpy-create-node-callback">rclpy.create_node() 및 콜백(Callback) 함수</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#callback">콜백(Callback)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#node-create-subscription">node.create_subscription()</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nav2-simple-commander">nav2_simple_commander</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-transformations">tf_transformations</a></li>
 </ul>
   </nav></div>
 
