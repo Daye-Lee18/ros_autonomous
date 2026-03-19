@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Command for ROS &#8212; Study for Autonomous Driving</title>
+    <title>2. PinkyPro와 연결 &#8212; Study for Autonomous Driving</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '_pages/ros/command';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_pages/pinky/2_connection';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1. PinkyPro" href="../pinky/1.html" />
-    <link rel="prev" title="통신 (communication)" href="2_communication.html" />
+    <link rel="next" title="3. PinkyPro LCD 및 Picamera 사용" href="3_LCD.html" />
+    <link rel="prev" title="1. PinkyPro" href="1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,19 +180,19 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">ROS</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1_node.html">Node</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_communication.html">통신 (communication)</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Command for ROS</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ros/1_node.html">Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros/2_communication.html">통신 (communication)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros/command.html">Command for ROS</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pinky Pro</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../pinky/1.html">1. PinkyPro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pinky/2_connection.html">2. PinkyPro와 연결</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pinky/3_LCD.html">3. PinkyPro LCD 및 Picamera 사용</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pinky/4_LED.html">4. PinkyPro LED</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pinky/5_slam.html">5. PinkyPro SLAM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pinky/6_nav.html">6. 주행 (Navigation)</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1.html">1. PinkyPro</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. PinkyPro와 연결</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_LCD.html">3. PinkyPro LCD 및 Picamera 사용</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_LED.html">4. PinkyPro LED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_slam.html">5. PinkyPro SLAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_nav.html">6. 주행 (Navigation)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">JetCobot</span></p>
 <ul class="nav bd-sidenav">
@@ -272,7 +272,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F_pages/ros/command.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F_pages/pinky/2_connection.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +302,7 @@
       
       
       
-      <li><a href="../../_sources/_pages/ros/command.md" target="_blank"
+      <li><a href="../../_sources/_pages/pinky/2_connection.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -386,7 +386,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Command for ROS</h1>
+    <h1>2. PinkyPro와 연결</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -396,13 +396,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ros">ROS</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">패키지 및 환경 변수 인식</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">노드 실행</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">로봇 시스템 한 번에 실행 및 관리</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">의존성 패키지 분석 및 자동 설치</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#topic">topic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting">Setting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">[처음 한 번 필요] 핑키프로 패키지 다운</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">PinkyPro를 와이파이와 연결 [처음 한 번만]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-pinkypro">Local에서 PinkyPro와 연결</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">PinkyPro 패키지 사용시</a></li>
 </ul>
 </li>
 </ul>
@@ -416,64 +414,75 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="command-for-ros">
-<h1>Command for ROS<a class="headerlink" href="#command-for-ros" title="Link to this heading">#</a></h1>
-<section id="linux">
-<h2>Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>alias</p></li>
-<li><p>sudo poweroff</p></li>
-<li><p>echo “” &gt;&gt; <file name></p></li>
-<li><p>echo $환경변수</p></li>
-</ul>
-</section>
-<section id="ros">
-<h2>ROS<a class="headerlink" href="#ros" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="pinkypro">
+<h1>2. PinkyPro와 연결<a class="headerlink" href="#pinkypro" title="Link to this heading">#</a></h1>
+<section id="setting">
+<h2>Setting<a class="headerlink" href="#setting" title="Link to this heading">#</a></h2>
 <section id="id1">
-<h3>패키지 및 환경 변수 인식<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>&lt;setup.bash<span class="w"> </span>/<span class="w"> </span>local_setup.bash&gt;
+<h3>[처음 한 번 필요] 핑키프로 패키지 다운<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>PC에서도 pinky pro 패키지를 사용하기 위한 작업이다.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. 깃헙 디렉토리 다운 </span>
+mkdir<span class="w"> </span>-p<span class="w"> </span>~/pinky_pro/src<span class="w"> </span>
+<span class="nb">cd</span><span class="w"> </span>~/pinky_pro/src<span class="w"> </span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/pinklab-art/pinky_pro.git
+
+<span class="c1"># 2. 의존성 설치 </span>
+sudo<span class="w"> </span>rosdep<span class="w"> </span>init<span class="w"> </span><span class="c1"># rosdep 설정 파일을 생성 및 초기화하여 기본 ROS &#39;패키지 의존성&#39; 소스 목록을 등록한다. (python의 pip과 동일)</span>
+rosdep<span class="w"> </span>update<span class="w"> </span><span class="c1"># 등록된 소스 목록에서 의존성 메타데이터를 내려받아 로컬 데이터베이스를 최신 상태로 갱신 </span>
+
+<span class="c1"># 3. PinkyPro 패키지의 의존성 패키지들 설치 </span>
+<span class="nb">cd</span><span class="w"> </span>~/pinky_pro
+rosdep<span class="w"> </span>install<span class="w"> </span>--from-paths<span class="w"> </span>src<span class="w"> </span>--ignore-src<span class="w"> </span>-r<span class="w"> </span>-y<span class="w"> </span>
+
+<span class="c1"># 4. 빌드 </span>
+colcon<span class="w"> </span>build<span class="w"> </span>
+
+<span class="c1"># 5. [빌드 에러시] 의존성 패키지 설치 command </span>
+sudo<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;echo &quot;deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main&quot; &gt; /etc/apt/sources.list.d/gazebo-stable.list&#39;</span>
+wget<span class="w"> </span>http://packages.osrfoundation.org/gazebo.key<span class="w"> </span>-O<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>apt-key<span class="w"> </span>add<span class="w"> </span>-
+sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libgz-sim8-dev
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>현재 ‘터미널’ 세션에 ROS 패키지, 노드, 라이브러리, 그리고 환경 변수의 위치를 인식시킨다. (<code class="docutils literal notranslate"><span class="pre">ROS_PACKAGE_PATH</span></code>, <code class="docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH</span></code>, <code class="docutils literal notranslate"><span class="pre">PATH</span></code> 등의 환경 변수)</p></li>
-<li><p>‘source’로 설정된 환경 변수는 해당 터미널(세션) 내에서만 유효하다.</p></li>
-<li><p>‘내가 만든(혹은 설치한) 패키지가 여기 있으니, 터미널아, 이제부터 이 명령어를 알아들어!’</p></li>
-</ul>
 </section>
 <section id="id2">
-<h3>노드 실행<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>&lt;package<span class="w"> </span>name&gt;<span class="w"> </span>&lt;node<span class="w"> </span>name&gt;
+<h3>PinkyPro를 와이파이와 연결 [처음 한 번만]<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>아래 과정을 하면, PinkyPro에 와이파이관련 정보가 저장된다. 처음 설정하고 다음에 하려고 하면 안된다고 함.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. sd 카드를 로봇에 장착 후 부팅 완료 후 PC를 Pinky의 네트워크로 와이파이 연결 </span>
+<span class="c1"># SSID: pinky_XXXX (4자리), 비밀번호: pinkypro </span>
+
+ssh<span class="w"> </span>pinky@192.168.4.1<span class="w"> </span><span class="c1"># [PC]에서 로봇 터미널에 접속 </span>
+nmcli<span class="w"> </span>device<span class="w"> </span>wifi<span class="w"> </span>list<span class="w"> </span><span class="c1"># [Pinky, ROBOT] 와이파이 리스트 확인 </span>
+./wifi_setup.sh<span class="w"> </span><span class="c1"># [Pinky, ROBOT] PinkyPro를 다른 네트워크에 연결, 로컬 PC -&gt; Pinky -&gt; 강의장내 네트워크 연결로 로컬 PC에서 Pinky와 강의장 내 네트워크 둘 다 사용할 수 있도록 한다. </span>
+<span class="c1"># ping 8.8.8.8 인터넷 연결 확인 </span>
+<span class="c1"># Enter WiFi SSID: AIE_509_5G (강의내 와이피아)</span>
+<span class="c1"># Enter WiFi Password:  addinedu_class1</span>
+</pre></div>
+</div>
+</section>
+<section id="local-pinkypro">
+<h3>Local에서 PinkyPro와 연결<a class="headerlink" href="#local-pinkypro" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>핑키 네트워크와 접속 (비밀번호 1)</p></li>
+<li><p>ssh 접속</p></li>
+</ol>
+<ul class="simple">
+<li><p>ssh <a class="reference external" href="mailto:pinky&#37;&#52;&#48;192&#46;148&#46;4&#46;1">pinky<span>&#64;</span>192<span>&#46;</span>148<span>&#46;</span>4<span>&#46;</span>1</a> 로 vscode에서 로봇으로 접속</p></li>
+<li><p>비밀번호: 1</p></li>
+<li><p>로봇안의 폴더 및 파일 확인 가능</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>PC와 로봇의 ROS_DOMAIN_ID 설정 (내 아이디 116)
+~/.bashrc 에서 “ROS_DOMAIN_ID” 내 아이디로 설정</p></li>
+<li><p>source ~/.bashrc 로 변경된 설정 모든 터미널에서 업데이트해주기</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>check<span class="w"> </span><span class="c1"># [Pinky] battery 상태 확인 </span>
 </pre></div>
 </div>
 </section>
 <section id="id3">
-<h3>로봇 시스템 한 번에 실행 및 관리<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>&lt;package<span class="w"> </span>name&gt;<span class="w"> </span>&lt;launch<span class="w"> </span>file&gt;
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>로봇 시스템을 한 번에 실행 및 관리한다. 개별 노드를 일일이 실행할 필요가 없어 시스템 구동을 간소화한다.</p></li>
-<li><p>주로 Python을 기반으로 한 <code class="docutils literal notranslate"><span class="pre">.launch.py</span></code> 파일을 사용한다.</p></li>
-</ul>
-</section>
-<section id="id4">
-<h3>의존성 패키지 분석 및 자동 설치<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosdep<span class="w"> </span>install<span class="w"> </span>--from-paths<span class="w"> </span>src<span class="w"> </span>--ignore-src<span class="w"> </span>-r<span class="w"> </span>-y
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>ROS 패키지를 빌드하거나 실행하는데 필요한 시스템 의존성을 자동으로 식별하고 설치</p></li>
-<li><p>package.xml 파일에 명시된 의존성 패키지를 분석해 apt-get 등으로 필요 라이브러리를 자동으로 설치</p></li>
-<li><p>현재 워크스페이스(src폴더) 내의 패키지들을 스캔하여 필요한 모든 의존성을 설치</p></li>
-<li><p>sudo rosdep init: rosdep을 처음 사용할 때 초기화하는 명령어 (한번만 실행)</p></li>
-<li><p>rosdep update: 의존성 패키지 목록을 최신으로 업데이트</p></li>
-</ul>
-</section>
-<section id="topic">
-<h3>topic<a class="headerlink" href="#topic" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>topic<span class="w"> </span>list<span class="w">  </span><span class="c1"># 토픽 존재 확인 </span>
-ros2<span class="w"> </span>topic<span class="w"> </span><span class="nb">type</span><span class="w"> </span>topic_name<span class="w"> </span><span class="c1"># 토픽 타입 확인 </span>
-ros2<span class="w"> </span>topic<span class="w"> </span>pub<span class="w"> </span>/clicked_point<span class="w"> </span>geometry_msgs/msg/PointStamped<span class="w"> </span>...<span class="w"> </span><span class="c1"># publish 가능 (테스트용)</span>
+<h3>PinkyPro 패키지 사용시<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>~/pinky_pro/install/local_setup.bash<span class="w"> </span><span class="c1"># [PC?] local PC에서 pinky_pro package를 사용하기 위해 설정 </span>
 </pre></div>
 </div>
 </section>
@@ -493,7 +502,7 @@ ros2<span class="w"> </span>topic<span class="w"> </span>pub<span class="w"> </s
         },
         kernelOptions: {
             name: "python3",
-            path: "./_pages/ros"
+            path: "./_pages/pinky"
         },
         predefinedOutput: true
     }
@@ -511,20 +520,20 @@ ros2<span class="w"> </span>topic<span class="w"> </span>pub<span class="w"> </s
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="2_communication.html"
+       href="1.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">통신 (communication)</p>
+        <p class="prev-next-title">1. PinkyPro</p>
       </div>
     </a>
     <a class="right-next"
-       href="../pinky/1.html"
+       href="3_LCD.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">1. PinkyPro</p>
+        <p class="prev-next-title">3. PinkyPro LCD 및 Picamera 사용</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -544,13 +553,11 @@ ros2<span class="w"> </span>topic<span class="w"> </span>pub<span class="w"> </s
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ros">ROS</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">패키지 및 환경 변수 인식</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">노드 실행</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">로봇 시스템 한 번에 실행 및 관리</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">의존성 패키지 분석 및 자동 설치</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#topic">topic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting">Setting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">[처음 한 번 필요] 핑키프로 패키지 다운</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">PinkyPro를 와이파이와 연결 [처음 한 번만]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-pinkypro">Local에서 PinkyPro와 연결</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">PinkyPro 패키지 사용시</a></li>
 </ul>
 </li>
 </ul>
