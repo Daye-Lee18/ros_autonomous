@@ -1,4 +1,4 @@
-# 6. 주행 (Navigation) 
+# 6. PinkyPro Navigation
 
 ````{admonition} What to learn
 :class: note 
@@ -17,9 +17,9 @@
 
 ros2 launch pinky_bringup bringup_robot.launch.xml # [Robot] pinky 준비 
 
-ros2 launch pinky_navigation bringup_launch.xml map:=저장한 맵이름.yaml # [Robot] 네비게이션 실행 
+ros2 launch pinky_navigation bringup_launch.xml map:=저장한 맵이름.yaml # [Robot] 네비게이션 관련 준비 
 
-ros2 launch pinky_navigation nav2_view.launch.xml # [PC] Rviz실행 (SLAM 용 Rviz와 상이함에 주의!)
+ros2 launch pinky_navigation nav2_view.launch.xml # !!![PC] Rviz실행 (SLAM 용 Rviz와 상이함에 주의!)
 ```
 
 Rviz UI에서, 
@@ -35,15 +35,16 @@ Rviz UI에서,
 ````{admonition} Nav2
 :class: dropdown 
 
-Nav2 (navigation stack)
-|-- planner
-|-- controller 
-|-- bt_navigator
-|-- costmap
-|-- localization
+Nav2 (navigation stack) \
+|-- planner \
+|-- controller  \
+|-- bt_navigator \
+|-- costmap \
+|-- localization \
 
 으로 여러 노드들로 구성되어 있다. 
 ````
+
 ### 주피터 설치 [한 번만 실행]
 
 ```bash
@@ -64,7 +65,7 @@ ros2 launch pinky_navigation nav2_view.launch.xml # [PC] nav2_view.rviz 실행 (
 # Rviz에서 2D Pose Estimate 버튼을 눌러 라이다와 맵 일치 시켜주기 
 # !!!! Jupyter 실행 전 ROS2 관련 환경변수 (특히, source setup.bash)가 적용된 상태에서 Jupyter 실행 
 source /opt/ros/jazzy/setup.bash
-source ~/pinky_ws/install/setup.bash   # (네 workspace)
+source ~/pinky_pro/install/local_setup.bash   # (네 workspace)
 jupyter notebook #[Robot] Initiates a local web server to run the application in your browser. 
 ```
 
@@ -93,7 +94,7 @@ import tf_transformations
 def get_quaternion_from_yaw(yaw_degrees):
     yaw_radians = math.radians(yaw_degrees)
 
-    quaternion = tf_transformations.quaternion_grom_euler(0, 0, yaw_radians)
+    quaternion = tf_transformations.quaternion_from_euler(0, 0, yaw_radians)
     return quaternion 
 ```
 
@@ -123,7 +124,7 @@ Nav를 이용해 Goal을 생성해보자.
 
 현재 로봇의 위치는 아래의 세 개 중에서 가능하나, /amcl_pose를 확인하는 게 가장 좋다. 
 ```bash 
-/clicked_point  # Rviz에서 클릭한 위치 
+ros2 topic echo /clicked_point  # Rviz에서 `Publish Point`로 클릭한 위치 
 ros2 topic echo /amcl_pose # 실제 로봇 위치 
 ros2 run tf2_ros tf2_echo map base_link # map에서 base_link 변환하여 현재 로봇의 pose를 알려준다. 
 ```
@@ -175,7 +176,7 @@ nav.goToPose(goal_pose)
 
 #### Nav2 로그 보기 
 
-터미널에서 Nav2 bringup 로그를 보면 가장 디테일하다. 
+터미널에서 Nav2 `bringup` 로그를 보면 가장 디테일하다. 
 
 1. /amcl_pose : localization 정상인지
 2. /cmd_vel: 속도 명령 나가는지 

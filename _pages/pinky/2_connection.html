@@ -192,7 +192,12 @@
 <li class="toctree-l1"><a class="reference internal" href="3_LCD.html">3. PinkyPro LCD 및 Picamera 사용</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4_LED.html">4. PinkyPro LED</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5_slam.html">5. PinkyPro SLAM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="6_nav.html">6. 주행 (Navigation)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_nav.html">6. PinkyPro Navigation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JetCobot</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../JetCobot/2_setting.html">2. JetCobot 연결</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../JetCobot/3_basic_move.html">로봇팔과 그리퍼 제어</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for ROS2</span></p>
 <ul class="nav bd-sidenav">
@@ -459,20 +464,30 @@ nmcli<span class="w"> </span>device<span class="w"> </span>wifi<span class="w"> 
 <section id="local-pinkypro">
 <h3>Local에서 PinkyPro와 연결<a class="headerlink" href="#local-pinkypro" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>핑키 네트워크와 접속 (비밀번호 1)</p></li>
+<li><p>PinkyPro 스위치 켜기 -&gt; 와이파이네트워크 ssid를 보고 해당 네트워크와 접속한다.</p></li>
+</ol>
+<p><img alt="pinky_lcd" src="_pages/pinky/_asset/pinky/1.png" /></p>
+<ol class="arabic simple">
 <li><p>ssh 접속</p></li>
 </ol>
 <ul class="simple">
-<li><p>ssh <a class="reference external" href="mailto:pinky&#37;&#52;&#48;192&#46;148&#46;4&#46;1">pinky<span>&#64;</span>192<span>&#46;</span>148<span>&#46;</span>4<span>&#46;</span>1</a> 로 vscode에서 로봇으로 접속</p></li>
+<li><p>ssh <a class="reference external" href="mailto:pinky&#37;&#52;&#48;192&#46;168&#46;4&#46;1">pinky<span>&#64;</span>192<span>&#46;</span>168<span>&#46;</span>4<span>&#46;</span>1</a> 로 vscode에서 로봇으로 접속</p></li>
 <li><p>비밀번호: 1</p></li>
 <li><p>로봇안의 폴더 및 파일 확인 가능</p></li>
 </ul>
-<ol class="arabic simple" start="3">
-<li><p>PC와 로봇의 ROS_DOMAIN_ID 설정 (내 아이디 116)
-~/.bashrc 에서 “ROS_DOMAIN_ID” 내 아이디로 설정</p></li>
+<ol class="arabic simple">
+<li><p>PC와 로봇의 ROS_DOMAIN_ID 설정 (내 아이디 116)</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>~/.bashrc<span class="w"> </span>
+<span class="c1"># ROS_DOMAIN_ID = 116 &lt;- PC터미널에서 echo로 확인 가능 </span>
+<span class="nb">source</span><span class="w"> </span>~/.bashrc<span class="w"> </span>
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$ROS_DOMAIN_ID</span><span class="w"> </span><span class="c1"># 변경 확인 </span>
+</pre></div>
+</div>
+<ol class="arabic simple">
 <li><p>source ~/.bashrc 로 변경된 설정 모든 터미널에서 업데이트해주기</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>check<span class="w"> </span><span class="c1"># [Pinky] battery 상태 확인 </span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>battery<span class="w"> </span><span class="c1"># [Pinky] battery 상태 확인 </span>
 </pre></div>
 </div>
 </section>

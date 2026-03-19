@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6. 주행 (Navigation) &#8212; Study for Autonomous Driving</title>
+    <title>6. PinkyPro Navigation &#8212; Study for Autonomous Driving</title>
   
   
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '_pages/pinky/6_nav';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Python Library for ROS" href="../python_ROS/1.html" />
+    <link rel="next" title="2. JetCobot 연결" href="../JetCobot/2_setting.html" />
     <link rel="prev" title="5. PinkyPro SLAM" href="5_slam.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -192,7 +192,12 @@
 <li class="toctree-l1"><a class="reference internal" href="3_LCD.html">3. PinkyPro LCD 및 Picamera 사용</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4_LED.html">4. PinkyPro LED</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5_slam.html">5. PinkyPro SLAM</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. 주행 (Navigation)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. PinkyPro Navigation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JetCobot</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../JetCobot/2_setting.html">2. JetCobot 연결</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../JetCobot/3_basic_move.html">로봇팔과 그리퍼 제어</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for ROS2</span></p>
 <ul class="nav bd-sidenav">
@@ -382,7 +387,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>6. 주행 (Navigation)</h1>
+    <h1>6. PinkyPro Navigation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -417,8 +422,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="navigation">
-<h1>6. 주행 (Navigation)<a class="headerlink" href="#navigation" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="pinkypro-navigation">
+<h1>6. PinkyPro Navigation<a class="headerlink" href="#pinkypro-navigation" title="Link to this heading">#</a></h1>
 <div class="note admonition">
 <p class="admonition-title">What to learn</p>
 <ul class="simple">
@@ -432,9 +437,9 @@ document.write(`
 <h2>핑키의 Rviz 로 주행 시작/목표 설정후 자율 주행<a class="headerlink" href="#rviz" title="Link to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>pinky_bringup<span class="w"> </span>bringup_robot.launch.xml<span class="w"> </span><span class="c1"># [Robot] pinky 준비 </span>
 
-ros2<span class="w"> </span>launch<span class="w"> </span>pinky_navigation<span class="w"> </span>bringup_launch.xml<span class="w"> </span>map:<span class="o">=</span>저장한<span class="w"> </span>맵이름.yaml<span class="w"> </span><span class="c1"># [Robot] 네비게이션 실행 </span>
+ros2<span class="w"> </span>launch<span class="w"> </span>pinky_navigation<span class="w"> </span>bringup_launch.xml<span class="w"> </span>map:<span class="o">=</span>저장한<span class="w"> </span>맵이름.yaml<span class="w"> </span><span class="c1"># [Robot] 네비게이션 관련 준비 </span>
 
-ros2<span class="w"> </span>launch<span class="w"> </span>pinky_navigation<span class="w"> </span>nav2_view.launch.xml<span class="w"> </span><span class="c1"># [PC] Rviz실행 (SLAM 용 Rviz와 상이함에 주의!)</span>
+ros2<span class="w"> </span>launch<span class="w"> </span>pinky_navigation<span class="w"> </span>nav2_view.launch.xml<span class="w"> </span><span class="c1"># !!![PC] Rviz실행 (SLAM 용 Rviz와 상이함에 주의!)</span>
 </pre></div>
 </div>
 <p>Rviz UI에서,</p>
@@ -448,12 +453,12 @@ ros2<span class="w"> </span>launch<span class="w"> </span>pinky_navigation<span 
 <h2>Jupyter로 Nav2 를 이용해 자율 주행<a class="headerlink" href="#jupyter-nav2" title="Link to this heading">#</a></h2>
 <div class="dropdown admonition">
 <p class="admonition-title">Nav2</p>
-<p>Nav2 (navigation stack)
-|– planner
-|– controller
-|– bt_navigator
-|– costmap
-|– localization</p>
+<p>Nav2 (navigation stack) <br />
+|– planner <br />
+|– controller  <br />
+|– bt_navigator <br />
+|– costmap <br />
+|– localization \</p>
 <p>으로 여러 노드들로 구성되어 있다.</p>
 </div>
 <section id="id1">
@@ -474,7 +479,7 @@ ros2<span class="w"> </span>launch<span class="w"> </span>pinky_navigation<span 
 <span class="c1"># Rviz에서 2D Pose Estimate 버튼을 눌러 라이다와 맵 일치 시켜주기 </span>
 <span class="c1"># !!!! Jupyter 실행 전 ROS2 관련 환경변수 (특히, source setup.bash)가 적용된 상태에서 Jupyter 실행 </span>
 <span class="nb">source</span><span class="w"> </span>/opt/ros/jazzy/setup.bash
-<span class="nb">source</span><span class="w"> </span>~/pinky_ws/install/setup.bash<span class="w">   </span><span class="c1"># (네 workspace)</span>
+<span class="nb">source</span><span class="w"> </span>~/pinky_pro/install/local_setup.bash<span class="w">   </span><span class="c1"># (네 workspace)</span>
 jupyter<span class="w"> </span>notebook<span class="w"> </span><span class="c1">#[Robot] Initiates a local web server to run the application in your browser. </span>
 </pre></div>
 </div>
@@ -500,7 +505,7 @@ jupyter<span class="w"> </span>notebook<span class="w"> </span><span class="c1">
 <span class="k">def</span><span class="w"> </span><span class="nf">get_quaternion_from_yaw</span><span class="p">(</span><span class="n">yaw_degrees</span><span class="p">):</span>
     <span class="n">yaw_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">yaw_degrees</span><span class="p">)</span>
 
-    <span class="n">quaternion</span> <span class="o">=</span> <span class="n">tf_transformations</span><span class="o">.</span><span class="n">quaternion_grom_euler</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">yaw_radians</span><span class="p">)</span>
+    <span class="n">quaternion</span> <span class="o">=</span> <span class="n">tf_transformations</span><span class="o">.</span><span class="n">quaternion_from_euler</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">yaw_radians</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">quaternion</span> 
 </pre></div>
 </div>
@@ -525,7 +530,7 @@ jupyter<span class="w"> </span>notebook<span class="w"> </span><span class="c1">
 <p>Nav를 이용해 Goal을 생성해보자.
 제자리에서 회전하는 것이기 때문에, Goal의 목표 위치는 현재 로봇의 위치로 설정해준다.</p>
 <p>현재 로봇의 위치는 아래의 세 개 중에서 가능하나, /amcl_pose를 확인하는 게 가장 좋다.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/clicked_point<span class="w">  </span><span class="c1"># Rviz에서 클릭한 위치 </span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>topic<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>/clicked_point<span class="w">  </span><span class="c1"># Rviz에서 `Publish Point`로 클릭한 위치 </span>
 ros2<span class="w"> </span>topic<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>/amcl_pose<span class="w"> </span><span class="c1"># 실제 로봇 위치 </span>
 ros2<span class="w"> </span>run<span class="w"> </span>tf2_ros<span class="w"> </span>tf2_echo<span class="w"> </span>map<span class="w"> </span>base_link<span class="w"> </span><span class="c1"># map에서 base_link 변환하여 현재 로봇의 pose를 알려준다. </span>
 </pre></div>
@@ -575,7 +580,7 @@ ros2<span class="w"> </span>run<span class="w"> </span>tf2_ros<span class="w"> <
 <p>자율주행중에 실행해보면 주행 상태 확인이 가능하다.</p>
 <section id="nav2">
 <h4>Nav2 로그 보기<a class="headerlink" href="#nav2" title="Link to this heading">#</a></h4>
-<p>터미널에서 Nav2 bringup 로그를 보면 가장 디테일하다.</p>
+<p>터미널에서 Nav2 <code class="docutils literal notranslate"><span class="pre">bringup</span></code> 로그를 보면 가장 디테일하다.</p>
 <ol class="arabic simple">
 <li><p>/amcl_pose : localization 정상인지</p></li>
 <li><p>/cmd_vel: 속도 명령 나가는지</p></li>
@@ -773,11 +778,11 @@ ros2<span class="w"> </span>run<span class="w"> </span>tf2_ros<span class="w"> <
       </div>
     </a>
     <a class="right-next"
-       href="../python_ROS/1.html"
+       href="../JetCobot/2_setting.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python Library for ROS</p>
+        <p class="prev-next-title">2. JetCobot 연결</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -11,11 +11,12 @@ ros2 launch pinky_bringup bringup_robot.launch.xml # [Robot] 로봇을 준비시
 
 ros2 launch pinky_navigation map_building.launch.xml # [Robot] SLAM 실행 
 
+source ~/pinky_pro/install/local_setup.bash # [PC] local PC에서 pinky_pro package를 사용하기 위해 설정 
 ros2 launch pinky_navigation map_view.launch.xml # [PC] RviZ 실행 
 
 ros2 run teleop_twist_keyboard teleop_twist_keyboard # [Robot/PC]에서 로봇 움직임 조작, pinky봇은 max speeds로 주행되어있도록 기본 설정됨. "저속도"로 맵핑 필요 
 
-ros2 run nav2_map_server map_saver_cli -f "<저장할 맵이름>" # [Robot] 맵 저장, 지정 이름으로 pgm 파일 (image) 과 yaml 파 (metadata) 이 동시에 저장된다. 
+ros2 run nav2_map_server map_saver_cli -f "<저장할 맵이름>" # [Robot] 따옴표 필수, 맵 저장, 지정 이름으로 pgm 파일 (image) 과 yaml 파 (metadata) 이 동시에 저장된다. 
 ```
 
 ## 맵생성시 팁

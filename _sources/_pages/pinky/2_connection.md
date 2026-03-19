@@ -49,20 +49,28 @@ nmcli device wifi list # [Pinky, ROBOT] 와이파이 리스트 확인
 
 ### Local에서 PinkyPro와 연결 
 
-1. 핑키 네트워크와 접속 (비밀번호 1)
+1. PinkyPro 스위치 켜기 -> 와이파이네트워크 ssid를 보고 해당 네트워크와 접속한다. 
+
+![pinky_lcd](_asset/pinky/1.png)
    
-2. ssh 접속 
-- ssh pinky@192.148.4.1 로 vscode에서 로봇으로 접속
+1. ssh 접속 
+- ssh pinky@192.168.4.1 로 vscode에서 로봇으로 접속
 - 비밀번호: 1 
 - 로봇안의 폴더 및 파일 확인 가능 
 
-3. PC와 로봇의 ROS_DOMAIN_ID 설정 (내 아이디 116)
-~/.bashrc 에서 "ROS_DOMAIN_ID" 내 아이디로 설정 
+1. PC와 로봇의 ROS_DOMAIN_ID 설정 (내 아이디 116)
 
-4. source ~/.bashrc 로 변경된 설정 모든 터미널에서 업데이트해주기 
+```bash
+nano ~/.bashrc 
+# ROS_DOMAIN_ID = 116 <- PC터미널에서 echo로 확인 가능 
+source ~/.bashrc 
+echo $ROS_DOMAIN_ID # 변경 확인 
+```
+
+1. source ~/.bashrc 로 변경된 설정 모든 터미널에서 업데이트해주기 
    
 ```bash
-check # [Pinky] battery 상태 확인 
+battery # [Pinky] battery 상태 확인 
 ```
 
 ### PinkyPro 패키지 사용시 

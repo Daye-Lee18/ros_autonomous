@@ -192,7 +192,12 @@
 <li class="toctree-l1"><a class="reference internal" href="3_LCD.html">3. PinkyPro LCD 및 Picamera 사용</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4_LED.html">4. PinkyPro LED</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5_slam.html">5. PinkyPro SLAM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="6_nav.html">6. 주행 (Navigation)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_nav.html">6. PinkyPro Navigation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JetCobot</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../JetCobot/2_setting.html">2. JetCobot 연결</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../JetCobot/3_basic_move.html">로봇팔과 그리퍼 제어</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for ROS2</span></p>
 <ul class="nav bd-sidenav">
@@ -393,14 +398,6 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">PinkyPro 소개</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting">Setting</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">[처음 한 번 필요] 핑키프로 패키지 다운</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">PinkyPro를 와이파이와 연결 [처음 한 번만]</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-pinkypro">Local에서 PinkyPro와 연결</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">PinkyPro 패키지 사용시</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slam">SLAM</a></li>
 </ul>
             </nav>
         </div>
@@ -416,92 +413,6 @@ document.write(`
 <h1>1. PinkyPro<a class="headerlink" href="#pinkypro" title="Link to this heading">#</a></h1>
 <section id="id1">
 <h2>PinkyPro 소개<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-</section>
-<section id="setting">
-<h2>Setting<a class="headerlink" href="#setting" title="Link to this heading">#</a></h2>
-<section id="id2">
-<h3>[처음 한 번 필요] 핑키프로 패키지 다운<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
-<p>PC에서도 pinky pro 패키지를 사용하기 위한 작업이다.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. 깃헙 디렉토리 다운 </span>
-mkdir<span class="w"> </span>-p<span class="w"> </span>~/pinky_pro/src<span class="w"> </span>
-<span class="nb">cd</span><span class="w"> </span>~/pinky_pro/src<span class="w"> </span>
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/pinklab-art/pinky_pro.git
-
-<span class="c1"># 2. 의존성 설치 </span>
-sudo<span class="w"> </span>rosdep<span class="w"> </span>init<span class="w"> </span><span class="c1"># rosdep 설정 파일을 생성 및 초기화하여 기본 ROS &#39;패키지 의존성&#39; 소스 목록을 등록한다. (python의 pip과 동일)</span>
-rosdep<span class="w"> </span>update<span class="w"> </span><span class="c1"># 등록된 소스 목록에서 의존성 메타데이터를 내려받아 로컬 데이터베이스를 최신 상태로 갱신 </span>
-
-<span class="c1"># 3. PinkyPro 패키지의 의존성 패키지들 설치 </span>
-<span class="nb">cd</span><span class="w"> </span>~/pinky_pro
-rosdep<span class="w"> </span>install<span class="w"> </span>--from-paths<span class="w"> </span>src<span class="w"> </span>--ignore-src<span class="w"> </span>-r<span class="w"> </span>-y<span class="w"> </span>
-
-<span class="c1"># 4. 빌드 </span>
-colcon<span class="w"> </span>build<span class="w"> </span>
-
-<span class="c1"># 5. [빌드 에러시] 의존성 패키지 설치 command </span>
-sudo<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;echo &quot;deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main&quot; &gt; /etc/apt/sources.list.d/gazebo-stable.list&#39;</span>
-wget<span class="w"> </span>http://packages.osrfoundation.org/gazebo.key<span class="w"> </span>-O<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>apt-key<span class="w"> </span>add<span class="w"> </span>-
-sudo<span class="w"> </span>apt-get<span class="w"> </span>update
-sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libgz-sim8-dev
-</pre></div>
-</div>
-</section>
-<section id="id3">
-<h3>PinkyPro를 와이파이와 연결 [처음 한 번만]<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
-<p>아래 과정을 하면, PinkyPro에 와이파이관련 정보가 저장된다. 처음 설정하고 다음에 하려고 하면 안된다고 함.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. sd 카드를 로봇에 장착 후 부팅 완료 후 PC를 Pinky의 네트워크로 와이파이 연결 </span>
-<span class="c1"># SSID: pinky_XXXX (4자리), 비밀번호: pinkypro </span>
-
-ssh<span class="w"> </span>pinky@192.168.4.1<span class="w"> </span><span class="c1"># [PC]에서 로봇 터미널에 접속 </span>
-nmcli<span class="w"> </span>device<span class="w"> </span>wifi<span class="w"> </span>list<span class="w"> </span><span class="c1"># [Pinky, ROBOT] 와이파이 리스트 확인 </span>
-./wifi_setup.sh<span class="w"> </span><span class="c1"># [Pinky, ROBOT] PinkyPro를 다른 네트워크에 연결, 로컬 PC -&gt; Pinky -&gt; 강의장내 네트워크 연결로 로컬 PC에서 Pinky와 강의장 내 네트워크 둘 다 사용할 수 있도록 한다. </span>
-<span class="c1"># ping 8.8.8.8 인터넷 연결 확인 </span>
-<span class="c1"># Enter WiFi SSID: AIE_509_5G (강의내 와이피아)</span>
-<span class="c1"># Enter WiFi Password:  addinedu_class1</span>
-</pre></div>
-</div>
-</section>
-<section id="local-pinkypro">
-<h3>Local에서 PinkyPro와 연결<a class="headerlink" href="#local-pinkypro" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>핑키 네트워크와 접속 (비밀번호 1)</p></li>
-<li><p>ssh 접속</p></li>
-</ol>
-<ul class="simple">
-<li><p>ssh <a class="reference external" href="mailto:pinky&#37;&#52;&#48;192&#46;148&#46;4&#46;1">pinky<span>&#64;</span>192<span>&#46;</span>148<span>&#46;</span>4<span>&#46;</span>1</a> 로 vscode에서 로봇으로 접속</p></li>
-<li><p>비밀번호: 1</p></li>
-<li><p>로봇안의 폴더 및 파일 확인 가능</p></li>
-</ul>
-<ol class="arabic simple" start="3">
-<li><p>PC와 로봇의 ROS_DOMAIN_ID 설정 (내 아이디 116)
-~/.bashrc 에서 “ROS_DOMAIN_ID” 내 아이디로 설정</p></li>
-<li><p>source ~/.bashrc 로 변경된 설정 모든 터미널에서 업데이트해주기</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>check<span class="w"> </span><span class="c1"># [Pinky] battery 상태 확인 </span>
-</pre></div>
-</div>
-</section>
-<section id="id4">
-<h3>PinkyPro 패키지 사용시<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>~/pinky_pro/install/local_setup.bash<span class="w"> </span><span class="c1"># [PC?] local PC에서 pinky_pro package를 사용하기 위해 설정 </span>
-</pre></div>
-</div>
-</section>
-</section>
-<section id="slam">
-<h2>SLAM<a class="headerlink" href="#slam" title="Link to this heading">#</a></h2>
-<p>comment 되어 있는 곳에 [Robot] / [PC]는 터미널의 종류를 의미한다.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>pinky_bringup<span class="w"> </span>bringup_robot.launch.xml<span class="w"> </span><span class="c1"># [Robot] 로봇을 준비시킨다. 센서켜고 모터 켜고 데이터 송수신같은 것을 준비한다. </span>
-
-ros2<span class="w"> </span>launch<span class="w"> </span>pinky_navigation<span class="w"> </span>map_building.launch.xml<span class="w"> </span><span class="c1"># [Robot] SLAM 실행 </span>
-
-ros2<span class="w"> </span>launch<span class="w"> </span>pinky_navigation<span class="w"> </span>map_view.launch.xml<span class="w"> </span><span class="c1"># [PC] RviZ 실행 </span>
-
-ros2<span class="w"> </span>run<span class="w"> </span>teleop_twist_keyboard<span class="w"> </span>teleop_twist_keyboard<span class="w"> </span><span class="c1"># [Robot/PC]에서 로봇 움직임 조작, pinky봇은 max speeds로 주행되어있도록 기본 설정됨. &quot;저속도&quot;로 맵핑 필요 </span>
-
-ros2<span class="w"> </span>run<span class="w"> </span>nav2_map_server<span class="w"> </span>map_saver_cli<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;&lt;저장할 맵이름&gt;&quot;</span><span class="w"> </span><span class="c1"># [Robot] 맵 저장, 지정 이름으로 pgm 파일 (image) 과 yaml 파 (metadata) 이 동시에 저장된다. </span>
-</pre></div>
-</div>
 </section>
 </section>
 
@@ -570,14 +481,6 @@ ros2<span class="w"> </span>run<span class="w"> </span>nav2_map_server<span clas
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">PinkyPro 소개</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting">Setting</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">[처음 한 번 필요] 핑키프로 패키지 다운</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">PinkyPro를 와이파이와 연결 [처음 한 번만]</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-pinkypro">Local에서 PinkyPro와 연결</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">PinkyPro 패키지 사용시</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slam">SLAM</a></li>
 </ul>
   </nav></div>
 

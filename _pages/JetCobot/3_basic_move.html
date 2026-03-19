@@ -1,0 +1,724 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>로봇팔과 그리퍼 제어 &#8212; Study for Autonomous Driving</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_pages/JetCobot/3_basic_move';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Python Library for ROS" href="../python_ROS/1.html" />
+    <link rel="prev" title="2. JetCobot 연결" href="2_setting.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/autonomous_driving_perception.jpg" class="logo__image only-light" alt="Study for Autonomous Driving - Home"/>
+    <script>document.write(`<img src="../../_static/autonomous_driving_perception.jpg" class="logo__image only-dark" alt="Study for Autonomous Driving - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">ROS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ros/1_node.html">Node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros/2_communication.html">통신 (communication)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros/command.html">Command for ROS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pinky Pro</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../pinky/1.html">1. PinkyPro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pinky/2_connection.html">2. PinkyPro와 연결</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pinky/3_LCD.html">3. PinkyPro LCD 및 Picamera 사용</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pinky/4_LED.html">4. PinkyPro LED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pinky/5_slam.html">5. PinkyPro SLAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pinky/6_nav.html">6. PinkyPro Navigation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JetCobot</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2_setting.html">2. JetCobot 연결</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">로봇팔과 그리퍼 제어</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for ROS2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../python_ROS/1.html">Python Library for ROS</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F_pages/JetCobot/3_basic_move.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/_pages/JetCobot/3_basic_move.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>로봇팔과 그리퍼 제어</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pymycobot-git">pymycobot Git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook">Jupyter notebook 켜기</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">로봇 연결 코드</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">로봇팔</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">로봇의 현재 데이터 읽기</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#home-pose">로봇팔을 초기 위치로 리셋 (Home Pose)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">로봇팔 관절 움직이기</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#angle-send-angle">목표 angle 로 움직이기 send_angle()</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#send-coord">목표 좌표로 움직이기 send_coord()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-gripper-value">그리퍼 제어 set_gripper_value()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">수동 조작 모드</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mode">Mode</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>로봇팔과 그리퍼 제어<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>위의 세팅을 해서 연결한 후 로봇팔의 기본 움직임을 사용해본다.</p>
+<section id="pymycobot-git">
+<h2>pymycobot Git<a class="headerlink" href="#pymycobot-git" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://github.com/elephantrobotics/pymycobot/blob/main/docs/MyCobot_280_en.md">깃링크</a>를 통해서 더 많은 함수와 파라미터를 구경할 수 있다.</p>
+</section>
+<section id="jupyter-notebook">
+<h2>Jupyter notebook 켜기<a class="headerlink" href="#jupyter-notebook" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># [Robot 터미널]에서 진행 </span>
+<span class="c1"># JetCobot 전용 가상환경 구축 </span>
+python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>~/venv/mycobot
+<span class="nb">source</span><span class="w"> </span>~/venv/mycobot/bin/activate<span class="w"> </span><span class="c1"># 가상환경 실행 </span>
+
+<span class="c1"># SDK와 기타 패키지 설치 </span>
+pip<span class="w"> </span>install<span class="w"> </span>pymycobot<span class="w"> </span>--upgrade
+pip<span class="w"> </span>install<span class="w"> </span>opencv-python
+pip<span class="w"> </span>install<span class="w"> </span>jupyter
+</pre></div>
+</div>
+<p>가상환경안에서 jupyter notebook을 켜고 실행한다.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>notebook<span class="w"> </span><span class="c1"># [Robot]</span>
+</pre></div>
+</div>
+<p>뜨는 링크를 통해 PC에서 jupyterbook에 접속한다.</p>
+</section>
+<section id="id2">
+<h2>로봇 연결 코드<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>필요한 라이브러리 불러오기</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pymycobot.mycobot280</span><span class="w"> </span><span class="kn">import</span> <span class="n">MyCobot280</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pymycobot.genre</span><span class="w"> </span><span class="kn">import</span> <span class="n">Angle</span><span class="p">,</span> <span class="n">Coord</span>
+</pre></div>
+</div>
+<p>로봇 연결. JetCobot의 이미지에는 로봇의 Udev 설정이 돼있다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mc</span> <span class="o">=</span> <span class="n">MyCobot280</span><span class="p">(</span><span class="s1">&#39;/dev/ttyJETCOBOT&#39;</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">)</span> <span class="c1"># 라즈베리랑 로봇 컨트롤보드 통신하기 위한 시리얼 포트 경로, 로봇 컨트롤 보드와 통신하기 위한 시리얼 포트 경로, 즉, 이 경로에 연결된 로봇과 통신할게라는 의미 </span>
+<span class="n">mc</span><span class="o">.</span><span class="n">thread_lock</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;로봇이 연결되었습니다.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>로봇팔<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h3>로봇의 현재 데이터 읽기<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 현재 각도 읽기</span>
+<span class="n">angles</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_angles</span><span class="p">()</span> <span class="c1"># Pose1: 기준축에 대한 각도로 정의 </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;현재 각도:&quot;</span><span class="p">,</span> <span class="n">angles</span><span class="p">)</span>
+<span class="c1"># 현재 좌표 읽기</span>
+<span class="n">coords</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_coords</span><span class="p">()</span> <span class="c1"># Pose2: 로봇팔 gripper 의 좌표로 정의 </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;현재 좌표:&quot;</span><span class="p">,</span> <span class="n">coords</span><span class="p">)</span>
+<span class="c1"># 인코더 값 읽기</span>
+<span class="n">encoders</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_encoders</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;인코더:&quot;</span><span class="p">,</span> <span class="n">encoders</span><span class="p">)</span>
+<span class="c1"># 라디안 값 읽기</span>
+<span class="n">radians</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">get_radians</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;라디안:&quot;</span><span class="p">,</span> <span class="n">radians</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">get_angles()</p>
+<p>The get_angles() function in the pymycobot library returns a list of six floating-point values (in degrees) representing the current rotational angle of each joint (J1 through J6).</p>
+<p>These angles are calculated with respect to the physical zero-position of the previous joint (relative joint angles), rather than a fixed global Cartesian axis, though they are usually visualized with the arm in a straight, vertical upright posture.</p>
+<ul class="simple">
+<li><p>Return value: A list: [j1, j2, j3, j4, j5, j6]</p></li>
+<li><p>Units: Degrees (usually in a range between -170° to +170°, depending on the specific model).</p></li>
+<li><p>Joint Definitions (Axis of Rotation):
+J1 (Base): Rotates around the vertical-axis of the base.
+J2 (Big Arm): Rotates around a horizontal axis (pitch).
+J3 (Forearm): Rotates around a horizontal axis (pitch).
+J4 (Forearm Roll): Rotates around the longitudinal axis of the forearm.
+J5 (Wrist Pitch): Rotates around a horizontal axis.
+J6 (Wrist Roll): Rotates around the longitudinal axis of the end-effector.</p></li>
+</ul>
+</div>
+<p>end effector는 myCobot에서 기본 설정으로 gripper가 아니라, 회색쪽 좌표 (플렌지?) 임
+물체의 좌표를 알아냈을 때, 그리퍼가 오므렸을 때의 점 (tcp)이길 알아야함.
+따라서, offset을 계산해서</p>
+<p>TCP (tool center point): 작업 도구의 가운데 점</p>
+<div class="dropdown admonition">
+<p class="admonition-title">get_coords()</p>
+<p>바닥어딘가의 기준점</p>
+</div>
+</section>
+<section id="home-pose">
+<h3>로봇팔을 초기 위치로 리셋 (Home Pose)<a class="headerlink" href="#home-pose" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">initial_angles</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">speed</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1"># 퍼센트 0~100 </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;로봇을 초기 위치로 리셋합니다.&quot;</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">send_angles</span><span class="p">(</span><span class="n">initial_angles</span><span class="p">,</span> <span class="n">speed</span><span class="p">)</span> <span class="c1"># 6개의 조인트는 로봇팔에 있는 것이고 </span>
+<span class="n">mc</span><span class="o">.</span><span class="n">set_gripper_value</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">speed</span><span class="p">)</span> <span class="c1"># 그리퍼 열기, 0을 넣으면 그리퍼가 닫힘. </span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># 움직임이 완료될 때까지 대기, 제어 시간을 줌 </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;리셋 완료&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="home_pose" src="_pages/JetCobot/_asset/jetcobot/1.png" /></p>
+</section>
+<section id="id5">
+<h3>로봇팔 관절 움직이기<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>JetCobot은 왼손좌표계를 사용한다. 로봇의 정면이 x, 로봇의 왼쪽이 y축, 로봇의 오른쪽이 z축</p>
+<ul class="simple">
+<li><p>angle: 연결 joint와의 각도</p></li>
+<li><p>coord: pose (x, y, z, rx, ry, rz)</p></li>
+</ul>
+<section id="angle-send-angle">
+<h4>목표 angle 로 움직이기 send_angle()<a class="headerlink" href="#angle-send-angle" title="Link to this heading">#</a></h4>
+<p>목표 속도 및 좌표로 움직이는 것이다.</p>
+<ul class="simple">
+<li><p>단일 관절 각도 움직이기: sent_angle(), 단수</p></li>
+<li><p>여러 관절 각도 움직이기: sent_angles(), 복수</p></li>
+</ul>
+</section>
+<section id="send-coord">
+<h4>목표 좌표로 움직이기 send_coord()<a class="headerlink" href="#send-coord" title="Link to this heading">#</a></h4>
+<p>Inverse Kinematics (IK) 로 풀 수 있는 경우에만 이동한다. (IK로 풀지못하면 안 움직임)</p>
+<ul class="simple">
+<li><p>FK: 각도 -&gt; 좌표</p></li>
+<li><p>IK: 좌표 -&gt; 각도, 풀리지 않을 수 있다. (뭔가를 잡아야한다 -&gt; 주어진 좌표로 이동하기 위해 각도를 계산해야한다)</p>
+<ul>
+<li><p>해가 여러개일 수 있다 = 같은 자세를 구성하는 자세도 다양함.</p></li>
+<li><p>해당 JetCobot에서는 특정 포즈로 이동하는 방법을 어떤 것을 쓰는지 알 순 없음.</p></li>
+</ul>
+</li>
+</ul>
+<p>동영상</p>
+<p>예를 들어서,</p>
+</section>
+</section>
+</section>
+<section id="set-gripper-value">
+<h2>그리퍼 제어 set_gripper_value()<a class="headerlink" href="#set-gripper-value" title="Link to this heading">#</a></h2>
+<p>동영상 o, 0으로 완전히 닫아도</p>
+</section>
+<section id="id6">
+<h2>수동 조작 모드<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>많이하게 될 것임.
+실행전에 손으로 로봇팔을 잡고 시작.
+공장에서 반복작업을 하는 경우 자세가 정해져있다. 수동조작 모드로 그 자세를 만들어주고</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 모터 비활성화, 손으로 잡고 있어야 함. </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;전체 모터를 비활성화합니다.&quot;</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">release_all_servos</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># 모터 활성화</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;전체 모터를 활성화합니다.&quot;</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">focus_all_servos</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>수동 조작 - 현재 좌표 확인 - 수동 조작 - 현재 좌표 확인 - 수동 조작 - …</p>
+<p>플렌지: 그리퍼와 연결된 부분</p>
+</section>
+<section id="mode">
+<h2>Mode<a class="headerlink" href="#mode" title="Link to this heading">#</a></h2>
+<p>MoveL은 constraints가 높아서, 풀기 더 어려운 문제이다.
+MoveJ가 예상과 다르게 움직일 수 있는 것은 degree of freedom이 높아서 그런가? 찾아야하는 variable의 개수가 많아서?</p>
+<p>mode 0: angular (movej)
+mode 1: linear (movel)</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./_pages/JetCobot"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2_setting.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">2. JetCobot 연결</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../python_ROS/1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Python Library for ROS</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pymycobot-git">pymycobot Git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook">Jupyter notebook 켜기</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">로봇 연결 코드</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">로봇팔</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">로봇의 현재 데이터 읽기</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#home-pose">로봇팔을 초기 위치로 리셋 (Home Pose)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">로봇팔 관절 움직이기</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#angle-send-angle">목표 angle 로 움직이기 send_angle()</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#send-coord">목표 좌표로 움직이기 send_coord()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-gripper-value">그리퍼 제어 set_gripper_value()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">수동 조작 모드</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mode">Mode</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Daye Lee
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

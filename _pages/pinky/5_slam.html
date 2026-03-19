@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '_pages/pinky/5_slam';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="6. 주행 (Navigation)" href="6_nav.html" />
+    <link rel="next" title="6. PinkyPro Navigation" href="6_nav.html" />
     <link rel="prev" title="4. PinkyPro LED" href="4_LED.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -192,7 +192,12 @@
 <li class="toctree-l1"><a class="reference internal" href="3_LCD.html">3. PinkyPro LCD 및 Picamera 사용</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4_LED.html">4. PinkyPro LED</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">5. PinkyPro SLAM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="6_nav.html">6. 주행 (Navigation)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_nav.html">6. PinkyPro Navigation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JetCobot</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../JetCobot/2_setting.html">2. JetCobot 연결</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../JetCobot/3_basic_move.html">로봇팔과 그리퍼 제어</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for ROS2</span></p>
 <ul class="nav bd-sidenav">
@@ -415,11 +420,12 @@ document.write(`
 
 ros2<span class="w"> </span>launch<span class="w"> </span>pinky_navigation<span class="w"> </span>map_building.launch.xml<span class="w"> </span><span class="c1"># [Robot] SLAM 실행 </span>
 
+<span class="nb">source</span><span class="w"> </span>~/pinky_pro/install/local_setup.bash<span class="w"> </span><span class="c1"># [PC] local PC에서 pinky_pro package를 사용하기 위해 설정 </span>
 ros2<span class="w"> </span>launch<span class="w"> </span>pinky_navigation<span class="w"> </span>map_view.launch.xml<span class="w"> </span><span class="c1"># [PC] RviZ 실행 </span>
 
 ros2<span class="w"> </span>run<span class="w"> </span>teleop_twist_keyboard<span class="w"> </span>teleop_twist_keyboard<span class="w"> </span><span class="c1"># [Robot/PC]에서 로봇 움직임 조작, pinky봇은 max speeds로 주행되어있도록 기본 설정됨. &quot;저속도&quot;로 맵핑 필요 </span>
 
-ros2<span class="w"> </span>run<span class="w"> </span>nav2_map_server<span class="w"> </span>map_saver_cli<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;&lt;저장할 맵이름&gt;&quot;</span><span class="w"> </span><span class="c1"># [Robot] 맵 저장, 지정 이름으로 pgm 파일 (image) 과 yaml 파 (metadata) 이 동시에 저장된다. </span>
+ros2<span class="w"> </span>run<span class="w"> </span>nav2_map_server<span class="w"> </span>map_saver_cli<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;&lt;저장할 맵이름&gt;&quot;</span><span class="w"> </span><span class="c1"># [Robot] 따옴표 필수, 맵 저장, 지정 이름으로 pgm 파일 (image) 과 yaml 파 (metadata) 이 동시에 저장된다. </span>
 </pre></div>
 </div>
 </section>
@@ -502,7 +508,7 @@ ros2<span class="w"> </span>run<span class="w"> </span>nav2_map_server<span clas
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">6. 주행 (Navigation)</p>
+        <p class="prev-next-title">6. PinkyPro Navigation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

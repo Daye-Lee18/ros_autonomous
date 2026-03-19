@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4. PinkyPro LED &#8212; Study for Autonomous Driving</title>
+    <title>2. JetCobot 연결 &#8212; Study for Autonomous Driving</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '_pages/pinky/4_LED';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_pages/JetCobot/2_setting';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5. PinkyPro SLAM" href="5_slam.html" />
-    <link rel="prev" title="3. PinkyPro LCD 및 Picamera 사용" href="3_LCD.html" />
+    <link rel="next" title="로봇팔과 그리퍼 제어" href="3_basic_move.html" />
+    <link rel="prev" title="6. PinkyPro Navigation" href="../pinky/6_nav.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -186,18 +186,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../ros/command.html">Command for ROS</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pinky Pro</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1.html">1. PinkyPro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_connection.html">2. PinkyPro와 연결</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3_LCD.html">3. PinkyPro LCD 및 Picamera 사용</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. PinkyPro LED</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_slam.html">5. PinkyPro SLAM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="6_nav.html">6. PinkyPro Navigation</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../pinky/1.html">1. PinkyPro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pinky/2_connection.html">2. PinkyPro와 연결</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pinky/3_LCD.html">3. PinkyPro LCD 및 Picamera 사용</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pinky/4_LED.html">4. PinkyPro LED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pinky/5_slam.html">5. PinkyPro SLAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pinky/6_nav.html">6. PinkyPro Navigation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">JetCobot</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../JetCobot/2_setting.html">2. JetCobot 연결</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../JetCobot/3_basic_move.html">로봇팔과 그리퍼 제어</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. JetCobot 연결</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_basic_move.html">로봇팔과 그리퍼 제어</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for ROS2</span></p>
 <ul class="nav bd-sidenav">
@@ -273,7 +273,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F_pages/pinky/4_LED.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F_pages/JetCobot/2_setting.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -303,7 +303,7 @@
       
       
       
-      <li><a href="../../_sources/_pages/pinky/4_LED.md" target="_blank"
+      <li><a href="../../_sources/_pages/JetCobot/2_setting.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -374,7 +374,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -385,11 +387,25 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>4. PinkyPro LED</h1>
+    <h1>2. JetCobot 연결</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">전원 연결</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pc-jetcobot">PC에서 JetCobot의 네트워크로 연결</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pc-ssh">PC에서 ssh로 로봇 접속</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">[첫 한번만] JetCobot 에서 공용 와이파이 연결</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pc-vscode">PC에서 vscode로 로봇 접속</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vnc-viewer-gui">VNC Viewer: GUI 를 위한 원격 접속 도구</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pc-jetcobot-jupyter-notebook">PC에서 Jetcobot jupyter notebook 접속하기</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -399,13 +415,89 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pinkypro-led">
-<h1>4. PinkyPro LED<a class="headerlink" href="#pinkypro-led" title="Link to this heading">#</a></h1>
-<p>[Robot] 터미널
-cd ~/pinky_pro/src/pinky_pro</p>
-<p>git pull origin rpi4 # 강사가 코드 바꿈 (LED부분만 바꿈)</p>
-<p>cd ~/pinky_pro # colcon build는 workspace에서 해야함</p>
-<p>colcon build –packages-select pinky_led # 바뀐 LED 부분만 colcon build 가능</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="jetcobot">
+<h1>2. JetCobot 연결<a class="headerlink" href="#jetcobot" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>전원 연결<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>sd 카드 금속 단자 위로 연결</p></li>
+<li><p>c-type charger 연결</p></li>
+<li><p>로봇팔 (동그라미 전원) 연결: 전원 들어가면 관절이 고정되기 때문에, 원하는 자세에서 전원 연결이 되도록 한다. (얼굴 조심)</p></li>
+</ol>
+<p>로봇팔의 컨트롤보드 (c-type)과 라즈베리파이 (주황색 박스 안 A-type)에 연결.</p>
+</section>
+<section id="pc-jetcobot">
+<h2>PC에서 JetCobot의 네트워크로 연결<a class="headerlink" href="#pc-jetcobot" title="Link to this heading">#</a></h2>
+<p>JetCobot 위의 붙어있는, SSID와 비밀번호 확인하여 PC에서 같은 이름의 와이파이 연결</p>
+<ul class="simple">
+<li><p>ssid는 jetcobot_xxxx (4자리 랜덤)</p></li>
+<li><p>비밀번호는 jetcobot</p></li>
+</ul>
+<p>해당 네트워크의 IPv4 탭에서 DNS를 8.8.8.8로 설정</p>
+</section>
+<section id="pc-ssh">
+<h2>PC에서 ssh로 로봇 접속<a class="headerlink" href="#pc-ssh" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>jetcobot@192.168.6.1<span class="w"> </span><span class="c1"># 비밀번호 1 </span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>[첫 한번만] JetCobot 에서 공용 와이파이 연결<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>이미 되어 있는 경우, 다시 하면 연결이 안되므로 주의</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nmcli<span class="w"> </span>device<span class="w"> </span>wifi<span class="w"> </span>list<span class="w"> </span><span class="c1"># [Jetcobot]</span>
+./wifi_setup.sh<span class="w"> </span><span class="c1"># [Jetcobot] 와이파이 정보 세팅 </span>
+<span class="c1"># Enter WiFi SSID: AIE_509_5G (강의내 와이피이)</span>
+<span class="c1"># Enter WiFi Password:  addinedu_class1</span>
+</pre></div>
+</div>
+<p>연결하려는 ssid가 없다면 재부팅후 다시 확인</p>
+</section>
+<section id="pc-vscode">
+<h2>PC에서 vscode로 로봇 접속<a class="headerlink" href="#pc-vscode" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">jetcobot&#64;192.168.6.1</span></code>로 접속
+비밀번호: 1</p>
+</section>
+<section id="vnc-viewer-gui">
+<h2>VNC Viewer: GUI 를 위한 원격 접속 도구<a class="headerlink" href="#vnc-viewer-gui" title="Link to this heading">#</a></h2>
+<p>원격제어 프로그램.
+NOTE!! 필요한 경우만 사용하면 되고, 터미널과 VSCode로 ssh접속해서 개발!</p>
+<p><a class="reference external" href="https://www.realvnc.com/en/connect/download/viewer/">링크</a>로 들어가서 RealNVC Viewer 를 설치한다. deb-64? 고르면 됨.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>Downloads/<span class="w"> </span><span class="c1"># [PC]</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>./VNC-Viewer-7.13.1-Linux-x64<span class="w"> </span><span class="c1"># [PC] 파일경로를 apt install에 전달 </span>
+</pre></div>
+</div>
+<p>PC에서 NVC Viewer 설정</p>
+<ul class="simple">
+<li><p>[PC] 설치 후 NVC Viewer 앱 실행</p></li>
+<li><p>로그인없이 무료 기능만 사용 (‘Use RealVNC Viewer without signing in)</p></li>
+<li><p>RVNC Connect 칸에 접속하려는 PC의 주소 입력</p>
+<ul>
+<li><p>192.168.6.1</p></li>
+</ul>
+</li>
+<li><p>Continue</p></li>
+<li><p>접속하려는 PC의 유저명과 암호 입력</p>
+<ul>
+<li><p>Username: jetcobot</p></li>
+<li><p>Password: 1</p></li>
+</ul>
+</li>
+<li><p>접속 성공 후</p></li>
+</ul>
+</section>
+<section id="pc-jetcobot-jupyter-notebook">
+<h2>PC에서 Jetcobot jupyter notebook 접속하기<a class="headerlink" href="#pc-jetcobot-jupyter-notebook" title="Link to this heading">#</a></h2>
+<p>제코봇 터미널에서 jupyter notebook을 먼저 실행해놔야 PC에서 원격으로 jupyter notebook으로 연결할 수 있다.</p>
+<ul class="simple">
+<li><p>[Robot] jupyter notebook 으로 먼저 실행 후</p></li>
+<li><p>PC 웹브라우저에서 위의 로봇터미널에 뜬 IP주소를 입력하면된다.</p>
+<ul>
+<li><p>로봇 PC에 jupyter notebook으로 접근 가능함.</p></li>
+<li><p>예를 들어, 192.168.6.1:8888</p></li>
+</ul>
+</li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -421,7 +513,7 @@ cd ~/pinky_pro/src/pinky_pro</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./_pages/pinky"
+            path: "./_pages/JetCobot"
         },
         predefinedOutput: true
     }
@@ -439,20 +531,20 @@ cd ~/pinky_pro/src/pinky_pro</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="3_LCD.html"
+       href="../pinky/6_nav.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">3. PinkyPro LCD 및 Picamera 사용</p>
+        <p class="prev-next-title">6. PinkyPro Navigation</p>
       </div>
     </a>
     <a class="right-next"
-       href="5_slam.html"
+       href="3_basic_move.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">5. PinkyPro SLAM</p>
+        <p class="prev-next-title">로봇팔과 그리퍼 제어</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -462,6 +554,27 @@ cd ~/pinky_pro/src/pinky_pro</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">전원 연결</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pc-jetcobot">PC에서 JetCobot의 네트워크로 연결</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pc-ssh">PC에서 ssh로 로봇 접속</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">[첫 한번만] JetCobot 에서 공용 와이파이 연결</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pc-vscode">PC에서 vscode로 로봇 접속</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vnc-viewer-gui">VNC Viewer: GUI 를 위한 원격 접속 도구</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pc-jetcobot-jupyter-notebook">PC에서 Jetcobot jupyter notebook 접속하기</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
