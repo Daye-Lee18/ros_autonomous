@@ -15,6 +15,13 @@ parts:
     chapters:
     - file: _pages/pinky/1
     - file: _pages/pinky/2
+    - file: _pages/pinky/3_LCD
+    - file: _pages/pinky/4_LED
+    - file: _pages/pinky/5_nav
+  
+  - caption: Arm
+    chapters:
+    - file: _pages/arm/1_setting 
   
   - caption: Python for ROS2
     chapters:

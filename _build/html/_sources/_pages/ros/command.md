@@ -38,3 +38,10 @@ rosdep install --from-paths src --ignore-src -r -y
 * sudo rosdep init: rosdep을 처음 사용할 때 초기화하는 명령어 (한번만 실행)
 * rosdep update: 의존성 패키지 목록을 최신으로 업데이트 
 
+### topic 
+
+```bash
+ros2 topic list  # 토픽 존재 확인 
+ros2 topic type topic_name # 토픽 타입 확인 
+ros2 topic pub /clicked_point geometry_msgs/msg/PointStamped ... # publish 가능 (테스트용)
+```

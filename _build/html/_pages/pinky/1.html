@@ -189,8 +189,9 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Pinky Robot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2.html">맵 생성 가이드</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_nav.html">주행 (Navigation)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">python library for ROS2</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for ROS2</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../python_ROS/1.html">Python Library for ROS</a></li>
 </ul>
@@ -397,7 +398,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slam">SLAM</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigation">주행 (Navigation)</a></li>
 </ul>
             </nav>
         </div>
@@ -500,23 +500,6 @@ ros2<span class="w"> </span>run<span class="w"> </span>nav2_map_server<span clas
 </pre></div>
 </div>
 </section>
-<section id="navigation">
-<h2>주행 (Navigation)<a class="headerlink" href="#navigation" title="Link to this heading">#</a></h2>
-<p>위에서 mapping 을 하고 저장한 메타데이터가 있는 .yaml 파일을 이용해 주행할 수 있다.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>pinky_bringup<span class="w"> </span>bringup_robot.launch.xml<span class="w"> </span><span class="c1"># [Robot] pinky 준비 </span>
-
-ros2<span class="w"> </span>launch<span class="w"> </span>pinky_navigation<span class="w"> </span>bringup_launch.xml<span class="w"> </span>map:<span class="o">=</span>저장한<span class="w"> </span>맵이름.yaml<span class="w"> </span><span class="c1"># [Robot] 네비게이션 실행 </span>
-
-ros2<span class="w"> </span>launch<span class="w"> </span>pinky_navigation<span class="w"> </span>nav2_view.launch.xml<span class="w"> </span><span class="c1"># [PC] Rviz실행 (SLAM 용 Rviz와 상이)</span>
-</pre></div>
-</div>
-<p>Rviz UI에서,</p>
-<ul class="simple">
-<li><p>초기 위치 선택: “2d pose estimation” 버튼 선택 (현재 라이다와 맵 일치 시켜주기)</p></li>
-<li><p>종료 지점 선택: “Nav2 Goal” 클릭 -&gt; 도착할 위치와 도착했을 때 바라볼 방향으로 드래그</p></li>
-</ul>
-<p>경로 생성을 할 때, 최단 경로 선택을 하려는데 그래서 벽을 타려고 한다. 충돌 위험 vs. 최단 경로 선택 중에서 로봇이 고민하게 되는데, waypoint를 중간 경로 지점으로 설정하는 것 같음.</p>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -592,7 +575,6 @@ ros2<span class="w"> </span>launch<span class="w"> </span>pinky_navigation<span 
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slam">SLAM</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigation">주행 (Navigation)</a></li>
 </ul>
   </nav></div>
 
