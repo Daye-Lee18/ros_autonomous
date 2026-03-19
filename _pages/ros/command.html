@@ -189,7 +189,8 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../pinky/1.html">Pinky Robot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pinky/2.html">맵 생성 가이드</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pinky/3_nav.html">주행 (Navigation)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pinky/3_LED.html">Pinky LED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pinky/5_nav.html">주행 (Navigation)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for ROS2</span></p>
 <ul class="nav bd-sidenav">
@@ -395,6 +396,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">노드 실행</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">로봇 시스템 한 번에 실행 및 관리</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">의존성 패키지 분석 및 자동 설치</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#topic">topic</a></li>
 </ul>
 </li>
 </ul>
@@ -460,6 +462,14 @@ document.write(`
 <li><p>sudo rosdep init: rosdep을 처음 사용할 때 초기화하는 명령어 (한번만 실행)</p></li>
 <li><p>rosdep update: 의존성 패키지 목록을 최신으로 업데이트</p></li>
 </ul>
+</section>
+<section id="topic">
+<h3>topic<a class="headerlink" href="#topic" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>topic<span class="w"> </span>list<span class="w">  </span><span class="c1"># 토픽 존재 확인 </span>
+ros2<span class="w"> </span>topic<span class="w"> </span><span class="nb">type</span><span class="w"> </span>topic_name<span class="w"> </span><span class="c1"># 토픽 타입 확인 </span>
+ros2<span class="w"> </span>topic<span class="w"> </span>pub<span class="w"> </span>/clicked_point<span class="w"> </span>geometry_msgs/msg/PointStamped<span class="w"> </span>...<span class="w"> </span><span class="c1"># publish 가능 (테스트용)</span>
+</pre></div>
+</div>
 </section>
 </section>
 </section>
@@ -534,6 +544,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">노드 실행</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">로봇 시스템 한 번에 실행 및 관리</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">의존성 패키지 분석 및 자동 설치</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#topic">topic</a></li>
 </ul>
 </li>
 </ul>
