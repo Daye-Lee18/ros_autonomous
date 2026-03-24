@@ -9,19 +9,23 @@ parts:
     chapters:
     - file: _pages/ros/1_node
     - file: _pages/ros/2_communication
-    - file: _pages/ros/command
+    - file: _pages/ros/3_command
 
   - caption: Pinky Pro 
     chapters:
     - file: _pages/pinky/1
-    - file: _pages/pinky/2
+    - file: _pages/pinky/2_connection
     - file: _pages/pinky/3_LCD
     - file: _pages/pinky/4_LED
-    - file: _pages/pinky/5_nav
+    - file: _pages/pinky/5_slam
+    - file: _pages/pinky/6_nav
   
-  - caption: Arm
+  - caption: JetCobot
     chapters:
-    - file: _pages/arm/1_setting 
+    - file: _pages/JetCobot/1_introduction
+    - file: _pages/JetCobot/2_setting
+    - file: _pages/JetCobot/3_basic_move
+
   
   - caption: Python for ROS2
     chapters:
