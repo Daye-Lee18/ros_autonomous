@@ -51,7 +51,7 @@ nmcli device wifi list # [Pinky, ROBOT] 와이파이 리스트 확인
 
 1. PinkyPro 스위치 켜기 -> 와이파이네트워크 ssid를 보고 해당 네트워크와 접속한다. 
 
-![pinky_lcd](_asset/pinky/1.png)
+![pinky_lcd](../../_asset/pinky/1.png)
    
 1. ssh 접속 
 - ssh pinky@192.168.4.1 로 vscode에서 로봇으로 접속

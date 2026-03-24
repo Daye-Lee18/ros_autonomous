@@ -109,7 +109,7 @@ time.sleep(3) # 움직임이 완료될 때까지 대기, 제어 시간을 줌
 print("리셋 완료")
 ```
 
-![home_pose](_asset/jetcobot/1.png)
+![home_pose](../../_asset/jetcobot/1.png)
 
 ### 로봇팔 관절 움직이기 
 

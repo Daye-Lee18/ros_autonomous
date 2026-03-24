@@ -40,7 +40,7 @@ nmcli device wifi list # [Jetcobot]
 `jetcobot@192.168.6.1`로 접속 
 비밀번호: 1 
 
-## VNC Viewer: GUI 를 위한 원격 접속 도구 
+## VNC Viewer: GUI 를 위한 원격 접속 도구 [처음 한번만]
 
 원격제어 프로그램. 
 NOTE!! 필요한 경우만 사용하면 되고, 터미널과 VSCode로 ssh접속해서 개발! 
