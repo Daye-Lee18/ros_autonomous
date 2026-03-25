@@ -410,6 +410,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.1.1. 주조 분야</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logistics">6.1.2. logistics 분야</a></li>
 </ul>
             </nav>
         </div>
@@ -426,11 +427,89 @@ document.write(`
 <section id="id2">
 <h2><span class="section-number">6.1.1. </span>주조 분야<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>주조 분야에서는 용어가 중요하다. 신뢰도의 차이가 크기 때문이다.</p>
+<p>“주조 공정은 용탕을 주형에 주탕한 뒤 냉각·탈형을 거쳐 제품을 만드는 과정이며, 특히 주탕과 물류 과정은 자동화가 가장 필요한 핵심 구간입니다.”</p>
 <ul class="simple">
-<li><p>주탕(Pouring)</p></li>
-<li><p>탈형 (Shakeout/Mold Removal)</p></li>
-<li></li>
+<li><p>주조 (Casting): 금속을 녹여 주형에 부어 형상을 만드는 공정</p></li>
+<li><p>용탕 (Molten Metal): 녹은 금속 상태</p></li>
+<li><p>주형 (Mold): 금속을 붓는 틀</p></li>
+<li><p>주물 (Casting Product): 최종 결과물</p></li>
+<li><p>용해 (Melting): 금속을 고온에서 녹여 액체 상태로 만드는 과정</p></li>
+<li><p>합금 (Alloy): 두 가지 이상의 금속(또는 금속 + 비금속)을 혼합한 재료</p></li>
+<li><p>슬래그 (Slag): 용해 과정에서 발생하는 불순물로, 표면에 떠올라 제거됨</p></li>
+<li><p>주형 제작 (Molding): 주물을 만들기 위한 틀을 제작하는 과정</p>
+<ul>
+<li><p>패턴 (Pattern): 주형을 만들기 위한 원형 모델</p></li>
+<li><p>코어 (Core): 주물 내부의 빈 공간을 형성하기 위한 구조물</p></li>
+<li><p>사형 주조 (Sand Casting): 모래를 이용해 주형을 만드는 방식</p></li>
+<li><p>금형 주조 (Die Casting): 금속 금형을 사용하는 고정밀 주조 방식</p></li>
 </ul>
+</li>
+</ul>
+<p><img alt="molding" src="../../../_images/molding.jpg" /></p>
+<ul class="simple">
+<li><p>주탕 시스템 (Pouring System): 용탕이 주형 내부로 흐르는 경로 시스템</p>
+<ul>
+<li><p>주탕 (Pouring): 용탕을 주형에 붓는 과정</p></li>
+<li><p>래들 (Ladle): 쇳물 담는 용기</p></li>
+<li><p>탕구 (Sprue): 용탕이 처음 들어가는 수직 통로</p></li>
+<li><p>러너 (Runner): 용탕을 여러 방향으로 분배하는 수평 통로</p></li>
+<li><p>게이트 (Gate): 실제 제품 형상으로 용탕이 들어가는 입구</p></li>
+<li><p>게이트 시스템 (Gating System): 용탕 흐르는 통로</p></li>
+<li><p>라이저 (Riser): 수축 보정용 저장 공간, 응고 시 수축을 보완하기 위한 용탕 저장부</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="pouring" src="../../../_images/pouring.jpg" /></p>
+<ul class="simple">
+<li><p>냉각/탈형</p>
+<ul>
+<li><p>냉각/응고 (Cooling / Solidification): 용탕이 식으면서 고체로 변하는 과정</p></li>
+<li><p>탈형(Shakeout / Mold Removal): 냉각된 주물에서 주형을 제거하는 과정</p></li>
+</ul>
+</li>
+<li><p>후처리 (Finishing): 주물의 표면을 다듬고 불필요한 부분을 제거하는 과정</p>
+<ul>
+<li><p>페틀링 (Fettling): 주물 표면 정리 작업</p></li>
+<li><p>디버링 (Deburring): 날카로운 모서리 제거</p></li>
+<li><p>샷 블라스트 (Shot Blasting): 표면 청소, 표면의 불순물 제거 및 마감 처리</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="finishing" src="../../../_images/finishing.jpg" /></p>
+<ul class="simple">
+<li><p>검사 (Inspection): 제품의 품질을 확인하는 과정</p>
+<ul>
+<li><p>외관 검사 (Visual Inspection): 눈으로 결함을 확인</p></li>
+<li><p>비파괴 검사 (NDT, Non-Destructive Testing): X-ray, 초음파 등을 이용해 내부 결함 검사</p></li>
+</ul>
+</li>
+</ul>
+<div style="display: flex; gap: 10px;">
+  <img src="../../../_asset/casting/inspection.jpg" width="350">
+  <img src="../../../_asset/casting/inspection2.jpg" width="350">
+</div>
+<ul class="simple">
+<li><p>결함 (Defect): 주조 과정에서 발생하는 품질 문제</p>
+<ul>
+<li><p>기공 (Porosity): 내부에 기포나 구멍이 생기는 현상</p></li>
+<li><p>수축 결함 (Shrinkage): 응고 과정에서 부피 감소로 발생하는 결함</p></li>
+<li><p>콜드 셧 (Cold Shut): 용탕이 제대로 결합되지 못한 상태</p></li>
+<li><p>미스런 (Misrun): 용탕이 주형을 끝까지 채우지 못한 현상</p></li>
+</ul>
+</li>
+<li><p>설비 및 자동화 관련</p>
+<ul>
+<li><p>래들 (Ladle): 용탕을 운반하고 붓는 용기</p></li>
+<li><p>로봇 셀 (Robot Cell): 로봇을 중심으로 구성된 작업 단위 시스템</p></li>
+<li><p>AMR (Autonomous Mobile Robot): 자율주행 기반 물류 이동 로봇</p></li>
+<li><p>비전 시스템 (Vision System): 카메라 기반 인식 및 검사 시스템</p></li>
+<li><p>공정 모니터링 (Process Monitoring): 센서를 통해 공정 상태를 실시간으로 확인하는 시스템</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="logistics">
+<h2><span class="section-number">6.1.2. </span>logistics 분야<a class="headerlink" href="#logistics" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -499,6 +578,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.1.1. 주조 분야</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logistics">6.1.2. logistics 분야</a></li>
 </ul>
   </nav></div>
 
