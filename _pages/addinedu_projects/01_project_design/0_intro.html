@@ -1,0 +1,1007 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>6. V-model for Project Design &#8212; Study for Autonomous Driving</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_pages/addinedu_projects/01_project_design/0_intro';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="7. Agile Method (애자일 방법론)" href="../01_agile_method/0_intro.html" />
+    <link rel="prev" title="5.5. Jetcobot 카메라 사용하기" href="../00_prerequisite/JetCobot/4_camera.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/autonomous_driving_perception.jpg" class="logo__image only-light" alt="Study for Autonomous Driving - Home"/>
+    <script>document.write(`<img src="../../../_static/autonomous_driving_perception.jpg" class="logo__image only-dark" alt="Study for Autonomous Driving - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    ROS2와 자율주행(Autonomous driving)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">ROS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../ros/1_node.html">1. 노드(Node)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ros/2_communication.html">2. 통신 (communication)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ros/3_command.html">3. Command for ROS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">addinedu 심화_ROS2와AI기반 자율주행&amp;로봇팔 교육</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00_prerequisite/pinky/1.html">4. PinkyPro</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/pinky/2_connection.html">4.2. PinkyPro와 연결</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/pinky/3_LCD.html">4.3. PinkyPro LCD 및 Picamera 사용</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/pinky/4_LED.html">4.4. PinkyPro LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/pinky/5_slam.html">4.5. PinkyPro SLAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/pinky/6_nav.html">4.6. PinkyPro Navigation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00_prerequisite/JetCobot/1_introduction.html">5. JetCobot</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/JetCobot/2_setting.html">5.3. JetCobot 연결</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/JetCobot/3_basic_move.html">5.4. 로봇팔과 그리퍼 제어</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/JetCobot/4_camera.html">5.5. Jetcobot 카메라 사용하기</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. V-model for Project Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_agile_method/0_intro.html">7. Agile Method (애자일 방법론)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for ROS2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../python_ROS/1.html">8. Python Library for ROS</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F_pages/addinedu_projects/01_project_design/0_intro.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/_pages/addinedu_projects/01_project_design/0_intro.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>V-model for Project Design</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.1. 개발/설계 단계</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-requirements">6.1.1. User requirements (사용자 요구사항)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-requirements">6.1.2. System Requirements (시스템 요구사항)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-architecture">6.1.3. System Architecture (시스템 구조)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detailed-design">6.1.4. Detailed Design (상세 설계)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">6.1.5. Implementation (구현)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.2. 테스트 단계</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-test">6.2.1. Unit Test (단위 테스트)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#component-test">6.2.2. Component Test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-test">6.2.3. Integration Test(연동 테스트)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-test">6.2.4. System Test(시스템 테스트)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceptance-test">6.2.5. Acceptance Test (인수 테스트)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.3. 마지막으로</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="v-model-for-project-design">
+<h1><span class="section-number">6. </span>V-model for Project Design<a class="headerlink" href="#v-model-for-project-design" title="Link to this heading">#</a></h1>
+<p>TPGM에서 surgical robot을 연구하신 노민승 강사님의 프로젝트 설계 강의를 정리하였다.</p>
+<div class="important admonition">
+<p class="admonition-title">오늘 배운 내용</p>
+<ol class="arabic simple">
+<li><p>경력자에게 기대하는 역량</p></li>
+<li><p>V-model은 개발(설계)과 검증(Test)의 대응 구조</p></li>
+</ol>
+</div>
+<p>v-model이란, <strong>개발 단계와 테스트 단계를 1:1로 대응</strong>시키는 소프트웨어 <strong>개발 모델</strong>이다. 아래 그림의 왼쪽으로 내려가는 것은 </u>설계(Define)</u>이고 오른쪽에서 올라가는 것은 </u>검증(Test)</u>이다.</p>
+<p><img alt="img" src="../../../_images/vmodel.png" /></p>
+<section id="id1">
+<h2><span class="section-number">6.1. </span>개발/설계 단계<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>v-model의 왼쪽에서 흐름은 다음과 같다. 즉, 점점 구체화되는 방향이다. (abstract -&gt; concrete)</p>
+<section id="user-requirements">
+<h3><span class="section-number">6.1.1. </span>User requirements (사용자 요구사항)<a class="headerlink" href="#user-requirements" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>산출물</p>
+<ul>
+<li><p>요구사항 명세서 (SRS)</p></li>
+<li><p>유즈 케이스 (Use Case)</p></li>
+<li><p>시나리오 문서</p></li>
+</ul>
+</li>
+<li><p>고려사항</p>
+<ul>
+<li><p>사용자 입장에서 문제 정의했는가?</p></li>
+<li><p>기능 요구 vs. 비기능요구 (성능, 안정성 등) 구분했는가?</p></li>
+<li><p>테스트 가능하게 작성했는가? (모호하면 안됨)</p></li>
+</ul>
+</li>
+<li><p>핵심 포인트</p>
+<ul>
+<li><p>“사람 입장에서” + “측정 가능하게”</p></li>
+</ul>
+</li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">예시</p>
+<p>스마트 팩토리 물류센터 기준</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">목표</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">물류 입고부터 적재까지 자동화</span>
+
+<span class="nt">사용자</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">물류 관리자</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">현장 작업자</span>
+
+<span class="nt">기능 요구</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">박스를 자동으로 인식해야 한다</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AMR이 지정된 위치로 이동해야 한다</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">로봇팔이 박스를 pick &amp; place 해야 한다</span>
+
+<span class="nt">비기능 요구</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">처리 시간</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">박스 1개당 10초 이내</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">정확도</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">95% 이상</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24시간 무인 운영 가능</span>
+
+<span class="nt">시나리오</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">1. 박스 도착 → 카메라 인식</span>
+<span class="l l-Scalar l-Scalar-Plain">2. AMR 호출</span>
+<span class="l l-Scalar l-Scalar-Plain">3. 로봇팔 pick</span>
+<span class="l l-Scalar l-Scalar-Plain">4. 지정 위치에 place</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="system-requirements">
+<h3><span class="section-number">6.1.2. </span>System Requirements (시스템 요구사항)<a class="headerlink" href="#system-requirements" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>산출물</p>
+<ul>
+<li><p>시스템 요구사항 정의서</p></li>
+<li><p>기능 리스트 (feature list)</p></li>
+<li><p>인터페이스 정의 (I/O spec)</p></li>
+</ul>
+</li>
+<li><p>고려사항</p>
+<ul>
+<li><p>요구사항을 시스템 관점으로 변환했는가?</p></li>
+<li><p>HW/SW 역할 분리했는가?</p></li>
+<li><p>measurable 한가? (ex) latency &lt; 100ms)</p></li>
+</ul>
+</li>
+<li><p>핵심</p>
+<ul>
+<li><p>요구사항 -&gt; “시스템 기능”으로 변환</p></li>
+</ul>
+</li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">예시</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">입력</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">카메라 이미지 (RGB)</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">사용자 작업 명령</span>
+
+<span class="nt">출력</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">로봇팔 제어 명령 (좌표)</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AMR 이동 명령</span>
+
+<span class="nt">기능 분해</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Vision Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">물체 인식</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">AMR Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">위치 이동</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Robot Arm Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pick &amp; place</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Control Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">작업 orchestration</span>
+
+<span class="nt">성능 요구</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inference latency &lt; 200ms</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AMR 위치 오차 &lt; 5cm</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="system-architecture">
+<h3><span class="section-number">6.1.3. </span>System Architecture (시스템 구조)<a class="headerlink" href="#system-architecture" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>산출물</p>
+<ul>
+<li><p>시스템 아키텍처 다이어그램</p></li>
+<li><p>모듈 구조도</p></li>
+<li><p>데이터 흐름도 (Data Flow)</p></li>
+</ul>
+</li>
+<li><p>고려사항</p>
+<ul>
+<li><p>주고 받는 데이터의 구조가 명확한가?</p></li>
+<li><p>모듈 간 책임 분리가 명확한가?</p></li>
+<li><p>확장성 / 유지보수 고려했는가?</p></li>
+<li><p>병목 (bottleneck) 발생 가능성</p></li>
+</ul>
+</li>
+<li><p>핵심</p>
+<ul>
+<li><p>누가 무엇을 담당하는지 명확히</p></li>
+</ul>
+</li>
+<li><p>참고</p>
+<ul>
+<li><p>GUI를 설계하면 시나리오를 디테일하게 구성할 수 있다.</p></li>
+</ul>
+</li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">예시</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">구성</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Vision Node (YOLO)</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AMR Navigation Node (Nav2)</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Robot Arm Controller Node</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Task Manager Node (LLM or rule-based)</span>
+
+<span class="nt">통신</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">ROS2 Topic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/image, /cmd_vel, /arm_cmd</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">ROS2 Action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation task</span>
+
+<span class="nt">데이터 흐름</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">Camera → Vision → Task Manager → AMR / Robot Arm</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="detailed-design">
+<h3><span class="section-number">6.1.4. </span>Detailed Design (상세 설계)<a class="headerlink" href="#detailed-design" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>산출물</p>
+<ul>
+<li><p>API 명세서</p></li>
+<li><p>ROS2 node / topic / action 정의</p></li>
+<li><p>클래스 다이어그램</p></li>
+<li><p>상태 다이어그램</p></li>
+</ul>
+</li>
+<li><p>고려사항</p>
+<ul>
+<li><p>실제 구현 가능한 수준까지 내려왔는가?</p></li>
+<li><p>인터페이스 충돌 없는가?</p></li>
+<li><p>edge case 고려했는가?</p></li>
+</ul>
+</li>
+<li><p>핵심</p>
+<ul>
+<li><p>바로 코드를 짤 수 있는 수준</p></li>
+</ul>
+</li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">예시</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ROS2 Node 정의</span><span class="p">:</span>
+
+<span class="nt">Vision Node</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/camera/image</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/detected_object</span>
+
+<span class="nt">Task Manager Node</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/detected_object</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/arm_cmd, /amr_goal</span>
+
+<span class="nt">Robot Arm Node</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/arm_cmd</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pick/place</span>
+
+<span class="nt">AMR Node</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/amr_goal</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation</span>
+
+<span class="nt">API</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">move_to(x, y)</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pick(object_id)</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">place(location)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="implementation">
+<h3><span class="section-number">6.1.5. </span>Implementation (구현)<a class="headerlink" href="#implementation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>산출물</p>
+<ul>
+<li><p>코드 (SW)</p></li>
+<li><p>하드웨어 구성 (HW)</p></li>
+<li><p>실행 스크립트 / 환경설정</p></li>
+</ul>
+</li>
+<li><p>고려사항</p>
+<ul>
+<li><p>코딩 규칙/협업 규칙</p></li>
+<li><p>테스트 코드 포함 여부</p></li>
+<li><p>재현 가능성 (reproducibility)</p></li>
+</ul>
+</li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">예시</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">코드</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vision.py (YOLO inference)</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nav.py (AMR control)</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arm.py (robot control)</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task_manager.py</span>
+
+<span class="nt">환경</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ROS2 Humble</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Python 3.10</span>
+
+<span class="nt">실행</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ros2 launch system.launch.py</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="id2">
+<h2><span class="section-number">6.2. </span>테스트 단계<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="unit-test">
+<h3><span class="section-number">6.2.1. </span>Unit Test (단위 테스트)<a class="headerlink" href="#unit-test" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>산출물</p>
+<ul>
+<li><p>테스트 코드 (pytest 등)</p></li>
+<li><p>테스트 결과 리포트</p></li>
+</ul>
+</li>
+<li><p>고려사항</p>
+<ul>
+<li><p>“정적 분석 툴”을 사용하여 개발한다. coding standard 규칙으로 연동해 개발한다.</p>
+<ul>
+<li><p>정적 분석 (Static Analysis): 코드를 실행하지 않고 구조, 코딩 규칙, 보안 취약점을 검사(예: SonarQube, PMD)</p>
+<ul>
+<li><p>목적: 표준 준수(MISRA C 등), 코드 품질 향상, 보안 강화를 위해 사용</p></li>
+<li><p>주요 툴: SonarQube, PMD, ESLint, Coverity</p></li>
+</ul>
+</li>
+<li><p>unit test: 어플리케이션의 가장 작은 단위(함수, 메소드 등)를 고립(Isolation)시켜 기능이 정확히 동작하는지 검증</p>
+<ul>
+<li><p>목적: 기능 작동 여부 검증, 코드 변경 시 사이드 이펙트 방지, 리팩토링 안정성 확보.</p></li>
+<li><p>주요 툴:  JUnit (Java), PyTest (Python), NUnit (.NET)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>각 함수/모듈이 정상 작동하는가?</p></li>
+<li><p>edge case 테스트 했는가?</p></li>
+</ul>
+</li>
+<li><p>예:</p>
+<ul>
+<li><p>로봇팔 pick 함수 단독 테스트</p></li>
+</ul>
+</li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">예시</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">테스트 대상</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vision.detect()</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arm.pick()</span>
+
+<span class="nt">테스트 케이스</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">정상 입력 → 정상 출력</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">없는 object → None 반환</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="component-test">
+<h3><span class="section-number">6.2.2. </span>Component Test<a class="headerlink" href="#component-test" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>산출물</p>
+<ul>
+<li><p>모듈 단위 테스트 결과</p></li>
+<li><p>mock 환경 테스트 결과</p></li>
+</ul>
+</li>
+<li><p>고려사항</p>
+<ul>
+<li><p>한 컴포넌트 내부 동작 정상인가?</p></li>
+<li><p>외부 의존성 없이 테스트 가능한가?</p></li>
+</ul>
+</li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">예시</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Vision Module 테스트</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">이미지 입력 → bounding box 출력 확인</span>
+
+<span class="nt">Robot Arm 테스트</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">단일 pick 동작 성공 여부</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="integration-test">
+<h3><span class="section-number">6.2.3. </span>Integration Test(연동 테스트)<a class="headerlink" href="#integration-test" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>산출물</p>
+<ul>
+<li><p>시스템 연동 테스트 리포트</p></li>
+<li><p>인터페이스 검증 결과</p></li>
+</ul>
+</li>
+<li><p>고려사항</p>
+<ul>
+<li><p>모듈 간 연결 잘 되는가?</p></li>
+<li><p>데이터 흐름 정상인가?</p></li>
+</ul>
+</li>
+<li><p>예)</p>
+<ul>
+<li><p>AMR -&gt; 로봇팔 task 전달</p></li>
+</ul>
+</li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">예시</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">시나리오</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Vision → Task Manager → Robot Arm 연결</span>
+
+<span class="nt">검증</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">detection 결과가 arm command로 전달되는가?</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AMR 이동 후 arm 실행되는가?</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="system-test">
+<h3><span class="section-number">6.2.4. </span>System Test(시스템 테스트)<a class="headerlink" href="#system-test" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>산출물</p>
+<ul>
+<li><p>전체 시나리오 테스트 결과</p></li>
+<li><p>성능 테스트 결과</p></li>
+</ul>
+</li>
+<li><p>고려사항</p>
+<ul>
+<li><p>전체 시스템이 요구사항대로 동작하는가?</p></li>
+<li><p>latency / 안정성 만족하는가?</p></li>
+</ul>
+</li>
+<li><p>여기까지 개발팀. 기능/비기능 테스트가 잘 나오는지 테스트</p></li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">예시</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">전체 시나리오</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">1. 박스 감지</span>
+<span class="l l-Scalar l-Scalar-Plain">2. AMR 이동</span>
+<span class="l l-Scalar l-Scalar-Plain">3. 로봇팔 pick</span>
+<span class="l l-Scalar l-Scalar-Plain">4. 지정 위치 place</span>
+
+<span class="nt">평가</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">성공률</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">90% 이상</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">처리 시간</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">평균 12초</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="acceptance-test">
+<h3><span class="section-number">6.2.5. </span>Acceptance Test (인수 테스트)<a class="headerlink" href="#acceptance-test" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>산출물</p>
+<ul>
+<li><p>고객 검증 결과</p></li>
+<li><p>최종 승인 문서</p></li>
+</ul>
+</li>
+<li><p>고려 사항</p>
+<ul>
+<li><p>실제 사용자 요구 충족하는가?</p></li>
+<li><p>현장 적용 가능한가?</p></li>
+</ul>
+</li>
+<li><p>사용자의 마음에 들어야 함.</p></li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">예시</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">검증 항목</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">실제 물류 흐름에서 동작하는가?</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">작업자 개입 없이 수행 가능한가?</span>
+
+<span class="nt">결과</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OK / Fail</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">개선 필요 사항</span>
+</pre></div>
+</div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Summary</p>
+<ol class="arabic simple">
+<li><p>왼쪽에서 “설계하면서” 오른쪽 테스트를 미리 정의해야함. 예를 들어, 요구사항을 쓸 때 이걸 어떻게 테스트하지를 동시에 고려해야함.</p></li>
+<li><p>각 단계는 반드시 산출물을 가지며, 해당 산출물이 다음 단계와 테스트의 기준이 된다.</p></li>
+</ol>
+<p>V-model은 단순히 개발 후 테스트하는 것이 아니라, 설계 단계에서부터 테스트를 함께 정의하여 각 단계별 검증을 가능하게 하는 개발 방식이다. 이를 통해 시스템의 안정성과 품질을 높일 수 있다.</p>
+</div>
+</section>
+</section>
+<section id="id3">
+<h2><span class="section-number">6.3. </span>마지막으로<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>경력자에게 기대하는 것이 뭘까? 첫번재로 실무이고 경험이 비슷하면, 회사 다닌 경험을 본다.
+그렇다면, 개발에서는 실무란 무엇인가? 일단 대회/학교/프로젝트에서 완성도와 차이가 크다. 보통, 대학원에서 완성도는 20~30%정도. 가능성만 확인하는 단계이다. 돈받고 팔 수 있어야하며, 사고/문제가 있으면 안되고, 알려진 버그들 및 작은 버그들은 관리가 되어 있어야 한다. 분야에 따라 90~95% 로 완성도가 높아야 한다. 경력자에게는 제품 출시해봤는지 물어보는데, “출시”를 거치려면 애낳는 고통을 겪어야 하기 때문이다. 인증받고 테스트하려면 엄청난 경험을 해야한다.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./_pages/addinedu_projects/01_project_design"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../00_prerequisite/JetCobot/4_camera.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">5.5. </span>Jetcobot 카메라 사용하기</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../01_agile_method/0_intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Agile Method (애자일 방법론)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.1. 개발/설계 단계</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-requirements">6.1.1. User requirements (사용자 요구사항)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-requirements">6.1.2. System Requirements (시스템 요구사항)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-architecture">6.1.3. System Architecture (시스템 구조)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detailed-design">6.1.4. Detailed Design (상세 설계)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">6.1.5. Implementation (구현)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.2. 테스트 단계</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-test">6.2.1. Unit Test (단위 테스트)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#component-test">6.2.2. Component Test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-test">6.2.3. Integration Test(연동 테스트)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-test">6.2.4. System Test(시스템 테스트)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceptance-test">6.2.5. Acceptance Test (인수 테스트)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.3. 마지막으로</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Daye Lee
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
