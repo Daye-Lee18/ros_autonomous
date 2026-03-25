@@ -1,4 +1,4 @@
-# 2. PinkyPro와 연결 
+# PinkyPro와 연결 
 
 
 ## Setting 

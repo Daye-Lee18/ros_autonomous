@@ -1,4 +1,4 @@
-# 4. PinkyPro LED
+# PinkyPro LED
 
 [Robot] 터미널 
 cd ~/pinky_pro/src/pinky_pro
