@@ -1,0 +1,876 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4.6. 6. PinkyPro Navigation &#8212; Study for Autonomous Driving</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_pages/addinedu_projects/00_prerequisite/pinky/6_nav';</script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="5. JetCobot" href="../JetCobot/1_introduction.html" />
+    <link rel="prev" title="4.5. 5. PinkyPro SLAM" href="5_slam.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/autonomous_driving_perception.jpg" class="logo__image only-light" alt="Study for Autonomous Driving - Home"/>
+    <script>document.write(`<img src="../../../../_static/autonomous_driving_perception.jpg" class="logo__image only-dark" alt="Study for Autonomous Driving - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../../intro.html">
+                    ROS2와 자율주행(Autonomous driving)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">ROS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../ros/1_node.html">1. 노드(Node)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ros/2_communication.html">2. 통신 (communication)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ros/3_command.html">3. Command for ROS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">addinedu 심화_ROS2와AI기반 자율주행&amp;로봇팔 교육</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="1.html">4. PinkyPro</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="2_connection.html">4.2. 2. PinkyPro와 연결</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_LCD.html">4.3. 3. PinkyPro LCD 및 Picamera 사용</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_LED.html">4.4. 4. PinkyPro LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_slam.html">4.5. 5. PinkyPro SLAM</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.6. 6. PinkyPro Navigation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../JetCobot/1_introduction.html">5. JetCobot</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../JetCobot/2_setting.html">5.3. 2. JetCobot 연결</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../JetCobot/3_basic_move.html">5.4. 3. 로봇팔과 그리퍼 제어</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../JetCobot/4_camera.html">5.5. 4. Jetcobot 카메라 사용하기</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for ROS2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../python_ROS/1.html">Python Library for ROS</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F_pages/addinedu_projects/00_prerequisite/pinky/6_nav.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../_sources/_pages/addinedu_projects/00_prerequisite/pinky/6_nav.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>6. PinkyPro Navigation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rviz">4.6.1. 핑키의 Rviz 로 주행 시작/목표 설정후 자율 주행</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-nav2">4.6.2. Jupyter로 Nav2 를 이용해 자율 주행</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.6.2.1. 주피터 설치 [한 번만 실행]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.6.2.2. 준비 단계</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nav-gotopose-nav2">4.6.2.3. 주피터 파일에서 nav.goToPose() 를 이용한 Nav2 로 주행</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.6.2.4. 주행시, 상태 확인</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nav2">4.6.2.4.1. Nav2 로그 보기</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.6.2.4.2. Nav2 관련 토픽 확인하기</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nav-followwaypoints">4.6.2.5. nav.followWaypoints() 함수를 이용해 여러 좌표 보내기</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.6.2.6. 자율주행</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pinkypro-navigation">
+<h1><span class="section-number">4.6. </span>6. PinkyPro Navigation<a class="headerlink" href="#pinkypro-navigation" title="Link to this heading">#</a></h1>
+<div class="note admonition">
+<p class="admonition-title">What to learn</p>
+<ul class="simple">
+<li><p>Nav2를 사용하여, Rviz에서 직접 목표 지점(Goal spot)을 설정하지 않고 nav2 를 이용해 goal 좌표를 생성하고 자율 주행하는 것을 배운다.</p></li>
+<li><p>또한, 자율주행동안 nav2를 이용해 남은 거리 (feedback.distance_remaining) 를 출력할 수 있으며, 주행 완료 후에는 주행 결과(nav.getResult())를 성공/실패/취소 됐는지 확인할 수 있다.</p></li>
+</ul>
+</div>
+<p>세팅을 하기 위해 <a class="reference internal" href="#"><span class="xref myst">로컬과 PinkyPro 연결</span></a> 파트를 먼저 하고 와야 한다.
+앞서 mapping (SLAM) 을 하고 저장한 메타데이터가 있는 .yaml 파일을 이용해 주행할 수 있다.</p>
+<section id="rviz">
+<h2><span class="section-number">4.6.1. </span>핑키의 Rviz 로 주행 시작/목표 설정후 자율 주행<a class="headerlink" href="#rviz" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>pinky_bringup<span class="w"> </span>bringup_robot.launch.xml<span class="w"> </span><span class="c1"># [Robot] pinky 준비 </span>
+
+ros2<span class="w"> </span>launch<span class="w"> </span>pinky_navigation<span class="w"> </span>bringup_launch.xml<span class="w"> </span>map:<span class="o">=</span>저장한<span class="w"> </span>맵이름.yaml<span class="w"> </span><span class="c1"># [Robot] 네비게이션 관련 준비 </span>
+
+ros2<span class="w"> </span>launch<span class="w"> </span>pinky_navigation<span class="w"> </span>nav2_view.launch.xml<span class="w"> </span><span class="c1"># !!![PC] Rviz실행 (SLAM 용 Rviz와 상이함에 주의!)</span>
+</pre></div>
+</div>
+<p>Rviz UI에서,</p>
+<ul class="simple">
+<li><p>초기 위치 선택: “2d Pose Estimation” 버튼 선택 (현재 라이다와 맵 일치 시켜주기)</p></li>
+<li><p>종료 지점 선택: “Nav2 Goal” 클릭 -&gt; 도착할 위치와 도착했을 때 바라볼 방향으로 드래그</p></li>
+</ul>
+<p>경로 생성을 할 때, 최단 경로 선택을 하려는데 그래서 벽을 타려고 한다. 충돌 위험 vs. 최단 경로 선택 중에서 로봇이 고민하게 되는데, waypoint를 중간 경로 지점으로 설정하는 것 같음.</p>
+</section>
+<section id="jupyter-nav2">
+<h2><span class="section-number">4.6.2. </span>Jupyter로 Nav2 를 이용해 자율 주행<a class="headerlink" href="#jupyter-nav2" title="Link to this heading">#</a></h2>
+<div class="dropdown admonition">
+<p class="admonition-title">Nav2</p>
+<p>Nav2 (navigation stack) <br />
+|– planner <br />
+|– controller  <br />
+|– bt_navigator <br />
+|– costmap <br />
+|– localization \</p>
+<p>으로 여러 노드들로 구성되어 있다.</p>
+</div>
+<section id="id1">
+<h3><span class="section-number">4.6.2.1. </span>주피터 설치 [한 번만 실행]<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3<span class="w"> </span>install<span class="w"> </span>jupyter<span class="w"> </span>--break-system-packages
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3><span class="section-number">4.6.2.2. </span>준비 단계<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>핑키봇 켜고, 주행모드와 지도를 켠 후, 주피터 노트북을 실행해준다.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>pinky_bringup<span class="w"> </span>bringup_robot.launch.xml<span class="w"> </span><span class="c1"># [Robot] 핑키 bringup</span>
+
+ros2<span class="w"> </span>launch<span class="w"> </span>pinky_navigation<span class="w"> </span>bringup_launch.xml<span class="w"> </span>map:<span class="o">=</span>저장한<span class="w"> </span>맵이름.yaml<span class="w"> </span><span class="c1"># [Robot] 내비게이션 실행 </span>
+
+ros2<span class="w"> </span>launch<span class="w"> </span>pinky_navigation<span class="w"> </span>nav2_view.launch.xml<span class="w"> </span><span class="c1"># [PC] nav2_view.rviz 실행 (SLAM과 다름)</span>
+
+<span class="c1"># Rviz에서 2D Pose Estimate 버튼을 눌러 라이다와 맵 일치 시켜주기 </span>
+<span class="c1"># !!!! Jupyter 실행 전 ROS2 관련 환경변수 (특히, source setup.bash)가 적용된 상태에서 Jupyter 실행 </span>
+<span class="nb">source</span><span class="w"> </span>/opt/ros/jazzy/setup.bash
+<span class="nb">source</span><span class="w"> </span>~/pinky_pro/install/local_setup.bash<span class="w">   </span><span class="c1"># (네 workspace)</span>
+jupyter<span class="w"> </span>notebook<span class="w"> </span><span class="c1">#[Robot] Initiates a local web server to run the application in your browser. </span>
+</pre></div>
+</div>
+</section>
+<section id="nav-gotopose-nav2">
+<h3><span class="section-number">4.6.2.3. </span>주피터 파일에서 nav.goToPose() 를 이용한 Nav2 로 주행<a class="headerlink" href="#nav-gotopose-nav2" title="Link to this heading">#</a></h3>
+<p>새로운 주피터 파일에서 코드 작업을 시작한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nav2_simple_commander.robot_navigator</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasicNavigator</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">rclpy</span> 
+
+<span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">nav</span> <span class="o">=</span> <span class="n">BasicNavigator</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>nav2가 실행되었는지 확인한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nav</span><span class="o">.</span><span class="n">waitUntilNav2Active</span><span class="p">()</span> <span class="c1"># &#39;Nav2 is ready for use!&#39; will be printed </span>
+</pre></div>
+</div>
+<p>로봇의 각도 (degree)를 쿼터니언으로 변환하는 함수 선언</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span> 
+<span class="kn">import</span><span class="w"> </span><span class="nn">tf_transformations</span> 
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_quaternion_from_yaw</span><span class="p">(</span><span class="n">yaw_degrees</span><span class="p">):</span>
+    <span class="n">yaw_radians</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">yaw_degrees</span><span class="p">)</span>
+
+    <span class="n">quaternion</span> <span class="o">=</span> <span class="n">tf_transformations</span><span class="o">.</span><span class="n">quaternion_from_euler</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">yaw_radians</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">quaternion</span> 
+</pre></div>
+</div>
+<p>/amcl_pose 토픽을 구독하는 노드 생성. ‘로봇의 현재 위치’를 출력하기 위한 노드이다.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">/amcl_pose</p>
+<p>Nav2의 localization을 담당하는 노드가 AMCL이고 nav2_amcl이 /amcl_pose를 생성.
+보통, nav2_bringup launch 를 하면 자동으로 같이 실행됨.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sub_amcl</span> <span class="o">=</span> <span class="n">rclpy</span><span class="o">.</span><span class="n">create_node</span><span class="p">(</span><span class="s1">&#39;sub_amcl&#39;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">amcl_callback</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;===&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="p">)</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">geometry_msgs.msg</span><span class="w"> </span><span class="kn">import</span> <span class="n">PoseWithCovarianceStamped</span>
+
+<span class="n">sub_amcl</span><span class="o">.</span><span class="n">create_subscription</span><span class="p">(</span><span class="n">PoseWithCovarianceStamped</span><span class="p">,</span> <span class="s1">&#39;amcl_pose&#39;</span><span class="p">,</span> <span class="n">amcl_callback</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nav를 이용해 Goal을 생성해보자.
+제자리에서 회전하는 것이기 때문에, Goal의 목표 위치는 현재 로봇의 위치로 설정해준다.</p>
+<p>현재 로봇의 위치는 아래의 세 개 중에서 가능하나, /amcl_pose를 확인하는 게 가장 좋다.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>topic<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>/clicked_point<span class="w">  </span><span class="c1"># Rviz에서 `Publish Point`로 클릭한 위치 </span>
+ros2<span class="w"> </span>topic<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>/amcl_pose<span class="w"> </span><span class="c1"># 실제 로봇 위치 </span>
+ros2<span class="w"> </span>run<span class="w"> </span>tf2_ros<span class="w"> </span>tf2_echo<span class="w"> </span>map<span class="w"> </span>base_link<span class="w"> </span><span class="c1"># map에서 base_link 변환하여 현재 로봇의 pose를 알려준다. </span>
+</pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">nav goal 좌표 PoseStamped</p>
+<p>Nav goal은 “글로벌 좌표계(map)” 기준 absolute pose를 사용한다.
+즉, 현재 기준으로 180도 돌아라 (상대좌표)가 아닌, map 기준으로 이 위치 + 이 방향으로 가라 (절대좌표)의 의미이다.</p>
+<ul class="simple">
+<li><p>map(global, 고정) &lt;- odom (local drift 있음) &lt;- base_link (로봇몸)</p>
+<ul>
+<li><p>map: SLAM, localization 기준</p></li>
+<li><p>odom: 상대적 이동</p></li>
+<li><p>base_link: 로봇 자체 좌표, 앞으로 1m 이런 거 할 때</p></li>
+</ul>
+</li>
+</ul>
+<p>pose.position.{x, y, z}, pose.orientation.{x, y, z, w} 즉, 해당 포즈를 취하라는 것이다. 현재 로봇좌표계에서 180도를 돌아라 이게 아니라, 절대 좌표계에서 180도 이미 회전되어 있는 상황이라면, orientation 움직이지 않을 것이다.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">geometry_msgs.msg</span><span class="w"> </span><span class="kn">import</span> <span class="n">PoseStamped</span> 
+
+<span class="n">goal_yaw</span> <span class="o">=</span> <span class="mi">180</span> 
+<span class="n">q</span> <span class="o">=</span> <span class="n">get_quaternion_from_yaw</span><span class="p">(</span><span class="n">goal_yaw</span><span class="p">)</span>
+
+<span class="n">goal_pose</span> <span class="o">=</span> <span class="n">PoseStamped</span><span class="p">()</span>
+<span class="n">goal_pose</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">frame_id</span> <span class="o">=</span> <span class="s1">&#39;map&#39;</span>
+<span class="n">goal_pose</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">stamp</span> <span class="o">=</span> <span class="n">nav</span><span class="o">.</span><span class="n">get_clock</span><span class="p">()</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">to_msg</span><span class="p">()</span>
+
+<span class="n">goal_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="err">?</span>
+<span class="n">goal_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="err">?</span>
+<span class="n">goal_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.0</span> 
+
+<span class="n">goal_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">goal_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">goal_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">goal_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+</pre></div>
+</div>
+<p>nav2에 goal 좌표를 보내면 자율주행을 시작한다. 이 경우, 목표 pose로 핑키가 움직인다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nav</span><span class="o">.</span><span class="n">goToPose</span><span class="p">(</span><span class="n">goal_pose</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3><span class="section-number">4.6.2.4. </span>주행시, 상태 확인<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>자율주행중에 실행해보면 주행 상태 확인이 가능하다.</p>
+<section id="nav2">
+<h4><span class="section-number">4.6.2.4.1. </span>Nav2 로그 보기<a class="headerlink" href="#nav2" title="Link to this heading">#</a></h4>
+<p>터미널에서 Nav2 <code class="docutils literal notranslate"><span class="pre">bringup</span></code> 로그를 보면 가장 디테일하다.</p>
+<ol class="arabic simple">
+<li><p>/amcl_pose : localization 정상인지</p></li>
+<li><p>/cmd_vel: 속도 명령 나가는지</p></li>
+<li><p>/plan 또는 global/local path 관련 시각화 : 경로가 생성되는지</p></li>
+<li><p>/tf : frame transform 정상인지</p></li>
+</ol>
+</section>
+<section id="id4">
+<h4><span class="section-number">4.6.2.4.2. </span>Nav2 관련 토픽 확인하기<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>cpu 부하방지 (jupyter 멈춤방지)를 위해 timeout_sec 1초로 설정한다.</p>
+<ul>
+<li><p>while 문에서 아무 대기 없이 계속 loop을 돌면, cpu가 쉬지 않고 반복문을 실행해서 멈출 수 있다.</p></li>
+<li><p>따라서, 최대 1초 정도 콜백/메시지를 기다리면서 쉬는 시간이 생긴다.</p></li>
+</ul>
+</li>
+<li><p>해석</p>
+<ul>
+<li><p>정상 주행 패턴</p>
+<ul>
+<li><p>distance_remaining 감소</p></li>
+<li><p>estimated_time_remaining 대체로 감소</p></li>
+<li><p>number_of_recoveries 0또는 낮음</p></li>
+</ul>
+</li>
+<li><p>이상 패턴</p>
+<ul>
+<li><p>distance_remaining 정체</p></li>
+<li><p>navigation_time 만 증가</p></li>
+<li><p>number_of_recoveries 증가</p></li>
+<li><p>경로 추종 실패, 장애물 회피 반복, localization 또는 planner/controller 문제</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">rclpy.duration</span><span class="w"> </span><span class="kn">import</span> <span class="n">Duration</span> 
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">clear_output</span> <span class="c1"># Jupyter 에서 IPyton 사용 </span>
+
+<span class="k">while</span> <span class="ow">not</span> <span class="n">nav</span><span class="o">.</span><span class="n">isTaskComplete</span><span class="p">():</span>
+    <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">spin_once</span><span class="p">(</span><span class="n">sub_amcl</span><span class="p">,</span> <span class="n">timeout_sec</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+
+    <span class="n">feedback</span> <span class="o">=</span> <span class="n">nav</span><span class="o">.</span><span class="n">getFeedback</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">feedback</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;===&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Distance remaining: </span><span class="si">{</span><span class="n">feedback</span><span class="o">.</span><span class="n">distance_remaining</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> meters&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Navigation time: </span><span class="si">{</span><span class="n">Duration</span><span class="o">.</span><span class="n">from_msg</span><span class="p">(</span><span class="n">feedback</span><span class="o">.</span><span class="n">navigation_time</span><span class="p">)</span><span class="o">.</span><span class="n">nanoseconds</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1e9</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> sec&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">feedback</span><span class="p">,</span> <span class="s1">&#39;estimated_time_remaining&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">feedback</span><span class="o">.</span><span class="n">estimated_time_remaining</span><span class="o">.</span><span class="n">sec</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estimated time remaining: </span><span class="si">{</span><span class="n">Duration</span><span class="o">.</span><span class="n">from_msg</span><span class="p">(</span><span class="n">feedback</span><span class="o">.</span><span class="n">estimated_time_remaining</span><span class="p">)</span><span class="o">.</span><span class="n">nanoseconds</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1e9</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> sec&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">feedback</span><span class="p">,</span> <span class="s1">&#39;number_of_recoveries&#39;</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Recoveries: </span><span class="si">{</span><span class="n">feedback</span><span class="o">.</span><span class="n">number_of_recoveries</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">Duration</span><span class="o">.</span><span class="n">from_msg</span><span class="p">(</span><span class="n">feedback</span><span class="o">.</span><span class="n">navigation_time</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">Duration</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mf">30.0</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Navigation timeout. Canceling task.&quot;</span><span class="p">)</span>
+            <span class="n">nav</span><span class="o">.</span><span class="n">cancelTask</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">nav.getFeedback()</p>
+<p>nav.getFeedback()은 보통 <code class="docutils literal notranslate"><span class="pre">NavigateToPose</span></code> 액션의 feedback이다.
+주로 다음과 같은 정보를 볼 수 있다.</p>
+<ul class="simple">
+<li><p>distance_remaining : 목표까지 남은 거리</p>
+<ul>
+<li><p>계속 줄어들면 정상 주행</p></li>
+<li><p>거의 안 줄어들면 정체</p></li>
+<li><p>늘어났다가 줄어들면 우회 중일 수 있음</p></li>
+</ul>
+</li>
+<li><p>navigation_time: 목표를 향해 움직이기 시작한뒤 지난 시간</p>
+<ul>
+<li><p>너무 길어지면 실패 가능성 증가</p></li>
+<li><p>아래 코드처럼 일정 시간 넘으면 cancel 가능</p></li>
+</ul>
+</li>
+<li><p>estimated_time_remaining:</p>
+<ul>
+<li><p>계속 감소하면 정상</p></li>
+<li><p>계속 커지면 경로 재계획이 자주 일어나거나 장애물 회피 중일 수 있음</p></li>
+</ul>
+</li>
+<li><p>number_of_recoveries: 복구 동작 횟수, 중요!</p>
+<ul>
+<li><p>값이 증가하면, nav2가 중간에 제자리 회전, 잠깐 후진, local costmap/global costmap clear, 재계획 등의 복구 행동을 시도했다는 뜻이므로,</p></li>
+<li><p>이 값이 늘어나면 단순히 주행이 느린 게 아니라 주행이 꼬이고 있다는 신호로 볼 수 있다.</p></li>
+</ul>
+</li>
+<li><p>current_pose: 현재 로봇의 위치</p></li>
+<li><p>current_waypoint : followWaypoints를 할때만 있는 건가? , goToPose</p></li>
+</ul>
+</div>
+<p>자율주행을 하다가 멈추고 싶다면, 자율주행 알고리즘 Nav2 bringup이나 pinky bringup를 꺼서 로봇 모터를 종료하면된다. 즉, nav2 —– /cmd_vel topic으로 메세지전달 —&gt; pinky bringup 의 구조로 되어있기 때문이다.</p>
+</section>
+</section>
+<section id="nav-followwaypoints">
+<h3><span class="section-number">4.6.2.5. </span>nav.followWaypoints() 함수를 이용해 여러 좌표 보내기<a class="headerlink" href="#nav-followwaypoints" title="Link to this heading">#</a></h3>
+<p>먼저 Map상에서 위치를 보기 위해, 터미널에서 Rviz상의 위치정보를 받는 /clicked_point 토픽을 구독하고  Rviz에서 위치를 찍는다.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>topic<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>/clicked_point<span class="w"> </span>
+</pre></div>
+</div>
+<p>pinky의 nav2_view.rviz 맵에서 “Publish Point” 를 클릭해서 여러개 찍으면 터미널에서 해당 포인트를 볼 수 있다.</p>
+<p>다음으로, waypoint list를 생성하고 <code class="docutils literal notranslate"><span class="pre">nav.followWaypoints</span></code>를 사용하여 주행을 한다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">goal_pose_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">goal_yaw1</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">q1</span> <span class="o">=</span> <span class="n">get_quaternion_from_yaw</span><span class="p">(</span><span class="n">goal_yaw1</span><span class="p">)</span>
+
+<span class="n">goal_pose1</span> <span class="o">=</span> <span class="n">PoseStamped</span><span class="p">()</span>
+<span class="n">goal_pose1</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">frame_id</span> <span class="o">=</span> <span class="s1">&#39;map&#39;</span>
+<span class="n">goal_pose1</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">stamp</span> <span class="o">=</span> <span class="n">nav</span><span class="o">.</span><span class="n">get_clock</span><span class="p">()</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">to_msg</span><span class="p">()</span>
+<span class="n">goal_pose1</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mf">2.9077</span>
+<span class="n">goal_pose1</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.24</span>
+<span class="n">goal_pose1</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">q1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">goal_pose1</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">q1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">goal_pose1</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">q1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">goal_pose1</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="n">q1</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">goal_pose_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">goal_pose1</span><span class="p">)</span>
+
+<span class="n">goal_yaw2</span> <span class="o">=</span> <span class="mi">180</span>
+<span class="n">q2</span> <span class="o">=</span> <span class="n">get_quaternion_from_yaw</span><span class="p">(</span><span class="n">goal_yaw2</span><span class="p">)</span>
+
+<span class="n">goal_pose2</span> <span class="o">=</span> <span class="n">PoseStamped</span><span class="p">()</span>
+<span class="n">goal_pose2</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">frame_id</span> <span class="o">=</span> <span class="s1">&#39;map&#39;</span>
+<span class="n">goal_pose2</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">stamp</span> <span class="o">=</span> <span class="n">nav</span><span class="o">.</span><span class="n">get_clock</span><span class="p">()</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">to_msg</span><span class="p">()</span>
+<span class="n">goal_pose2</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.28</span>
+<span class="n">goal_pose2</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mf">0.248</span>
+<span class="n">goal_pose2</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">q2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">goal_pose2</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">q2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">goal_pose2</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">q2</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">goal_pose2</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="n">q2</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">goal_pose_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">goal_pose2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>waypoint 주행 시작 후 피드백 확인해보기</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nav_start</span> <span class="o">=</span> <span class="n">nav</span><span class="o">.</span><span class="n">get_clock</span><span class="p">()</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">nav</span><span class="o">.</span><span class="n">followWaypoints</span><span class="p">(</span><span class="n">goal_pose_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>중요! 자원을 해제한다. 특히, 어제 LCD, LED사용하고 나서는 자원해제를 해야된다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nav</span><span class="o">.</span><span class="n">lifecycleShutdown</span><span class="p">()</span>
+<span class="n">rclpy</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h3><span class="section-number">4.6.2.6. </span>자율주행<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>goal tolerence parameter: 핑키의 위치 추정과 목표 지점까지 소수점까지의 특정 오차 범위 안에 도착하면, 멈추도록 되어있음.</p>
+<ul class="simple">
+<li><p>거리와 각도 조정 가능</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./_pages/addinedu_projects/00_prerequisite/pinky"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="5_slam.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">4.5. </span>5. PinkyPro SLAM</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../JetCobot/1_introduction.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>JetCobot</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rviz">4.6.1. 핑키의 Rviz 로 주행 시작/목표 설정후 자율 주행</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-nav2">4.6.2. Jupyter로 Nav2 를 이용해 자율 주행</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.6.2.1. 주피터 설치 [한 번만 실행]</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.6.2.2. 준비 단계</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nav-gotopose-nav2">4.6.2.3. 주피터 파일에서 nav.goToPose() 를 이용한 Nav2 로 주행</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.6.2.4. 주행시, 상태 확인</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nav2">4.6.2.4.1. Nav2 로그 보기</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.6.2.4.2. Nav2 관련 토픽 확인하기</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nav-followwaypoints">4.6.2.5. nav.followWaypoints() 함수를 이용해 여러 좌표 보내기</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.6.2.6. 자율주행</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Daye Lee
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
