@@ -1,4 +1,4 @@
-# 1. JetCobot Introduction and Setting 
+# JetCobot 
 
 ## JetCobot 모델 정보 
 

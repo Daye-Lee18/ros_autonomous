@@ -6,28 +6,36 @@ root: intro
 
 parts: 
   - caption: ROS 
+    numbered: True # only applies to chapters in ROS 
     chapters:
     - file: _pages/ros/1_node
     - file: _pages/ros/2_communication
     - file: _pages/ros/3_command
 
-  - caption: Pinky Pro 
+  - caption: addinedu 심화_ROS2와AI기반 자율주행&로봇팔 교육 
+    numbered: True
     chapters:
-    - file: _pages/pinky/1
-    - file: _pages/pinky/2_connection
-    - file: _pages/pinky/3_LCD
-    - file: _pages/pinky/4_LED
-    - file: _pages/pinky/5_slam
-    - file: _pages/pinky/6_nav
-  
-  - caption: JetCobot
-    chapters:
-    - file: _pages/JetCobot/1_introduction
-    - file: _pages/JetCobot/2_setting
-    - file: _pages/JetCobot/3_basic_move
+    - file: _pages/addinedu_projects/00_prerequisite/pinky/1
+      sections:
+      - file: _pages/addinedu_projects/00_prerequisite/pinky/2_connection
+      - file: _pages/addinedu_projects/00_prerequisite/pinky/3_LCD
+      - file: _pages/addinedu_projects/00_prerequisite/pinky/4_LED
+      - file: _pages/addinedu_projects/00_prerequisite/pinky/5_slam
+      - file: _pages/addinedu_projects/00_prerequisite/pinky/6_nav
+    
+    - file: _pages/addinedu_projects/00_prerequisite/JetCobot/1_introduction
+      sections:
+      - file: _pages/addinedu_projects/00_prerequisite/JetCobot/2_setting
+      - file: _pages/addinedu_projects/00_prerequisite/JetCobot/3_basic_move
+      - file: _pages/addinedu_projects/00_prerequisite/JetCobot/4_camera
+
+    # - file: _pages/addinedu_projects/01_project_design_v_model/introduction
+    #   section:
+    #   - file: 
 
   
   - caption: Python for ROS2
+    numbered: True
     chapters:
     - file: _pages/python_ROS/1
 
