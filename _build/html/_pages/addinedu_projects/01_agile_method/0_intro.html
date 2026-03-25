@@ -1,0 +1,728 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>8. Agile Method (애자일 방법론) &#8212; Study for Autonomous Driving</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_pages/addinedu_projects/01_agile_method/0_intro';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="9. Python Library for ROS" href="../../python_ROS/1.html" />
+    <link rel="prev" title="7.4. team_2 user_requirements" href="../02_project_design/1_user_requirements.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/autonomous_driving_perception.jpg" class="logo__image only-light" alt="Study for Autonomous Driving - Home"/>
+    <script>document.write(`<img src="../../../_static/autonomous_driving_perception.jpg" class="logo__image only-dark" alt="Study for Autonomous Driving - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    ROS2와 자율주행(Autonomous driving)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">ROS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../ros/1_node.html">1. 노드(Node)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ros/2_communication.html">2. 통신 (communication)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ros/3_command.html">3. Command for ROS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">addinedu 심화_ROS2와AI기반 자율주행&amp;로봇팔 교육</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00_prerequisite/pinky/1.html">4. PinkyPro</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/pinky/2_connection.html">4.2. PinkyPro와 연결</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/pinky/3_LCD.html">4.3. PinkyPro LCD 및 Picamera 사용</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/pinky/4_LED.html">4.4. PinkyPro LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/pinky/5_slam.html">4.5. PinkyPro SLAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/pinky/6_nav.html">4.6. PinkyPro Navigation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00_prerequisite/JetCobot/1_introduction.html">5. JetCobot</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/JetCobot/2_setting.html">5.3. JetCobot 연결</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/JetCobot/3_basic_move.html">5.4. 로봇팔과 그리퍼 제어</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/JetCobot/4_camera.html">5.5. Jetcobot 카메라 사용하기</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_domain_research/0_intro.html">6. 자료 조사</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_domain_research/3_terminology.html">6.1. 실무 용어</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_project_design/0_intro.html">7. V-model for Project Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_project_design/1_user_requirements.html">7.4. team_2 user_requirements</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Agile Method (애자일 방법론)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for ROS2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../python_ROS/1.html">9. Python Library for ROS</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F_pages/addinedu_projects/01_agile_method/0_intro.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/_pages/addinedu_projects/01_agile_method/0_intro.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Agile Method (애자일 방법론)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waterfall-v-model">8.1. 기존 방식: Waterfall / V-model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.2. Agile Method란</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.2.1. 특징</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.3. 핵심 개념</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sprint">8.3.1. Sprint</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.3.2. 작은 단위 개발</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">8.3.3. 지속적인 테스트</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-software">8.3.4. Working Software</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scrum">8.4. Scrum 방식</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">8.4.1. 구성 요소</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">8.4.2. Scrum 흐름</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">8.5. 실무 도구</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">8.6. 버전 관리</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">8.7. 프로젝트 적용 예시</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="agile-method">
+<h1><span class="section-number">8. </span>Agile Method (애자일 방법론)<a class="headerlink" href="#agile-method" title="Link to this heading">#</a></h1>
+<section id="waterfall-v-model">
+<h2><span class="section-number">8.1. </span>기존 방식: Waterfall / V-model<a class="headerlink" href="#waterfall-v-model" title="Link to this heading">#</a></h2>
+<p>기존 방식은 순차적으로 개발 진행하여 (설계 → 구현 → 테스트) 테스트가 개발 후반에 수행된다. 이에 대해서 다음의 문제점들이 존재한다.</p>
+<ul class="simple">
+<li><p>테스트가 늦어 문제 발견 시 수정 비용 증가</p></li>
+<li><p>개발 기간 예측 어려움</p></li>
+<li><p>요구사항 변경 대응 어려움</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id1">
+<h2><span class="section-number">8.2. </span>Agile Method란<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Agile은 기능을 작은 단위로 나누어 반복적으로 개발하고, 지속적으로 검증하는 방법론이다.</p>
+<section id="id2">
+<h3><span class="section-number">8.2.1. </span>특징<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>변화에 유연하게 대응</p></li>
+<li><p>빠른 피드백</p></li>
+<li><p>협업 중심 개발</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>구분</p></th>
+<th class="head"><p>Waterfall</p></th>
+<th class="head"><p>Agile</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>개발 방식</p></td>
+<td><p>순차적</p></td>
+<td><p>반복적</p></td>
+</tr>
+<tr class="row-odd"><td><p>테스트</p></td>
+<td><p>마지막</p></td>
+<td><p>지속적</p></td>
+</tr>
+<tr class="row-even"><td><p>유연성</p></td>
+<td><p>낮음</p></td>
+<td><p>높음</p></td>
+</tr>
+<tr class="row-odd"><td><p>리스크</p></td>
+<td><p>큼</p></td>
+<td><p>작음</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h2><span class="section-number">8.3. </span>핵심 개념<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="sprint">
+<h3><span class="section-number">8.3.1. </span>Sprint<a class="headerlink" href="#sprint" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>짧은 개발 주기 (보통 1~2주)</p></li>
+<li><p>하나의 작은 기능을 완성하는 단위</p></li>
+</ul>
+<p>각 Sprint는 다음 과정을 반복한다:</p>
+<p>설계 → 구현 → 테스트 → 배포</p>
+</section>
+<hr class="docutils" />
+<section id="id4">
+<h3><span class="section-number">8.3.2. </span>작은 단위 개발<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>큰 프로젝트를 기능 단위로 나누어 개발한다.</p>
+<p>예:</p>
+<ul class="simple">
+<li><p>물류 자동화 시스템
+→ 박스 인식
+→ AMR 이동
+→ 로봇팔 pick &amp; place</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id5">
+<h3><span class="section-number">8.3.3. </span>지속적인 테스트<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>구현 후 바로 테스트 수행</p></li>
+<li><p>문제를 빠르게 발견하고 수정</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="working-software">
+<h3><span class="section-number">8.3.4. </span>Working Software<a class="headerlink" href="#working-software" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>완벽한 코드보다 “동작하는 코드”가 중요</p></li>
+<li><p>매 Sprint마다 실행 가능한 결과물을 만들어야 한다</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="scrum">
+<h2><span class="section-number">8.4. </span>Scrum 방식<a class="headerlink" href="#scrum" title="Link to this heading">#</a></h2>
+<p>Scrum은 Agile을 구현하는 대표적인 방법이다.</p>
+<section id="id6">
+<h3><span class="section-number">8.4.1. </span>구성 요소<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Product Owner: 요구사항 정의</p></li>
+<li><p>Scrum Master: 프로세스 관리</p></li>
+<li><p>Development Team: 개발 수행</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id7">
+<h3><span class="section-number">8.4.2. </span>Scrum 흐름<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>Backlog 정의<br />
+→ Sprint 계획<br />
+→ 개발 (1~2주)<br />
+→ 리뷰 및 회고<br />
+→ 다음 Sprint</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id8">
+<h2><span class="section-number">8.5. </span>실무 도구<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Jira: 일정 및 Task 관리, Sprint 운영</p></li>
+<li><p>Confluence: 문서 및 회의 기록</p></li>
+<li><p>GitHub: 코드 관리 및 협업</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id9">
+<h2><span class="section-number">8.6. </span>버전 관리<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<p>v1.0: 첫 release<br />
+v1.1: 버그 수정<br />
+v1.x: 지속적인 개선</p>
+<p>Agile에서는 자주 release하는 것이 중요하다.</p>
+</section>
+<hr class="docutils" />
+<section id="id10">
+<h2><span class="section-number">8.7. </span>프로젝트 적용 예시<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
+<p>Sprint 1: 박스 인식 (Vision)<br />
+Sprint 2: AMR 이동<br />
+Sprint 3: 로봇팔 제어<br />
+Sprint 4: 전체 시스템 통합</p>
+<p>각 Sprint마다 실행 가능한 기능을 확보한다.</p>
+<hr class="docutils" />
+<div class="note admonition">
+<p class="admonition-title">Summary</p>
+<p>Agile은 기능을 작은 단위로 나누어 반복적으로 개발하고 검증함으로써, 빠른 피드백과 안정적인 프로젝트 진행을 가능하게 하는 방법론이다.</p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./_pages/addinedu_projects/01_agile_method"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../02_project_design/1_user_requirements.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">7.4. </span>team_2 user_requirements</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../python_ROS/1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Python Library for ROS</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waterfall-v-model">8.1. 기존 방식: Waterfall / V-model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.2. Agile Method란</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.2.1. 특징</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.3. 핵심 개념</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sprint">8.3.1. Sprint</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.3.2. 작은 단위 개발</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">8.3.3. 지속적인 테스트</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-software">8.3.4. Working Software</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scrum">8.4. Scrum 방식</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">8.4.1. 구성 요소</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">8.4.2. Scrum 흐름</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">8.5. 실무 도구</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">8.6. 버전 관리</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">8.7. 프로젝트 적용 예시</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Daye Lee
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

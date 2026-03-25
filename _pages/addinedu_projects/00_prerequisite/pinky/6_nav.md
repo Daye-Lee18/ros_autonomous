@@ -7,7 +7,7 @@
 * 또한, 자율주행동안 nav2를 이용해 남은 거리 (feedback.distance_remaining) 를 출력할 수 있으며, 주행 완료 후에는 주행 결과(nav.getResult())를 성공/실패/취소 됐는지 확인할 수 있다. 
 ````
 
-세팅을 하기 위해 [로컬과 PinkyPro 연결]() 파트를 먼저 하고 와야 한다. 
+세팅을 하기 위해 [로컬과 PinkyPro 연결](2_connection.md) 파트를 먼저 하고 와야 한다. 
 앞서 mapping (SLAM) 을 하고 저장한 메타데이터가 있는 .yaml 파일을 이용해 주행할 수 있다. 
 
 
@@ -153,8 +153,8 @@ goal_pose = PoseStamped()
 goal_pose.header.frame_id = 'map'
 goal_pose.header.stamp = nav.get_clock().now().to_msg()
 
-goal_pose.pose.position.x = ?
-goal_pose.pose.position.y = ?
+goal_pose.pose.position.x = ? # ? 채우기 
+goal_pose.pose.position.y = ?  # ? 채우기 
 goal_pose.pose.position.z = 0.0 
 
 goal_pose.pose.orientation.x = q[0]

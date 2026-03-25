@@ -201,10 +201,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../JetCobot/4_camera.html">5.5. Jetcobot 카메라 사용하기</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_domain_research/0_intro.html">6. 자료 조사</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../01_domain_research/3_terminology.html">6.1. 실무 용어</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_project_design/0_intro.html">7. V-model for Project Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02_project_design/1_user_requirements.html">7.4. team_2 user_requirements</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../01_agile_method/0_intro.html">8. Agile Method (애자일 방법론)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for ROS2</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../../python_ROS/1.html">6. Python Library for ROS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../python_ROS/1.html">9. Python Library for ROS</a></li>
 </ul>
 
     </div>
@@ -434,7 +443,7 @@ document.write(`
 <li><p>또한, 자율주행동안 nav2를 이용해 남은 거리 (feedback.distance_remaining) 를 출력할 수 있으며, 주행 완료 후에는 주행 결과(nav.getResult())를 성공/실패/취소 됐는지 확인할 수 있다.</p></li>
 </ul>
 </div>
-<p>세팅을 하기 위해 <a class="reference internal" href="#"><span class="xref myst">로컬과 PinkyPro 연결</span></a> 파트를 먼저 하고 와야 한다.
+<p>세팅을 하기 위해 <a class="reference internal" href="2_connection.html"><span class="std std-doc">로컬과 PinkyPro 연결</span></a> 파트를 먼저 하고 와야 한다.
 앞서 mapping (SLAM) 을 하고 저장한 메타데이터가 있는 .yaml 파일을 이용해 주행할 수 있다.</p>
 <section id="rviz">
 <h2><span class="section-number">4.6.1. </span>핑키의 Rviz 로 주행 시작/목표 설정후 자율 주행<a class="headerlink" href="#rviz" title="Link to this heading">#</a></h2>
@@ -562,8 +571,8 @@ ros2<span class="w"> </span>run<span class="w"> </span>tf2_ros<span class="w"> <
 <span class="n">goal_pose</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">frame_id</span> <span class="o">=</span> <span class="s1">&#39;map&#39;</span>
 <span class="n">goal_pose</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">stamp</span> <span class="o">=</span> <span class="n">nav</span><span class="o">.</span><span class="n">get_clock</span><span class="p">()</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">to_msg</span><span class="p">()</span>
 
-<span class="n">goal_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="err">?</span>
-<span class="n">goal_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="err">?</span>
+<span class="n">goal_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="err">?</span> <span class="c1"># ? 채우기 </span>
+<span class="n">goal_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="err">?</span>  <span class="c1"># ? 채우기 </span>
 <span class="n">goal_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.0</span> 
 
 <span class="n">goal_pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
