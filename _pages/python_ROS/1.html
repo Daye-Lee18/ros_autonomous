@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>8. Python Library for ROS &#8212; Study for Autonomous Driving</title>
+    <title>9. Python Library for ROS &#8212; Study for Autonomous Driving</title>
   
   
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '_pages/python_ROS/1';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="7. Agile Method (애자일 방법론)" href="../addinedu_projects/01_agile_method/0_intro.html" />
+    <link rel="prev" title="8. Agile Method (애자일 방법론)" href="../addinedu_projects/01_agile_method/0_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -200,12 +200,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../addinedu_projects/00_prerequisite/JetCobot/4_camera.html">5.5. Jetcobot 카메라 사용하기</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../addinedu_projects/01_project_design/0_intro.html">6. V-model for Project Design</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../addinedu_projects/01_agile_method/0_intro.html">7. Agile Method (애자일 방법론)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../addinedu_projects/01_domain_research/0_intro.html">6. 자료 조사</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../addinedu_projects/01_domain_research/3_terminology.html">6.1. 실무 용어</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../addinedu_projects/02_project_design/0_intro.html">7. V-model for Project Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../addinedu_projects/02_project_design/1_user_requirements.html">7.4. team_2 user_requirements</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../addinedu_projects/01_agile_method/0_intro.html">8. Agile Method (애자일 방법론)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for ROS2</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Python Library for ROS</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. Python Library for ROS</a></li>
 </ul>
 
     </div>
@@ -401,18 +408,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rclpy">8.1. rclpy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rclpy-init">8.1.1. rclpy.init()</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#node">8.1.2. Node 관련</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rclpy-create-node-callback">8.1.2.1. rclpy.create_node() 및 콜백(Callback) 함수</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#callback">8.1.2.2. 콜백(Callback)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#node-create-subscription">8.1.2.3. node.create_subscription()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rclpy">9.1. rclpy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rclpy-init">9.1.1. rclpy.init()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#node">9.1.2. Node 관련</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rclpy-create-node-callback">9.1.2.1. rclpy.create_node() 및 콜백(Callback) 함수</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#callback">9.1.2.2. 콜백(Callback)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#node-create-subscription">9.1.2.3. node.create_subscription()</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nav2-simple-commander">8.2. nav2_simple_commander</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-transformations">8.3. tf_transformations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nav2-simple-commander">9.2. nav2_simple_commander</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-transformations">9.3. tf_transformations</a></li>
 </ul>
             </nav>
         </div>
@@ -425,12 +432,12 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python-library-for-ros">
-<h1><span class="section-number">8. </span>Python Library for ROS<a class="headerlink" href="#python-library-for-ros" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">9. </span>Python Library for ROS<a class="headerlink" href="#python-library-for-ros" title="Link to this heading">#</a></h1>
 <section id="rclpy">
-<h2><span class="section-number">8.1. </span>rclpy<a class="headerlink" href="#rclpy" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.1. </span>rclpy<a class="headerlink" href="#rclpy" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">rclpy</span></code>는 ROS2 python client library이다.</p>
 <section id="rclpy-init">
-<h3><span class="section-number">8.1.1. </span>rclpy.init()<a class="headerlink" href="#rclpy-init" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">9.1.1. </span>rclpy.init()<a class="headerlink" href="#rclpy-init" title="Link to this heading">#</a></h3>
 <p>rclpy.init()는 rclpy를 초기화하여 ROS2 네트워크와 통신할 수 있도록 준비하는 필수 함수이다. 노드 생성 전 가장 먼저 호출되어 노드 초기화 및 통신 환경 설정을 수행한다.</p>
 <ul class="simple">
 <li><p>ROS2 네트워크 연결: 노드를 ROS2 시스템 (Graph)에 등록하고, 다른 노드들과의 통신(Topic, Service, Action 등)을 준비한다.</p></li>
@@ -453,16 +460,16 @@ document.write(`
 </div>
 </section>
 <section id="node">
-<h3><span class="section-number">8.1.2. </span>Node 관련<a class="headerlink" href="#node" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">9.1.2. </span>Node 관련<a class="headerlink" href="#node" title="Link to this heading">#</a></h3>
 <section id="rclpy-create-node-callback">
-<h4><span class="section-number">8.1.2.1. </span>rclpy.create_node() 및 콜백(Callback) 함수<a class="headerlink" href="#rclpy-create-node-callback" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">9.1.2.1. </span>rclpy.create_node() 및 콜백(Callback) 함수<a class="headerlink" href="#rclpy-create-node-callback" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>역할: ROS2에서 실행 가능한 노드 객체를 생성하는 파이썬 함수이다.</p></li>
 <li><p>사용법: <code class="docutils literal notranslate"><span class="pre">node</span> <span class="pre">=</span> <span class="pre">rclpy.create_node('node_name')</span></code> 형태로 노드 이름을 지정하여 생성</p></li>
 </ul>
 </section>
 <section id="callback">
-<h4><span class="section-number">8.1.2.2. </span>콜백(Callback)<a class="headerlink" href="#callback" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">9.1.2.2. </span>콜백(Callback)<a class="headerlink" href="#callback" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>노드 내부에 콜백 함수를 등록하여 데이터를 처리한다.</p></li>
 <li><p>역할: Subscriber가 메시지를 받거나, 타이머가 만료되었을 때, 또는 서비스 요청을 받았을 때 비동기적으로 호출되어 실행되는 함수</p></li>
@@ -487,7 +494,7 @@ document.write(`
 </div>
 </section>
 <section id="node-create-subscription">
-<h4><span class="section-number">8.1.2.3. </span>node.create_subscription()<a class="headerlink" href="#node-create-subscription" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">9.1.2.3. </span>node.create_subscription()<a class="headerlink" href="#node-create-subscription" title="Link to this heading">#</a></h4>
 <p>특정 토픽을 구독하고 메시지를 수신할 콜백 함수를 등록하는 함수</p>
 <ul class="simple">
 <li><p>기본 구조</p></li>
@@ -510,7 +517,7 @@ document.write(`
 </section>
 </section>
 <section id="nav2-simple-commander">
-<h2><span class="section-number">8.2. </span>nav2_simple_commander<a class="headerlink" href="#nav2-simple-commander" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.2. </span>nav2_simple_commander<a class="headerlink" href="#nav2-simple-commander" title="Link to this heading">#</a></h2>
 <p>ROS2 Navigation2(Nav2) 스택의 기능을 파이썬 스크립트에서 호출할 수 있도록 설계된 API 라이브러리이다. 액션 클라이언트(Action Client)나 ROS2 내부 작동 방식을 일일이 구현하지 않아도 로봇의 ‘네비게이션 기능’을 제어할 수 있게 해준다.</p>
 <ul class="simple">
 <li><p>로봇의 목적지 설정 및 제어를 가장 단순화하여 사용할 수 있는 라이브러리</p></li>
@@ -532,7 +539,7 @@ document.write(`
 </div>
 </section>
 <section id="tf-transformations">
-<h2><span class="section-number">8.3. </span>tf_transformations<a class="headerlink" href="#tf-transformations" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.3. </span>tf_transformations<a class="headerlink" href="#tf-transformations" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -572,7 +579,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Agile Method (애자일 방법론)</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Agile Method (애자일 방법론)</p>
       </div>
     </a>
 </div>
@@ -591,18 +598,18 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rclpy">8.1. rclpy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rclpy-init">8.1.1. rclpy.init()</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#node">8.1.2. Node 관련</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rclpy-create-node-callback">8.1.2.1. rclpy.create_node() 및 콜백(Callback) 함수</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#callback">8.1.2.2. 콜백(Callback)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#node-create-subscription">8.1.2.3. node.create_subscription()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rclpy">9.1. rclpy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rclpy-init">9.1.1. rclpy.init()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#node">9.1.2. Node 관련</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rclpy-create-node-callback">9.1.2.1. rclpy.create_node() 및 콜백(Callback) 함수</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#callback">9.1.2.2. 콜백(Callback)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#node-create-subscription">9.1.2.3. node.create_subscription()</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nav2-simple-commander">8.2. nav2_simple_commander</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-transformations">8.3. tf_transformations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nav2-simple-commander">9.2. nav2_simple_commander</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-transformations">9.3. tf_transformations</a></li>
 </ul>
   </nav></div>
 

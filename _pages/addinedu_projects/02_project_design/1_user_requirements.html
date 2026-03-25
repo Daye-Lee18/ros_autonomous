@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>8. Agile Method (애자일 방법론) &#8212; Study for Autonomous Driving</title>
+    <title>7.4. team_2 user_requirements &#8212; Study for Autonomous Driving</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '_pages/addinedu_projects/01_agile_method/0_intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_pages/addinedu_projects/02_project_design/1_user_requirements';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="9. Python Library for ROS" href="../../python_ROS/1.html" />
-    <link rel="prev" title="7.4. team_2 user_requirements" href="../02_project_design/1_user_requirements.html" />
+    <link rel="next" title="8. Agile Method (애자일 방법론)" href="../01_agile_method/0_intro.html" />
+    <link rel="prev" title="7. V-model for Project Design" href="0_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -205,11 +205,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../01_domain_research/3_terminology.html">6.1. 실무 용어</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../02_project_design/0_intro.html">7. V-model for Project Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../02_project_design/1_user_requirements.html">7.4. team_2 user_requirements</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="0_intro.html">7. V-model for Project Design</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.4. team_2 user_requirements</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Agile Method (애자일 방법론)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_agile_method/0_intro.html">8. Agile Method (애자일 방법론)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for ROS2</span></p>
 <ul class="nav bd-sidenav">
@@ -285,7 +285,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F_pages/addinedu_projects/01_agile_method/0_intro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F_pages/addinedu_projects/02_project_design/1_user_requirements.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -315,7 +315,7 @@
       
       
       
-      <li><a href="../../../_sources/_pages/addinedu_projects/01_agile_method/0_intro.md" target="_blank"
+      <li><a href="../../../_sources/_pages/addinedu_projects/02_project_design/1_user_requirements.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -399,7 +399,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Agile Method (애자일 방법론)</h1>
+    <h1>team_2 user_requirements</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -409,26 +409,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waterfall-v-model">8.1. 기존 방식: Waterfall / V-model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.2. Agile Method란</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.2.1. 특징</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisite">7.4.1. Prerequisite</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.4.1.1. 하이브리드 스마트 팩토리</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.4.1.2. 영세 공장 현황</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.3. 핵심 개념</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sprint">8.3.1. Sprint</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.3.2. 작은 단위 개발</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">8.3.3. 지속적인 테스트</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-software">8.3.4. Working Software</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.4.2. 주조 공장 자동화</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#market-status">7.4.2.1. 시장 조사 및 현황 분석 (Market &amp; Status)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scrum">8.4. Scrum 방식</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">8.4.1. 구성 요소</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">8.4.2. Scrum 흐름</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">8.5. 실무 도구</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">8.6. 버전 관리</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">8.7. 프로젝트 적용 예시</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.4.3. [조사]주조 공정 전체 흐름 정리</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.4.4. [분석] 실제 자동화가 필요한 작업</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7.4.5. [분석] 실제 자동화가 필요한 작업</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-requirements">7.4.6. User requirements</a></li>
 </ul>
             </nav>
         </div>
@@ -440,150 +433,293 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="agile-method">
-<h1><span class="section-number">8. </span>Agile Method (애자일 방법론)<a class="headerlink" href="#agile-method" title="Link to this heading">#</a></h1>
-<section id="waterfall-v-model">
-<h2><span class="section-number">8.1. </span>기존 방식: Waterfall / V-model<a class="headerlink" href="#waterfall-v-model" title="Link to this heading">#</a></h2>
-<p>기존 방식은 순차적으로 개발 진행하여 (설계 → 구현 → 테스트) 테스트가 개발 후반에 수행된다. 이에 대해서 다음의 문제점들이 존재한다.</p>
-<ul class="simple">
-<li><p>테스트가 늦어 문제 발견 시 수정 비용 증가</p></li>
-<li><p>개발 기간 예측 어려움</p></li>
-<li><p>요구사항 변경 대응 어려움</p></li>
-</ul>
-</section>
-<hr class="docutils" />
+  <section class="tex2jax_ignore mathjax_ignore" id="team-2-user-requirements">
+<h1><span class="section-number">7.4. </span>team_2 user_requirements<a class="headerlink" href="#team-2-user-requirements" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://blog.naver.com/moons4ir">스마트 팩토리 사례, 정밀 주조 reference</a></p>
+<p><a class="reference external" href="https://www.kuka.com/ko-kr/%EC%82%B0%EC%97%85/%EA%B8%88%EC%86%8D%EC%82%B0%EC%97%85/%EC%A3%BC%EC%A1%B0-%EC%82%B0%EC%97%85-%EB%B0%8F-%EB%8B%A8%EC%A1%B0-%EC%82%B0%EC%97%85">KUKA 주조 산업 사례</a></p>
+<section id="prerequisite">
+<h2><span class="section-number">7.4.1. </span>Prerequisite<a class="headerlink" href="#prerequisite" title="Link to this heading">#</a></h2>
 <section id="id1">
-<h2><span class="section-number">8.2. </span>Agile Method란<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>Agile은 기능을 작은 단위로 나누어 반복적으로 개발하고, 지속적으로 검증하는 방법론이다.</p>
-<section id="id2">
-<h3><span class="section-number">8.2.1. </span>특징<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>변화에 유연하게 대응</p></li>
-<li><p>빠른 피드백</p></li>
-<li><p>협업 중심 개발</p></li>
-</ul>
+<h3><span class="section-number">7.4.1.1. </span>하이브리드 스마트 팩토리<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>하이브리드 스마트팩토리란, 기존의 고정식 자동화(Fixed Automation)와 유연한 자동화(Flexible Automation)를 결합하여 운영하는 방식을 의미한다. 쉽게 말해, “컨베이어 벨트처럼 정해진 경로로 빠르게 움직이는 설비”와 “AMR(자율주행 로봇)처럼 상황에 따라 경로를 변경하는 설비”를 함께 사용하는 공장을 의미한다.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>구분</p></th>
-<th class="head"><p>Waterfall</p></th>
-<th class="head"><p>Agile</p></th>
+<th class="head"><p>고정식 자동화 (Fixed)</p></th>
+<th class="head"><p>유연한 자동화 (Flexible)</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>개발 방식</p></td>
-<td><p>순차적</p></td>
-<td><p>반복적</p></td>
+<tr class="row-even"><td><p>대표 설비</p></td>
+<td><p>컨베이어 벨트, 전용 가공기</p></td>
+<td><p>AMR(자율주행로봇), 협동 로봇</p></td>
 </tr>
-<tr class="row-odd"><td><p>테스트</p></td>
-<td><p>마지막</p></td>
-<td><p>지속적</p></td>
+<tr class="row-odd"><td><p>장점</p></td>
+<td><p>대량 생산 시 속도가 매우 빠름</p></td>
+<td><p>다품종 소량 생산에 유리, 경로 변경 쉬움</p></td>
 </tr>
-<tr class="row-even"><td><p>유연성</p></td>
-<td><p>낮음</p></td>
-<td><p>높음</p></td>
+<tr class="row-even"><td><p>단점</p></td>
+<td><p>라인 변경이 어렵고 공간을 많이 차지함</p></td>
+<td><p>컨베이어보다 이동 속도가 느릴 수 있음</p></td>
 </tr>
-<tr class="row-odd"><td><p>리스크</p></td>
-<td><p>큼</p></td>
-<td><p>작음</p></td>
+<tr class="row-odd"><td><p>역할</p></td>
+<td><p>메인 도로 (공정 간 대량 수송)</p></td>
+<td><p>라스트 마일 (로봇팔 전달, 빈 공간 이송)</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
+<section id="id2">
+<h3><span class="section-number">7.4.1.2. </span>영세 공장 현황<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>공장은 이미 일부 기계 자동화가 되어 있지만, 중소형 공장은 사람의 손길이 필요한 구간(렉킹/검사)과 비용 문제로 인해 완전 자동화에 어려움을 겪고 있음 → 국가 차원의 자동화 전환 지원 사업 진행 중</p></li>
+<li><p>다품종 소량 생산: 대기업 하청이 아닌 일반 공장은 일 들어오는 물건의 모양과 재질이 다름</p></li>
+<li><p>이때마다 로봇 팔의 동선을 새로 짜는 것이 비용 대비 효율이 떨어져 수동을 고집하게 됨</p></li>
+</ul>
 </section>
-<hr class="docutils" />
+</section>
 <section id="id3">
-<h2><span class="section-number">8.3. </span>핵심 개념<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<section id="sprint">
-<h3><span class="section-number">8.3.1. </span>Sprint<a class="headerlink" href="#sprint" title="Link to this heading">#</a></h3>
+<h2><span class="section-number">7.4.2. </span>주조 공장 자동화<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>주조(Casting)란, 금속을 융점 이상의 고온으로 녹여 액체(용탕) 상태로 만든 뒤, 모래나 금속 등으로 만든 거푸집(주형)에 부어 식혀서 원하는 형상의 제품(주물)을 만드는 기초 제조 공정이다.</p>
+<section id="market-status">
+<h3><span class="section-number">7.4.2.1. </span>시장 조사 및 현황 분석 (Market &amp; Status)<a class="headerlink" href="#market-status" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>짧은 개발 주기 (보통 1~2주)</p></li>
-<li><p>하나의 작은 기능을 완성하는 단위</p></li>
+<li><p>국내외 현황:</p>
+<ul>
+<li><p>국내 주조업계의 고령화 및 인력난 심화(3D 기피).</p></li>
+<li><p>글로벌 스마트 제조 시장의 성장세</p></li>
 </ul>
-<p>각 Sprint는 다음 과정을 반복한다:</p>
-<p>설계 → 구현 → 테스트 → 배포</p>
+</li>
+<li><p>기존 공정의 한계(Pain Points):</p>
+<ul>
+<li><p>고온 용탕 주입 시 화상 위험.</p></li>
+<li><p>무거운 주물 이송 시 근골격계 질환 및 안전사고 발생.</p></li>
+<li><p>수동 작업으로 인한 품질 불균일.</p></li>
+<li><p>고온 작업 환경 및 분진</p></li>
+</ul>
+</li>
+</ul>
 </section>
-<hr class="docutils" />
+</section>
 <section id="id4">
-<h3><span class="section-number">8.3.2. </span>작은 단위 개발<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
-<p>큰 프로젝트를 기능 단위로 나누어 개발한다.</p>
-<p>예:</p>
-<ul class="simple">
-<li><p>물류 자동화 시스템
-→ 박스 인식
-→ AMR 이동
-→ 로봇팔 pick &amp; place</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="id5">
-<h3><span class="section-number">8.3.3. </span>지속적인 테스트<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>구현 후 바로 테스트 수행</p></li>
-<li><p>문제를 빠르게 발견하고 수정</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="working-software">
-<h3><span class="section-number">8.3.4. </span>Working Software<a class="headerlink" href="#working-software" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>완벽한 코드보다 “동작하는 코드”가 중요</p></li>
-<li><p>매 Sprint마다 실행 가능한 결과물을 만들어야 한다</p></li>
-</ul>
-</section>
-</section>
-<hr class="docutils" />
-<section id="scrum">
-<h2><span class="section-number">8.4. </span>Scrum 방식<a class="headerlink" href="#scrum" title="Link to this heading">#</a></h2>
-<p>Scrum은 Agile을 구현하는 대표적인 방법이다.</p>
-<section id="id6">
-<h3><span class="section-number">8.4.1. </span>구성 요소<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Product Owner: 요구사항 정의</p></li>
-<li><p>Scrum Master: 프로세스 관리</p></li>
-<li><p>Development Team: 개발 수행</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="id7">
-<h3><span class="section-number">8.4.2. </span>Scrum 흐름<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
-<p>Backlog 정의<br />
-→ Sprint 계획<br />
-→ 개발 (1~2주)<br />
-→ 리뷰 및 회고<br />
-→ 다음 Sprint</p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="id8">
-<h2><span class="section-number">8.5. </span>실무 도구<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Jira: 일정 및 Task 관리, Sprint 운영</p></li>
-<li><p>Confluence: 문서 및 회의 기록</p></li>
-<li><p>GitHub: 코드 관리 및 협업</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="id9">
-<h2><span class="section-number">8.6. </span>버전 관리<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
-<p>v1.0: 첫 release<br />
-v1.1: 버그 수정<br />
-v1.x: 지속적인 개선</p>
-<p>Agile에서는 자주 release하는 것이 중요하다.</p>
-</section>
-<hr class="docutils" />
-<section id="id10">
-<h2><span class="section-number">8.7. </span>프로젝트 적용 예시<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
-<p>Sprint 1: 박스 인식 (Vision)<br />
-Sprint 2: AMR 이동<br />
-Sprint 3: 로봇팔 제어<br />
-Sprint 4: 전체 시스템 통합</p>
-<p>각 Sprint마다 실행 가능한 기능을 확보한다.</p>
-<hr class="docutils" />
-<div class="note admonition">
-<p class="admonition-title">Summary</p>
-<p>Agile은 기능을 작은 단위로 나누어 반복적으로 개발하고 검증함으로써, 빠른 피드백과 안정적인 프로젝트 진행을 가능하게 하는 방법론이다.</p>
+<h2><span class="section-number">7.4.3. </span>[조사]주조 공정 전체 흐름 정리<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>원재료 준비 → 용해 → 주형 제작 → 주탕(Pouring) → 냉각 → 탈형 → 후처리 → 검사
+</pre></div>
 </div>
+</section>
+<section id="id5">
+<h2><span class="section-number">7.4.4. </span>[분석] 실제 자동화가 필요한 작업<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+</section>
+<section id="id6">
+<h2><span class="section-number">7.4.5. </span>[분석] 실제 자동화가 필요한 작업<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>공정 단계</p></th>
+<th class="head"><p>사람이 하는 일</p></th>
+<th class="head"><p>특징</p></th>
+<th class="head"><p>자동화 가능</p></th>
+<th class="head"><p>인간 필요</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>원재료 준비</p></td>
+<td><p>원재료 선택 / 투입<br>비율 조정<br>품질 확인</p></td>
+<td><p>경험 기반 판단 많음</p></td>
+<td><p>투입, 계량</p></td>
+<td><p>소재 품질 판단</p></td>
+</tr>
+<tr class="row-odd"><td><p>용해 (Melting)</p></td>
+<td><p>온도 확인<br>합금 조성 조절<br>상태 판단 (색, 점도 등)</p></td>
+<td><p>고온 환경, 상태 변화 많음</p></td>
+<td><p>온도 제어 (센서 + PID)</p></td>
+<td><p>예외 상황 대응</p></td>
+</tr>
+<tr class="row-even"><td><p>주형 제작 (Molding)</p></td>
+<td><p>모래 압축 / 금형 조립<br>품질 확인 (균열, 정밀도)</p></td>
+<td><p>반복 작업 많음</p></td>
+<td><p>매우 쉬움 (이미 자동화됨)</p></td>
+<td><p>초기 셋업 / 오류 수정</p></td>
+</tr>
+<tr class="row-odd"><td><p>주탕 (Pouring) ⭐</p></td>
+<td><p>쇳물 붓기<br>타이밍 조절<br>흐름 제어</p></td>
+<td><p>고온 / 위험 / 반복 작업</p></td>
+<td><p>반드시 자동화 필요<br>로봇팔 + 비전 적용 가능</p></td>
+<td><p>예외 상황 대응</p></td>
+</tr>
+<tr class="row-even"><td><p>냉각 / 탈형</p></td>
+<td><p>타이밍 판단<br>제품 꺼내기</p></td>
+<td><p>공정 타이밍 중요</p></td>
+<td><p>컨베이어 + 로봇</p></td>
+<td><p>비정상 제품 대응</p></td>
+</tr>
+<tr class="row-odd"><td><p>후처리 (절단, 연마)</p></td>
+<td><p>불필요 부분 제거<br>표면 처리</p></td>
+<td><p>물리 노동</p></td>
+<td><p>CNC / 로봇</p></td>
+<td><p>복잡 형상 처리</p></td>
+</tr>
+<tr class="row-even"><td><p>검사 (Inspection)</p></td>
+<td><p>외관 검사<br>불량 판단</p></td>
+<td><p>품질 핵심 단계</p></td>
+<td><p>AI Vision 적용 가능</p></td>
+<td><p>최종 판단 / 클레임 대응</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- 1) 원재료 준비
+ * 사람이 하는 일
+   * 원재료 선택 / 투입
+   * 비율 조정
+   * 품질 확인
+ * 특징
+   * 경험 기반 판단 많음
+ * 자동화 판단
+   * 가능: 투입, 계량 
+   * 인간 필요: 소재 품질 판단
+2) 용해 (Melting)
+   * 사람이 하는 일
+     * 온도 확인
+     * 합금 조성 조절
+     * 상태 판단 (색, 점도 등)
+   * 자동화 판단
+     * 가능: 온도 제어 (센서 + PID)
+     * 인간 필요: 예외 상황 대응
+3) 주형 제작 (Molding)
+   * 사람이 하는 일
+     * 모래 압축 / 금형 조립
+     * 품질 확인 (균열, 정밀도)
+   * 자동화 판단
+     * 매우 쉬움 (이미 많이 자동화됨)
+     * 인간 필요: 초기 셋업 / 오류 수정
+4) 주입 (Pouring) ⭐ 핵심 위험 구간
+    * 사람이 하는 일
+      * 쇳물 붓기
+      * 타이밍 조절
+      * 흐름 제어
+    * 자동화 판단 
+      * 반드시 자동화해야 하는 구간
+        * 고온 / 위험
+        * 반복 작업
+        * 로봇팔 + 비전 적용 가능
+5) 냉각 / 탈형
+   * 사람이 하는 일 
+     * 타이밍 판단
+     * 제품 꺼내기
+   * 자동화 판단
+     * 가능 (컨베이어 + 로봇)
+     * 인간 필요: 비정상 제품 대응
+6) 후처리 (절단, 연마 등)
+   * 사람이 하는 일
+     * 불필요 부분 제거
+     * 표면 처리
+   * 자동화 판단
+     * 가능 (CNC / 로봇)
+     * 인간 필요: 복잡 형상
+
+7) 검사 (Inspection)
+    * 사람이 하는 일
+      * 외관 검사
+      * 불량 판단
+    * 자동화 판단
+      * AI Vision 적용 가능
+      * 인간 필요: 최종 판단 / 클레임 대응 -->
+<p>위 분석을 기반으로, 본 시스템은 “위험 작업의 자동화 + 판단 작업의 인간/AI 협업”을 핵심 설계 원칙으로 한다.</p>
+<p>사람 때문에 필요한 작업과 공정 자체에서 필요한 작업을 구분하고, 전자의 경우 자동화 타겟으로 설정하였다. 예를 들어, 반복 작업(투입, 이동, 단순 검사), 위험 작업(주탕, 고온 작업), 물리 노동(운반, 절단)은 자동화 대상으로 분류하였다. 반면, 공정 자체에서 필요한 작업은 완전 자동화가 어렵거나 보조가 필요한 영역으로 판단하였다. 이에 해당하는 작업은 다음과 같다: 판단(품질, 이상 상황), 최적화(공정 조건 조절), 의사결정(라인 변경). 이러한 영역은 AI와 인간의 협업이 필요한 부분이다.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="err">*</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1순위 (무조건 자동화)</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">* 주탕 (pouring)</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">* 물류 이동 (AMR)</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">* 단순 반복 작업</span>
+<span class="l l-Scalar l-Scalar-Plain">* 2순위 (AI + 자동화)</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">* 검사 (vision)</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">* 공정 최적화 (온도, 시간)</span>
+<span class="l l-Scalar l-Scalar-Plain">* 3순위 (사람 유지)</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">* 예외 처리</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">* 공정 설계</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">* 품질 최종 판단</span>
+</pre></div>
+</div>
+</section>
+<section id="user-requirements">
+<h2><span class="section-number">7.4.6. </span>User requirements<a class="headerlink" href="#user-requirements" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>목표: 다품종 소량 생산 환경에서 안전성과 효율성을 확보하는 하이브리드 스마트팩토리 데모 구축</p></li>
+<li><p>사용자:</p>
+<ul>
+<li><p>공장 작업자 (Operator)</p></li>
+<li><p>공정 관리자 (Manager)</p></li>
+<li><p>시스템 관리자 (Engineer)</p></li>
+</ul>
+</li>
+<li><p>기능 요구 (Functional Requirements):</p>
+<ul>
+<li><p>로봇팔:</p>
+<ul>
+<li><p>고온 주탕(Pouring) 자동 수행</p></li>
+<li><p>주형 → 컨베이어 → 후처리 위치로 Pick &amp; Place</p></li>
+<li><p>비전 기반 위치 인식 및 보정</p></li>
+</ul>
+</li>
+<li><p>AMR:</p>
+<ul>
+<li><p>공정 간 물류 자동 이송 (주형 → 주탕 → 후처리)</p></li>
+<li><p>장애물 회피 및 동적 경로 계획</p></li>
+<li><p>작업 요청(Task) 기반 이동 수행</p></li>
+</ul>
+</li>
+<li><p>검사 시스템:</p>
+<ul>
+<li><p>카메라 기반 외관 검사 (불량 탐지)</p></li>
+<li><p>결과를 중앙 시스템에 전달</p></li>
+</ul>
+</li>
+<li><p>관제 시스템:</p>
+<ul>
+<li><p>작업 상태 모니터링 (로봇/AMR 상태)</p></li>
+<li><p>작업 지시 (Task Allocation)</p></li>
+<li><p>이상 상황 알림</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>비기능 요구 (Non-functional Requirements):</p>
+<ul>
+<li><p>처리 시간:</p>
+<ul>
+<li><p>AMR 이동 지연 최소화 (실시간 경로 재계획)</p></li>
+</ul>
+</li>
+<li><p>안정성:</p>
+<ul>
+<li><p>고온 작업에서 안전 확보 (로봇 대체)</p></li>
+</ul>
+</li>
+<li><p>확장성:</p>
+<ul>
+<li><p>다양한 제품 형상 대응 가능 (다품종 생산)</p></li>
+</ul>
+</li>
+<li><p>신뢰성:</p>
+<ul>
+<li><p>24시간 연속 운영 가능</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>시나리오:</p>
+<ol class="arabic simple">
+<li><p>작업자가 원재료를 투입하거나 자동 공급 시스템이 투입</p></li>
+<li><p>용해로에서 온도 센서 기반 상태 모니터링</p></li>
+<li><p>로봇팔이 주탕(Pouring) 작업 수행</p></li>
+<li><p>AMR이 주형을 다음 공정으로 이송</p></li>
+<li><p>로봇팔 또는 설비가 탈형 수행</p></li>
+<li><p>후처리 공정 진행 (자동/반자동)</p></li>
+<li><p>비전 검사 시스템이 불량 여부 판단</p></li>
+<li><p>관제 시스템이 전체 상태를 모니터링 및 기록</p></li>
+</ol>
+</li>
+</ul>
 </section>
 </section>
 
@@ -600,7 +736,7 @@ Sprint 4: 전체 시스템 통합</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./_pages/addinedu_projects/01_agile_method"
+            path: "./_pages/addinedu_projects/02_project_design"
         },
         predefinedOutput: true
     }
@@ -618,20 +754,20 @@ Sprint 4: 전체 시스템 통합</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../02_project_design/1_user_requirements.html"
+       href="0_intro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">7.4. </span>team_2 user_requirements</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>V-model for Project Design</p>
       </div>
     </a>
     <a class="right-next"
-       href="../../python_ROS/1.html"
+       href="../01_agile_method/0_intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>Python Library for ROS</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Agile Method (애자일 방법론)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -651,26 +787,19 @@ Sprint 4: 전체 시스템 통합</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waterfall-v-model">8.1. 기존 방식: Waterfall / V-model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.2. Agile Method란</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.2.1. 특징</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisite">7.4.1. Prerequisite</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.4.1.1. 하이브리드 스마트 팩토리</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.4.1.2. 영세 공장 현황</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.3. 핵심 개념</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sprint">8.3.1. Sprint</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.3.2. 작은 단위 개발</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">8.3.3. 지속적인 테스트</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-software">8.3.4. Working Software</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.4.2. 주조 공장 자동화</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#market-status">7.4.2.1. 시장 조사 및 현황 분석 (Market &amp; Status)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scrum">8.4. Scrum 방식</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">8.4.1. 구성 요소</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">8.4.2. Scrum 흐름</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">8.5. 실무 도구</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">8.6. 버전 관리</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">8.7. 프로젝트 적용 예시</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.4.3. [조사]주조 공정 전체 흐름 정리</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.4.4. [분석] 실제 자동화가 필요한 작업</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7.4.5. [분석] 실제 자동화가 필요한 작업</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-requirements">7.4.6. User requirements</a></li>
 </ul>
   </nav></div>
 
