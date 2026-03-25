@@ -1,4 +1,4 @@
-# 5. PinkyPro SLAM 
+# PinkyPro SLAM 
 
 세팅을 하기 위해 [로컬과 PinkyPro 연결](../pinky/2_connection.md) 파트를 먼저 하고 와야 한다. 
 

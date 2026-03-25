@@ -1,4 +1,4 @@
-# 6. PinkyPro Navigation
+# PinkyPro Navigation
 
 ````{admonition} What to learn
 :class: note 

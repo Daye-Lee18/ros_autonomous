@@ -29,9 +29,9 @@ parts:
       - file: _pages/addinedu_projects/00_prerequisite/JetCobot/3_basic_move
       - file: _pages/addinedu_projects/00_prerequisite/JetCobot/4_camera
 
-    # - file: _pages/addinedu_projects/01_project_design_v_model/introduction
-    #   section:
-    #   - file: 
+    - file: _pages/addinedu_projects/01_project_design_v_model/0_intro
+      # sections:
+      # - file: 
 
   
   - caption: Python for ROS2

@@ -1,2 +1,2 @@
-# 3. PinkyPro LCD 및 Picamera 사용 
+# PinkyPro LCD 및 Picamera 사용 
 

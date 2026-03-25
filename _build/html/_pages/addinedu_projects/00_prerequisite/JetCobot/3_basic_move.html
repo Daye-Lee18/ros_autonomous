@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5.4. 3. 로봇팔과 그리퍼 제어 &#8212; Study for Autonomous Driving</title>
+    <title>5.4. 로봇팔과 그리퍼 제어 &#8212; Study for Autonomous Driving</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '_pages/addinedu_projects/00_prerequisite/JetCobot/3_basic_move';</script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="5.5. 4. Jetcobot 카메라 사용하기" href="4_camera.html" />
-    <link rel="prev" title="5.3. 2. JetCobot 연결" href="2_setting.html" />
+    <link rel="next" title="5.5. Jetcobot 카메라 사용하기" href="4_camera.html" />
+    <link rel="prev" title="5.3. JetCobot 연결" href="2_setting.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -188,23 +188,24 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">addinedu 심화_ROS2와AI기반 자율주행&amp;로봇팔 교육</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../pinky/1.html">4. PinkyPro</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../pinky/2_connection.html">4.2. 2. PinkyPro와 연결</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pinky/3_LCD.html">4.3. 3. PinkyPro LCD 및 Picamera 사용</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pinky/4_LED.html">4.4. 4. PinkyPro LED</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pinky/5_slam.html">4.5. 5. PinkyPro SLAM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pinky/6_nav.html">4.6. 6. PinkyPro Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pinky/2_connection.html">4.2. PinkyPro와 연결</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pinky/3_LCD.html">4.3. PinkyPro LCD 및 Picamera 사용</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pinky/4_LED.html">4.4. PinkyPro LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pinky/5_slam.html">4.5. PinkyPro SLAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pinky/6_nav.html">4.6. PinkyPro Navigation</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="1_introduction.html">5. JetCobot</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="2_setting.html">5.3. 2. JetCobot 연결</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.4. 3. 로봇팔과 그리퍼 제어</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4_camera.html">5.5. 4. Jetcobot 카메라 사용하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_setting.html">5.3. JetCobot 연결</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.4. 로봇팔과 그리퍼 제어</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_camera.html">5.5. Jetcobot 카메라 사용하기</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../01_project_design_v_model/0_intro.html">6. V-model for Project Design</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for ROS2</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../../python_ROS/1.html">6. Python Library for ROS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../python_ROS/1.html">7. Python Library for ROS</a></li>
 </ul>
 
     </div>
@@ -390,7 +391,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>3. 로봇팔과 그리퍼 제어</h1>
+    <h1>로봇팔과 그리퍼 제어</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -428,7 +429,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1><span class="section-number">5.4. </span>3. 로봇팔과 그리퍼 제어<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">5.4. </span>로봇팔과 그리퍼 제어<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <p>위의 세팅을 해서 연결한 후 로봇팔의 기본 움직임을 사용해본다.</p>
 <section id="pymycobot-git">
 <h2><span class="section-number">5.4.1. </span>pymycobot Git<a class="headerlink" href="#pymycobot-git" title="Link to this heading">#</a></h2>
@@ -524,7 +525,7 @@ J6 (Wrist Roll): Rotates around the longitudinal axis of the end-effector.</p></
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;리셋 완료&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><img alt="home_pose" src="_pages/addinedu_projects/_asset/jetcobot/1.png" /></p>
+<p><img alt="home_pose" src="../../../../_images/1.png" /></p>
 </section>
 <section id="id5">
 <h3><span class="section-number">5.4.4.3. </span>로봇팔 관절 움직이기<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
@@ -626,7 +627,7 @@ mode 1: linear (movel)</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5.3. </span>2. JetCobot 연결</p>
+        <p class="prev-next-title"><span class="section-number">5.3. </span>JetCobot 연결</p>
       </div>
     </a>
     <a class="right-next"
@@ -634,7 +635,7 @@ mode 1: linear (movel)</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.5. </span>4. Jetcobot 카메라 사용하기</p>
+        <p class="prev-next-title"><span class="section-number">5.5. </span>Jetcobot 카메라 사용하기</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

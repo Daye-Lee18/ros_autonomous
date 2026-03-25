@@ -1,5 +1,5 @@
 
-# 2. JetCobot 연결  
+# JetCobot 연결  
 
 ## 전원 연결 
 1. sd 카드 금속 단자 위로 연결 
