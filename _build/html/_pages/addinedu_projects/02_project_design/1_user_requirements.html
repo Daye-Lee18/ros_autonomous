@@ -201,8 +201,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/JetCobot/4_camera.html">5.5. Jetcobot 카메라 사용하기</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../01_domain_research/0_intro.html">6. 자료 조사</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../01_domain_research/3_terminology.html">6.1. 실무 용어</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_domain_research/0_intro.html">6. 기술 조사 보고서 (Technical Research Report)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_domain_research/1_casting.html">6.6. [Casting] Technical Research Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_domain_research/2_logistics.html">6.7. [Logistics] Technical Research Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_domain_research/3_terminology.html">6.8. 실무 용어</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="0_intro.html">7. V-model for Project Design</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -414,14 +416,23 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.4.1.2. 영세 공장 현황</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.4.2. 주조 공장 자동화</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.4.2. [조사] 주조 공장 자동화</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#market-status">7.4.2.1. 시장 조사 및 현황 분석 (Market &amp; Status)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.4.3. [조사]주조 공정 전체 흐름 정리</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.4.4. [분석] 실제 자동화가 필요한 작업</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7.4.5. [분석] 실제 자동화가 필요한 작업</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-requirements">7.4.6. User requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">7.4.6. [결론] 자동화 우선순위</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-requirements">7.4.7. User Requirements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">7.4.7.1. 목표(Objective)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stakeholders">7.4.7.2. 사용자(Stakeholders)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-requirements">7.4.7.3. 기능 요구 (Functional Requirements)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-functional-requirements">7.4.7.4. 비기능 요구 (Non-functional Requirements)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operation-scenario">7.4.7.5. 시나리오 (Operation Scenario)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-design-principle">7.4.7.6. Key Design Principle</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -480,7 +491,7 @@ document.write(`
 </section>
 </section>
 <section id="id3">
-<h2><span class="section-number">7.4.2. </span>주조 공장 자동화<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.4.2. </span>[조사] 주조 공장 자동화<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>주조(Casting)란, 금속을 융점 이상의 고온으로 녹여 액체(용탕) 상태로 만든 뒤, 모래나 금속 등으로 만든 거푸집(주형)에 부어 식혀서 원하는 형상의 제품(주물)을 만드는 기초 제조 공정이다.</p>
 <section id="market-status">
 <h3><span class="section-number">7.4.2.1. </span>시장 조사 및 현황 분석 (Market &amp; Status)<a class="headerlink" href="#market-status" title="Link to this heading">#</a></h3>
@@ -625,9 +636,27 @@ document.write(`
     * 자동화 판단
       * AI Vision 적용 가능
       * 인간 필요: 최종 판단 / 클레임 대응 -->
-<p>위 분석을 기반으로, 본 시스템은 “위험 작업의 자동화 + 판단 작업의 인간/AI 협업”을 핵심 설계 원칙으로 한다.</p>
-<p>사람 때문에 필요한 작업과 공정 자체에서 필요한 작업을 구분하고, 전자의 경우 자동화 타겟으로 설정하였다. 예를 들어, 반복 작업(투입, 이동, 단순 검사), 위험 작업(주탕, 고온 작업), 물리 노동(운반, 절단)은 자동화 대상으로 분류하였다. 반면, 공정 자체에서 필요한 작업은 완전 자동화가 어렵거나 보조가 필요한 영역으로 판단하였다. 이에 해당하는 작업은 다음과 같다: 판단(품질, 이상 상황), 최적화(공정 조건 조절), 의사결정(라인 변경). 이러한 영역은 AI와 인간의 협업이 필요한 부분이다.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="err">*</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1순위 (무조건 자동화)</span>
+</section>
+<section id="id7">
+<h2><span class="section-number">7.4.6. </span>[결론] 자동화 우선순위<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<p>본 공정 분석 결과, 주탕(Pouring) 공정은 고온 환경에서 수행되는 위험 작업이며 동시에 반복성이 높아 자동화 효과가 가장 큰 구간으로 판단된다. 따라서 본 시스템에서는 주탕 공정의 자동화를 최우선 목표로 설정한다.</p>
+<p>본 시스템은 “위험 작업의 자동화 + 판단 작업의 인간/AI 협업”을 핵심 설계 원칙으로 한다. 즉, 사람 때문에 필요한 작업과 공정 자체에서 필요한 작업을 구분하고, 전자의 경우 자동화 타겟으로 설정하였다. 예를 들어, 반복 작업(투입, 이동, 단순 검사), 위험 작업(주탕, 고온 작업), 물리 노동(운반, 절단)은 자동화 대상으로 분류하였다. 반면, 공정 자체에서 필요한 작업은 완전 자동화가 어렵거나 보조가 필요한 영역으로 판단하였다. 이에 해당하는 작업은 다음과 같다: 판단(품질, 이상 상황), 최적화(공정 조건 조절), 의사결정(라인 변경). 이러한 영역은 AI와 인간의 협업이 필요한 부분이다.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="err">*</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Priority 1 (Critical Automation)</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">* 주탕 (Pouring) ← 핵심 자동화 대상</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">* 물류 이동 (AMR)</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">* 단순 반복 작업</span>
+
+<span class="l l-Scalar l-Scalar-Plain">* Priority 2 (AI-assisted Automation)</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">* 검사 (Vision-based Inspection)</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">* 공정 최적화 (온도, 시간)</span>
+
+<span class="l l-Scalar l-Scalar-Plain">* Priority 3 (Human-in-the-loop)</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">* 예외 처리</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">* 공정 설계</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">* 품질 최종 판단</span>
+
+<span class="l l-Scalar l-Scalar-Plain">```yaml</span>
+<span class="l l-Scalar l-Scalar-Plain">* 1순위 (무조건 자동화)</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">* 주탕 (pouring)</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">* 물류 이동 (AMR)</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">* 단순 반복 작업</span>
@@ -642,84 +671,165 @@ document.write(`
 </div>
 </section>
 <section id="user-requirements">
-<h2><span class="section-number">7.4.6. </span>User requirements<a class="headerlink" href="#user-requirements" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.4.7. </span>User Requirements<a class="headerlink" href="#user-requirements" title="Link to this heading">#</a></h2>
+<section id="objective">
+<h3><span class="section-number">7.4.7.1. </span>목표(Objective)<a class="headerlink" href="#objective" title="Link to this heading">#</a></h3>
+<p>다품종 소량 생산 환경의 주조 공장에서 안전성과 효율성을 확보하기 위한 하이브리드 스마트팩토리 데모 구축<br />
+→ 특히, 주탕(Pouring) 공정을 최우선 자동화 대상으로 설정</p>
+</section>
+<section id="stakeholders">
+<h3><span class="section-number">7.4.7.2. </span>사용자(Stakeholders)<a class="headerlink" href="#stakeholders" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>역할</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Operator</p></td>
+<td><p>현장 작업자, 설비 조작 및 상태 확인</p></td>
+</tr>
+<tr class="row-odd"><td><p>Manager</p></td>
+<td><p>공정 관리 및 작업 지시</p></td>
+</tr>
+<tr class="row-even"><td><p>Engineer</p></td>
+<td><p>시스템 유지보수 및 설정</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="functional-requirements">
+<h3><span class="section-number">7.4.7.3. </span>기능 요구 (Functional Requirements)<a class="headerlink" href="#functional-requirements" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>시스템</p></th>
+<th class="head"><p>기능</p></th>
+<th class="head"><p>설명</p></th>
+<th class="head"><p>우선순위</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Robot Arm</p></td>
+<td><p>Pouring</p></td>
+<td><p>고온 주탕 자동 수행</p></td>
+<td><p>⭐ Critical</p></td>
+</tr>
+<tr class="row-odd"><td><p>Robot Arm</p></td>
+<td><p>Pick &amp; Place</p></td>
+<td><p>주형 및 제품 이동</p></td>
+<td><p>High</p></td>
+</tr>
+<tr class="row-even"><td><p>Robot Arm</p></td>
+<td><p>Vision Alignment</p></td>
+<td><p>비전 기반 위치 보정</p></td>
+<td><p>High</p></td>
+</tr>
+<tr class="row-odd"><td><p>AMR</p></td>
+<td><p>Material Transport</p></td>
+<td><p>공정 간 물류 이동</p></td>
+<td><p>⭐ Critical</p></td>
+</tr>
+<tr class="row-even"><td><p>AMR</p></td>
+<td><p>Path Planning</p></td>
+<td><p>장애물 회피 및 경로 계획</p></td>
+<td><p>High</p></td>
+</tr>
+<tr class="row-odd"><td><p>Inspection</p></td>
+<td><p>Defect Detection</p></td>
+<td><p>외관 불량 탐지</p></td>
+<td><p>Medium</p></td>
+</tr>
+<tr class="row-even"><td><p>Control System</p></td>
+<td><p>Monitoring</p></td>
+<td><p>공정 상태 모니터링</p></td>
+<td><p>High</p></td>
+</tr>
+<tr class="row-odd"><td><p>Control System</p></td>
+<td><p>Task Allocation</p></td>
+<td><p>작업 할당 및 스케줄링</p></td>
+<td><p>High</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="non-functional-requirements">
+<h3><span class="section-number">7.4.7.4. </span>비기능 요구 (Non-functional Requirements)<a class="headerlink" href="#non-functional-requirements" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>요구사항</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Safety</p></td>
+<td><p>고온 작업을 로봇으로 대체</p></td>
+</tr>
+<tr class="row-odd"><td><p>Latency</p></td>
+<td><p>AMR 이동 지연 최소화</p></td>
+</tr>
+<tr class="row-even"><td><p>Scalability</p></td>
+<td><p>다양한 제품 대응 가능</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reliability</p></td>
+<td><p>24시간 연속 운영</p></td>
+</tr>
+<tr class="row-even"><td><p>Robustness</p></td>
+<td><p>예외 상황 대응 가능</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="operation-scenario">
+<h3><span class="section-number">7.4.7.5. </span>시나리오 (Operation Scenario)<a class="headerlink" href="#operation-scenario" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Step</p></th>
+<th class="head"><p>내용</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>원재료 투입</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>용해 및 상태 모니터링</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>로봇팔 주탕 수행 ⭐</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>AMR 물류 이송</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>탈형</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>후처리</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>비전 검사</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>관제 시스템 기록</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="key-design-principle">
+<h3><span class="section-number">7.4.7.6. </span>Key Design Principle<a class="headerlink" href="#key-design-principle" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>목표: 다품종 소량 생산 환경에서 안전성과 효율성을 확보하는 하이브리드 스마트팩토리 데모 구축</p></li>
-<li><p>사용자:</p>
-<ul>
-<li><p>공장 작업자 (Operator)</p></li>
-<li><p>공정 관리자 (Manager)</p></li>
-<li><p>시스템 관리자 (Engineer)</p></li>
+<li><p>주탕(Pouring) 공정 중심 자동화</p></li>
+<li><p>물류 및 반복 작업 자동화</p></li>
+<li><p>판단 작업은 인간 + AI 협업</p></li>
 </ul>
-</li>
-<li><p>기능 요구 (Functional Requirements):</p>
-<ul>
-<li><p>로봇팔:</p>
-<ul>
-<li><p>고온 주탕(Pouring) 자동 수행</p></li>
-<li><p>주형 → 컨베이어 → 후처리 위치로 Pick &amp; Place</p></li>
-<li><p>비전 기반 위치 인식 및 보정</p></li>
-</ul>
-</li>
-<li><p>AMR:</p>
-<ul>
-<li><p>공정 간 물류 자동 이송 (주형 → 주탕 → 후처리)</p></li>
-<li><p>장애물 회피 및 동적 경로 계획</p></li>
-<li><p>작업 요청(Task) 기반 이동 수행</p></li>
-</ul>
-</li>
-<li><p>검사 시스템:</p>
-<ul>
-<li><p>카메라 기반 외관 검사 (불량 탐지)</p></li>
-<li><p>결과를 중앙 시스템에 전달</p></li>
-</ul>
-</li>
-<li><p>관제 시스템:</p>
-<ul>
-<li><p>작업 상태 모니터링 (로봇/AMR 상태)</p></li>
-<li><p>작업 지시 (Task Allocation)</p></li>
-<li><p>이상 상황 알림</p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>비기능 요구 (Non-functional Requirements):</p>
-<ul>
-<li><p>처리 시간:</p>
-<ul>
-<li><p>AMR 이동 지연 최소화 (실시간 경로 재계획)</p></li>
-</ul>
-</li>
-<li><p>안정성:</p>
-<ul>
-<li><p>고온 작업에서 안전 확보 (로봇 대체)</p></li>
-</ul>
-</li>
-<li><p>확장성:</p>
-<ul>
-<li><p>다양한 제품 형상 대응 가능 (다품종 생산)</p></li>
-</ul>
-</li>
-<li><p>신뢰성:</p>
-<ul>
-<li><p>24시간 연속 운영 가능</p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>시나리오:</p>
-<ol class="arabic simple">
-<li><p>작업자가 원재료를 투입하거나 자동 공급 시스템이 투입</p></li>
-<li><p>용해로에서 온도 센서 기반 상태 모니터링</p></li>
-<li><p>로봇팔이 주탕(Pouring) 작업 수행</p></li>
-<li><p>AMR이 주형을 다음 공정으로 이송</p></li>
-<li><p>로봇팔 또는 설비가 탈형 수행</p></li>
-<li><p>후처리 공정 진행 (자동/반자동)</p></li>
-<li><p>비전 검사 시스템이 불량 여부 판단</p></li>
-<li><p>관제 시스템이 전체 상태를 모니터링 및 기록</p></li>
-</ol>
-</li>
-</ul>
+</section>
 </section>
 </section>
 
@@ -792,14 +902,23 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.4.1.2. 영세 공장 현황</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.4.2. 주조 공장 자동화</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.4.2. [조사] 주조 공장 자동화</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#market-status">7.4.2.1. 시장 조사 및 현황 분석 (Market &amp; Status)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.4.3. [조사]주조 공정 전체 흐름 정리</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.4.4. [분석] 실제 자동화가 필요한 작업</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7.4.5. [분석] 실제 자동화가 필요한 작업</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-requirements">7.4.6. User requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">7.4.6. [결론] 자동화 우선순위</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-requirements">7.4.7. User Requirements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">7.4.7.1. 목표(Objective)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stakeholders">7.4.7.2. 사용자(Stakeholders)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-requirements">7.4.7.3. 기능 요구 (Functional Requirements)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-functional-requirements">7.4.7.4. 비기능 요구 (Non-functional Requirements)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operation-scenario">7.4.7.5. 시나리오 (Operation Scenario)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-design-principle">7.4.7.6. Key Design Principle</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

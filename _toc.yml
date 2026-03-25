@@ -31,6 +31,8 @@ parts:
 
     - file: _pages/addinedu_projects/01_domain_research/0_intro
       sections:
+      - file: _pages/addinedu_projects/01_domain_research/1_casting
+      - file: _pages/addinedu_projects/01_domain_research/2_logistics
       - file: _pages/addinedu_projects/01_domain_research/3_terminology
 
     - file: _pages/addinedu_projects/02_project_design/0_intro

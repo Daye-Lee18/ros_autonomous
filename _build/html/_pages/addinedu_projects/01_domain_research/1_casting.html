@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../../../" >
+<html lang="en" data-content_root="../../../" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4.3. PinkyPro LCD 및 Picamera 사용 &#8212; Study for Autonomous Driving</title>
+    <title>6.6. [Casting] Technical Research Report &#8212; Study for Autonomous Driving</title>
   
   
   
@@ -18,50 +18,50 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '_pages/addinedu_projects/00_prerequisite/pinky/3_LCD';</script>
-    <link rel="index" title="Index" href="../../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="4.4. PinkyPro LED" href="4_LED.html" />
-    <link rel="prev" title="4.2. PinkyPro와 연결" href="2_connection.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = '_pages/addinedu_projects/01_domain_research/1_casting';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="6.7. [Logistics] Technical Research Report" href="2_logistics.html" />
+    <link rel="prev" title="6. 기술 조사 보고서 (Technical Research Report)" href="0_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -93,7 +93,7 @@
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="../../../../search.html"
+      action="../../../search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -142,7 +142,7 @@
     
   
 
-<a class="navbar-brand logo" href="../../../../intro.html">
+<a class="navbar-brand logo" href="../../../intro.html">
   
   
   
@@ -153,8 +153,8 @@
       
     
     
-    <img src="../../../../_static/autonomous_driving_perception.jpg" class="logo__image only-light" alt="Study for Autonomous Driving - Home"/>
-    <script>document.write(`<img src="../../../../_static/autonomous_driving_perception.jpg" class="logo__image only-dark" alt="Study for Autonomous Driving - Home"/>`);</script>
+    <img src="../../../_static/autonomous_driving_perception.jpg" class="logo__image only-light" alt="Study for Autonomous Driving - Home"/>
+    <script>document.write(`<img src="../../../_static/autonomous_driving_perception.jpg" class="logo__image only-dark" alt="Study for Autonomous Driving - Home"/>`);</script>
   
   
 </a></div>
@@ -174,48 +174,48 @@
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../../../intro.html">
+                <a class="reference internal" href="../../../intro.html">
                     ROS2와 자율주행(Autonomous driving)
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">ROS</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../../ros/1_node.html">1. 노드(Node)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../ros/2_communication.html">2. 통신 (communication)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../ros/3_command.html">3. Command for ROS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ros/1_node.html">1. 노드(Node)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ros/2_communication.html">2. 통신 (communication)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ros/3_command.html">3. Command for ROS</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">addinedu 심화_ROS2와AI기반 자율주행&amp;로봇팔 교육</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="1.html">4. PinkyPro</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="2_connection.html">4.2. PinkyPro와 연결</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.3. PinkyPro LCD 및 Picamera 사용</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4_LED.html">4.4. PinkyPro LED</a></li>
-<li class="toctree-l2"><a class="reference internal" href="5_slam.html">4.5. PinkyPro SLAM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="6_nav.html">4.6. PinkyPro Navigation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00_prerequisite/pinky/1.html">4. PinkyPro</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/pinky/2_connection.html">4.2. PinkyPro와 연결</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/pinky/3_LCD.html">4.3. PinkyPro LCD 및 Picamera 사용</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/pinky/4_LED.html">4.4. PinkyPro LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/pinky/5_slam.html">4.5. PinkyPro SLAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/pinky/6_nav.html">4.6. PinkyPro Navigation</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../JetCobot/1_introduction.html">5. JetCobot</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../JetCobot/2_setting.html">5.3. JetCobot 연결</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../JetCobot/3_basic_move.html">5.4. 로봇팔과 그리퍼 제어</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../JetCobot/4_camera.html">5.5. Jetcobot 카메라 사용하기</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00_prerequisite/JetCobot/1_introduction.html">5. JetCobot</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/JetCobot/2_setting.html">5.3. JetCobot 연결</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/JetCobot/3_basic_move.html">5.4. 로봇팔과 그리퍼 제어</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/JetCobot/4_camera.html">5.5. Jetcobot 카메라 사용하기</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_domain_research/0_intro.html">6. 기술 조사 보고서 (Technical Research Report)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../01_domain_research/1_casting.html">6.6. [Casting] Technical Research Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../01_domain_research/2_logistics.html">6.7. [Logistics] Technical Research Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../01_domain_research/3_terminology.html">6.8. 실무 용어</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="0_intro.html">6. 기술 조사 보고서 (Technical Research Report)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.6. [Casting] Technical Research Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_logistics.html">6.7. [Logistics] Technical Research Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_terminology.html">6.8. 실무 용어</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_project_design/0_intro.html">7. V-model for Project Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../02_project_design/1_user_requirements.html">7.4. team_2 user_requirements</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_project_design/0_intro.html">7. V-model for Project Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_project_design/1_user_requirements.html">7.4. team_2 user_requirements</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../../01_agile_method/0_intro.html">8. Agile Method (애자일 방법론)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_agile_method/0_intro.html">8. Agile Method (애자일 방법론)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python for ROS2</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../../python_ROS/1.html">9. Python Library for ROS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python_ROS/1.html">9. Python Library for ROS</a></li>
 </ul>
 
     </div>
@@ -287,7 +287,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F_pages/addinedu_projects/00_prerequisite/pinky/3_LCD.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F_pages/addinedu_projects/01_domain_research/1_casting.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -317,7 +317,7 @@
       
       
       
-      <li><a href="../../../../_sources/_pages/addinedu_projects/00_prerequisite/pinky/3_LCD.md" target="_blank"
+      <li><a href="../../../_sources/_pages/addinedu_projects/01_domain_research/1_casting.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -399,7 +399,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>PinkyPro LCD 및 Picamera 사용</h1>
+    <h1>[Casting] Technical Research Report</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -413,8 +413,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pinkypro-lcd-picamera">
-<h1><span class="section-number">4.3. </span>PinkyPro LCD 및 Picamera 사용<a class="headerlink" href="#pinkypro-lcd-picamera" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="casting-technical-research-report">
+<h1><span class="section-number">6.6. </span>[Casting] Technical Research Report<a class="headerlink" href="#casting-technical-research-report" title="Link to this heading">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -430,7 +430,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./_pages/addinedu_projects/00_prerequisite/pinky"
+            path: "./_pages/addinedu_projects/01_domain_research"
         },
         predefinedOutput: true
     }
@@ -448,20 +448,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="2_connection.html"
+       href="0_intro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4.2. </span>PinkyPro와 연결</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>기술 조사 보고서 (Technical Research Report)</p>
       </div>
     </a>
     <a class="right-next"
-       href="4_LED.html"
+       href="2_logistics.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.4. </span>PinkyPro LED</p>
+        <p class="prev-next-title"><span class="section-number">6.7. </span>[Logistics] Technical Research Report</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -515,8 +515,8 @@ By Daye Lee
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

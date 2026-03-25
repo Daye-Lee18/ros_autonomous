@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6. 자료 조사 &#8212; Study for Autonomous Driving</title>
+    <title>6. 기술 조사 보고서 (Technical Research Report) &#8212; Study for Autonomous Driving</title>
   
   
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '_pages/addinedu_projects/01_domain_research/0_intro';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="6.1. 실무 용어" href="3_terminology.html" />
+    <link rel="next" title="6.6. [Casting] Technical Research Report" href="1_casting.html" />
     <link rel="prev" title="5.5. Jetcobot 카메라 사용하기" href="../00_prerequisite/JetCobot/4_camera.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -201,8 +201,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../00_prerequisite/JetCobot/4_camera.html">5.5. Jetcobot 카메라 사용하기</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">6. 자료 조사</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="3_terminology.html">6.1. 실무 용어</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">6. 기술 조사 보고서 (Technical Research Report)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_casting.html">6.6. [Casting] Technical Research Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_logistics.html">6.7. [Logistics] Technical Research Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_terminology.html">6.8. 실무 용어</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../02_project_design/0_intro.html">7. V-model for Project Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -386,7 +388,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -397,11 +401,30 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>자료 조사</h1>
+    <h1>기술 조사 보고서 (Technical Research Report)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.1. 목적</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.2. 시스템 구성 요소</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.3. 기술 조사 항목</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pouring-automation">6.3.1. 주탕 자동화 기술 (Pouring Automation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#amr-autonomous-mobile-robot">6.3.2. AMR (Autonomous Mobile Robot)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robot-manipulation">6.3.3. Robot Manipulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vision-system">6.3.4. Vision System (검사 + 인식)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">6.3.5. 관제 시스템</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">6.4. 기술 선택 근거</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vs">6.5. 기존 시스템 vs 제안 시스템</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -411,8 +434,198 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1><span class="section-number">6. </span>자료 조사<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="technical-research-report">
+<h1><span class="section-number">6. </span>기술 조사 보고서 (Technical Research Report)<a class="headerlink" href="#technical-research-report" title="Link to this heading">#</a></h1>
+<p>지금 단계에서, 기술조사 보고서 = “우리 시스템 설계를 뒷받침하는 근거 문서”이다. 기술 선택 이유를 설명하는 게 핵심이다.  즉, 기술 조사 보고서는 우리가 어떤 기술을 왜 선택했는지 설명하는 문서이다.</p>
+<p>아래는 간략히 기술 조서 보고서를 작성했고 상세 페이지에 세부 내용이 채워져있다.</p>
+<section id="id1">
+<h2><span class="section-number">6.1. </span>목적<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>본 보고서는 주조 공정 및 물류 시스템이 결합된 스마트팩토리 구현을 위해 필요한 핵심 기술을 조사하고, 적용 가능성을 분석하는 것을 목적으로 한다.</p>
+</section>
+<section id="id2">
+<h2><span class="section-number">6.2. </span>시스템 구성 요소<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>본 시스템은 다음 3가지 영역으로 구성된다:</p>
+<ul class="simple">
+<li><p>주조 공정 (Casting)</p></li>
+<li><p>물류 시스템 (AMR 기반 이송)</p></li>
+<li><p>관제 시스템 (Control / Monitoring)</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2><span class="section-number">6.3. </span>기술 조사 항목<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="pouring-automation">
+<h3><span class="section-number">6.3.1. </span>주탕 자동화 기술 (Pouring Automation)<a class="headerlink" href="#pouring-automation" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>내용</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>필요성</p></td>
+<td><p>고온 / 위험 / 반복 작업</p></td>
+</tr>
+<tr class="row-odd"><td><p>기술</p></td>
+<td><p>산업용 로봇팔 (KUKA, UR 등)</p></td>
+</tr>
+<tr class="row-even"><td><p>핵심 기능</p></td>
+<td><p>정밀 위치 제어, 경로 계획</p></td>
+</tr>
+<tr class="row-odd"><td><p>추가 기술</p></td>
+<td><p>비전 기반 위치 인식</p></td>
+</tr>
+<tr class="row-even"><td><p>적용 난이도</p></td>
+<td><p>중 ~ 높음</p></td>
+</tr>
+<tr class="row-odd"><td><p>기대 효과</p></td>
+<td><p>안전성 향상, 품질 균일화</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="amr-autonomous-mobile-robot">
+<h3><span class="section-number">6.3.2. </span>AMR (Autonomous Mobile Robot)<a class="headerlink" href="#amr-autonomous-mobile-robot" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>내용</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>필요성</p></td>
+<td><p>공정 간 자동 이송</p></td>
+</tr>
+<tr class="row-odd"><td><p>기술</p></td>
+<td><p>ROS2 + Nav2</p></td>
+</tr>
+<tr class="row-even"><td><p>핵심 기능</p></td>
+<td><p>자율주행, 경로 계획</p></td>
+</tr>
+<tr class="row-odd"><td><p>센서</p></td>
+<td><p>LiDAR, Camera</p></td>
+</tr>
+<tr class="row-even"><td><p>적용 난이도</p></td>
+<td><p>중</p></td>
+</tr>
+<tr class="row-odd"><td><p>기대 효과</p></td>
+<td><p>유연한 물류 시스템</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="robot-manipulation">
+<h3><span class="section-number">6.3.3. </span>Robot Manipulation<a class="headerlink" href="#robot-manipulation" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>내용</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>기술</p></td>
+<td><p>MoveIt2</p></td>
+</tr>
+<tr class="row-odd"><td><p>기능</p></td>
+<td><p>Pick &amp; Place, 경로 계획</p></td>
+</tr>
+<tr class="row-even"><td><p>제어 방식</p></td>
+<td><p>Inverse Kinematics</p></td>
+</tr>
+<tr class="row-odd"><td><p>적용 대상</p></td>
+<td><p>주탕, 탈형, 후처리</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="vision-system">
+<h3><span class="section-number">6.3.4. </span>Vision System (검사 + 인식)<a class="headerlink" href="#vision-system" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>내용</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>역할</p></td>
+<td><p>위치 인식 / 결함 검사</p></td>
+</tr>
+<tr class="row-odd"><td><p>기술</p></td>
+<td><p>OpenCV, YOLO</p></td>
+</tr>
+<tr class="row-even"><td><p>기능</p></td>
+<td><p>Object Detection</p></td>
+</tr>
+<tr class="row-odd"><td><p>적용 위치</p></td>
+<td><p>주탕 위치 정렬, 검사</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id4">
+<h3><span class="section-number">6.3.5. </span>관제 시스템<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>내용</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>역할</p></td>
+<td><p>전체 시스템 관리</p></td>
+</tr>
+<tr class="row-odd"><td><p>기술</p></td>
+<td><p>ROS2 Topic / Service / Action</p></td>
+</tr>
+<tr class="row-even"><td><p>기능</p></td>
+<td><p>Task allocation, Monitoring</p></td>
+</tr>
+<tr class="row-odd"><td><p>확장</p></td>
+<td><p>LLM 기반 명령 해석</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="id5">
+<h2><span class="section-number">6.4. </span>기술 선택 근거<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>주탕 공정은 고온 및 위험 작업이므로 로봇 자동화가 필수적임</p></li>
+<li><p>물류 시스템은 다품종 소량 생산 환경에 대응하기 위해 AMR을 선택함</p></li>
+<li><p>비전 시스템을 통해 공정 정밀도 및 품질 검사를 자동화함</p></li>
+<li><p>ROS2 기반 시스템을 통해 각 모듈 간 확장성과 유연성을 확보함</p></li>
+</ul>
+</section>
+<section id="vs">
+<h2><span class="section-number">6.5. </span>기존 시스템 vs 제안 시스템<a class="headerlink" href="#vs" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>기존</p></th>
+<th class="head"><p>제안</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>주탕</p></td>
+<td><p>수작업</p></td>
+<td><p>로봇 자동화</p></td>
+</tr>
+<tr class="row-odd"><td><p>물류</p></td>
+<td><p>수동/컨베이어</p></td>
+<td><p>AMR</p></td>
+</tr>
+<tr class="row-even"><td><p>검사</p></td>
+<td><p>육안</p></td>
+<td><p>Vision</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -457,11 +670,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="3_terminology.html"
+       href="1_casting.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6.1. </span>실무 용어</p>
+        <p class="prev-next-title"><span class="section-number">6.6. </span>[Casting] Technical Research Report</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -471,6 +684,32 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.1. 목적</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.2. 시스템 구성 요소</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.3. 기술 조사 항목</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pouring-automation">6.3.1. 주탕 자동화 기술 (Pouring Automation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#amr-autonomous-mobile-robot">6.3.2. AMR (Autonomous Mobile Robot)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robot-manipulation">6.3.3. Robot Manipulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vision-system">6.3.4. Vision System (검사 + 인식)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">6.3.5. 관제 시스템</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">6.4. 기술 선택 근거</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vs">6.5. 기존 시스템 vs 제안 시스템</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
