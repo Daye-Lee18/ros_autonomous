@@ -96,5 +96,5 @@ IP주소는 같지만, 다른 왕국이라서 괜찮다.
 
 [flask link](https://testdriven.io/courses/learn-flask/routing/) 
 
-![img1](../../_asset/jetcobot/flask1.png)
-![img2](../../_asset/jetcobot/flask2.png)
+![img1](../../../../_asset/jetcobot/flask1.png)
+![img2](../../../../_asset/jetcobot/flask2.png)
