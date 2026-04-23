@@ -8,6 +8,11 @@
 
 로봇팔의 컨트롤보드 (c-type)과 라즈베리파이 (주황색 박스 안 A-type)에 연결. 
 
+> SmartCast Robotics 실험에선, tailescale 로 특정 공유기에 다같이 연결해해놓았기 때문에
+> 로컬 컴퓨터에서 로컬에서 ifconfig 로 ip 주소 확인하여 .ssh/config 설정 후 jetcobot과 바로 연결가능하다. 
+> 연결 안된다면, 보드나 충전기 전원 연결 및 ping 으로 확인 
+> 따라서, 바로 다음 chapter 로 넘어가면 된다. 
+
 ## PC에서 JetCobot의 네트워크로 연결 
 
 JetCobot 위의 붙어있는, SSID와 비밀번호 확인하여 PC에서 같은 이름의 와이파이 연결 
